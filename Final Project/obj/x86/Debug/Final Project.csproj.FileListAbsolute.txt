@@ -221,3 +221,4 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\quali
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\qualifiers.txt.intermediate
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\ProjectArchitectures.txt
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Final Project.csprojAssemblyReference.cache
