@@ -55,16 +55,15 @@ namespace Final_Project.Classes
         }
         public void ShotBullet(Bullets bulletType)
         {
-            //first place the bullet on the canvas
-            //places in the middle of the ship
-            bullet = new Bullet(this.x - 20, this.y, canvas, bulletType); // this is global so we can access his axis and ayis
+            //first place the bullet on the canvas places in the middle of the ship
+            bullet = new Bullet(this.x - 25, this.y, canvas, bulletType); // this is global so we can access his axis and ayis
 
             //then createTimer
-            bullet.bullet_timer_movement.Interval = TimeSpan.FromSeconds(0.3); // each interval
-            bullet.bullet_timer_movement.Tick += Bullet_timer_movement_Tick;
+            bullet.bullet_timer_movement.Interval = TimeSpan.FromTicks(1); // each interval
 
             bullet_Control.Add(bullet); // add to the control list the current bullet
 
+            bullet.bullet_timer_movement.Tick += Bullet_timer_movement_Tick;
             bullet.bullet_timer_movement.Start();
         }
 
