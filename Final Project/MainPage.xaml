@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="Final_Project.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Final_Project"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Background>
+        <ImageBrush ImageSource="Assets/BackGrounds/background_final.jpg" Stretch="UniformToFill"/>
+    </Page.Background>
+
+
+    <Grid>
+        <Image Source="Assets/BackGrounds/bgbg.png" Margin="-432,-106,338,276" RenderTransformOrigin="0.462,0.989" UseLayoutRounding="False" d:LayoutRounding="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="-16.09" TranslateX="126.325" TranslateY="3.778"/>
+            </Image.RenderTransform>
+        </Image>
+
+        <Button Name="playButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,409,0,0" VerticalAlignment="Top" Click="playButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/Buttons/mp_start_button.png"/>
+            </Button.Background>
+        </Button>
+        <Button Name="shopButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,180,0,0" VerticalAlignment="Top">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/Buttons/mp_shop_button.png"/>
+            </Button.Background>
+        </Button>
+        <Button Name="logoutButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,630,0,0" VerticalAlignment="Top">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/Buttons/mp_logout_button.png"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Page>
