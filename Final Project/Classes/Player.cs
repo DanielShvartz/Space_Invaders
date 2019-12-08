@@ -14,8 +14,6 @@ namespace Final_Project.Classes
         // because the x and y is changing different in the enemy and in the player 
         //we cant init it in the base only in the players class
         Bullet bullet;
-        List<Bullet> bullet_Control = new List<Bullet>(); // we will have a list of bullets to control the bullets movement
-        // this list also allows to remove hit bullets from the canvas and stop timers by eahc bullet
 
         public Player(double dxSpeed, Canvas canvas, string imageLocation) : base(dxSpeed, canvas, imageLocation)
         {
@@ -53,27 +51,12 @@ namespace Final_Project.Classes
                 }
             }
         }
-        public void ShotBullet(Bullets bulletType)
+
+        public double[] getPlayerLocation()
         {
-            //first place the bullet on the canvas places in the middle of the ship
-            bullet = new Bullet(this.x - 25, this.y, canvas, bulletType); // this is global so we can access his axis and ayis
-
-            //then createTimer
-            bullet.bullet_timer_movement.Interval = TimeSpan.FromTicks(1); // each interval
-
-            bullet_Control.Add(bullet); // add to the control list the current bullet
-
-            bullet.bullet_timer_movement.Tick += Bullet_timer_movement_Tick;
-            bullet.bullet_timer_movement.Start();
+            double[] ret = { this.x, this.y };
+            return ret;
         }
 
-        private void Bullet_timer_movement_Tick(object sender, object e)
-        {
-            // when the bullet moves he goes up
-            if (!bullet.goUp())
-                bullet_Control.Remove(bullet);
-
-            //collustion
-        }
     }
 }

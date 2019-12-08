@@ -23,22 +23,22 @@ namespace Final_Project.Classes
         private const double height = 75;
 
         private Bullets bullet_type; // set values by chosen bullet type
-        private double speedDy; 
+        private double speedDy;
         private int damage; // speed of bullet, dmg and image
         Image bullet_image;
 
-        public DispatcherTimer bullet_timer_movement = new DispatcherTimer(); 
+        public DispatcherTimer bullet_timer_movement = new DispatcherTimer();
 
         public Bullet(double Shipx, double Shipy, Canvas canvas, Bullets bullet_type)
         {
             this.x = Shipx; // x and y are set by ship so we dont know the given locations only the ship gives it
-            this.y = Shipy-height;
+            this.y = Shipy - height;
             this.canvas = canvas;
             this.bullet_type = bullet_type;
             this.bullet_image = new Image();
 
             // bullet type defines which speed, dmg and which image will be places, ship places the bullet on the canvas
-            switch(bullet_type)
+            switch (bullet_type)
             {
                 case Bullets.Light_Shell_Default:
                     speedDy = -20; // fast but no dmg
@@ -88,21 +88,29 @@ namespace Final_Project.Classes
             canvas.Children.Add(bullet_image);
 
 
-            bullet_timer_movement.Interval = TimeSpan.FromTicks(1); // when you create a new bullet a new timer creates
+            //bullet_timer_movement.Interval = TimeSpan.FromTicks(1); set of interval timer is being set in the game page and is not needing in the bullet
         }
-        public bool goUp()
+
+        public double[] getBulletInfo()
         {
-            if (y + speedDy > canvas.ActualHeight - this.bullet_image.ActualHeight) // if he reaches the border
-            {
-                canvas.Children.Remove(bullet_image); // remove the image
-                return false; // false means he needs to be removed from the list
-            }
-            else
-            {
-                this.y += speedDy;
-                Canvas.SetTop(this.bullet_image, y);
-                return true; // true means he moves
-            }
+            double[] ret = { this.x, this.y, 75}; // height and weight are the same so we return the value
+            return ret;
+        }
+
+        public Image GetBulletImage()
+        {
+            return this.bullet_image;
+        }
+
+        public double GetBulletSpeed()
+        {
+            return this.speedDy;
+        }
+
+        public void Move()
+        {
+            this.y += speedDy;
         }
     }
 }
+

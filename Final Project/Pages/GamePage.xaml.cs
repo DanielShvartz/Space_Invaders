@@ -23,8 +23,10 @@ namespace Final_Project.Pages
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class GamePage : Page
-    {
+    { 
+        List<Bullet> bullet_Control; // we will have a list of bullets to control the bullets movement
         Player player;
+        Bullet bullet;
         public GamePage()
         {
             this.InitializeComponent();
@@ -34,6 +36,8 @@ namespace Final_Project.Pages
         {
             //initalize componenets when the game starts
             player = new Player(10, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
+
+            List<Bullet> bullet_Control = new List<Bullet>(); // this list also allows to remove hit bullets from the canvas and stop timers by each bullet
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown; ; //if key was press give control to windows or event
         }
@@ -45,11 +49,51 @@ namespace Final_Project.Pages
             if (args.VirtualKey == VirtualKey.Right) // if its right we move right
                 player.Move("Right");
             if (args.VirtualKey == VirtualKey.Space)
-                player.ShotBullet(Bullets.Light_Shell_Default); // for now its a default value of bullets, but you need to debug
+                ShotBullet(Bullets.Light_Shell_Default); // for now its a default value of bullets, but you need to debug
             //you need to debug any bullet type and hits of border and movement
 
             //for late makes this as user wanted
 
+        }
+
+        public void ShotBullet(Bullets bulletType)
+        {
+            //first place the bullet on the canvas places in the middle of the ship
+            bullet = new Bullet(player.getPlayerLocation()[0] - 25, player.getPlayerLocation()[1], canvas, bulletType); // this is global so we can access his axis and ayis
+
+            //then createTimer
+            bullet.bullet_timer_movement.Interval = TimeSpan.FromTicks(1); // when you create a new bullet a new timer creates
+
+            bullet_Control.Add(bullet); // add to the control list the current bullet
+
+            bullet.bullet_timer_movement.Tick += Bullet_timer_movement_Tick;
+            bullet.bullet_timer_movement.Start();
+        }
+        private void Bullet_timer_movement_Tick(object sender, object e)
+        {
+            // when the bullet moves he goes up
+            if (!goUp())
+                bullet_Control.Remove(bullet);
+
+            //collustion
+        }
+
+        public bool goUp()
+        {
+            double[] bulletInfo =  bullet.getBulletInfo();
+            double bulletSpeed = bullet.GetBulletSpeed();
+
+            if (bulletInfo[1] + bulletSpeed > canvas.ActualHeight - bulletInfo[2]) // if he reaches the border
+            {
+                canvas.Children.Remove(bullet.GetBulletImage()); // remove the image
+                return false; // false means he needs to be removed from the list
+            }
+            else
+            {
+                bullet.Move();
+                Canvas.SetTop(bullet.GetBulletImage(), bullet.getBulletInfo()[1]);
+                return true; // true means he moves
+            }
         }
     }
 }
