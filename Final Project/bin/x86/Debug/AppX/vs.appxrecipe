@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-12-08T06:39:12.361</Modified>
+      <Modified>2019-12-08T09:02:33.065</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.exe">
       <PackagePath>entrypoint\Final Project.exe</PackagePath>
-      <Modified>2019-12-08T06:39:11.242</Modified>
+      <Modified>2019-12-08T09:02:32.647</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -497,285 +497,285 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\background_final.jpg">
       <PackagePath>Assets\BackGrounds\background_final.jpg</PackagePath>
-      <Modified>2019-12-02T13:12:07.826</Modified>
+      <Modified>2019-12-08T07:59:39.885</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\background_game.jpg">
       <PackagePath>Assets\BackGrounds\background_game.jpg</PackagePath>
-      <Modified>2019-12-02T13:12:07.829</Modified>
+      <Modified>2019-12-08T07:59:39.888</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\bgbg.png">
       <PackagePath>Assets\BackGrounds\bgbg.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.834</Modified>
+      <Modified>2019-12-08T07:59:39.893</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\veryFinalBackGround.png">
       <PackagePath>Assets\BackGrounds\veryFinalBackGround.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.857</Modified>
+      <Modified>2019-12-08T07:59:39.916</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Buttons\mp_logout_button.png">
       <PackagePath>Assets\Buttons\mp_logout_button.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.859</Modified>
+      <Modified>2019-12-08T07:59:39.918</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Buttons\mp_shop_button.png">
       <PackagePath>Assets\Buttons\mp_shop_button.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.859</Modified>
+      <Modified>2019-12-08T07:59:39.918</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Buttons\mp_start_button.png">
       <PackagePath>Assets\Buttons\mp_start_button.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.860</Modified>
+      <Modified>2019-12-08T07:59:39.919</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Enemy_Bullet.png">
       <PackagePath>Assets\Enemys\Enemy_Bullet.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.860</Modified>
+      <Modified>2019-12-08T07:59:39.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Level1.png">
       <PackagePath>Assets\Enemys\Ship_Level1.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.863</Modified>
+      <Modified>2019-12-08T07:59:39.922</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Level2.png">
       <PackagePath>Assets\Enemys\Ship_Level2.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.864</Modified>
+      <Modified>2019-12-08T07:59:39.922</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Level3.png">
       <PackagePath>Assets\Enemys\Ship_Level3.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.865</Modified>
+      <Modified>2019-12-08T07:59:39.923</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Level4.png">
       <PackagePath>Assets\Enemys\Ship_Level4.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.865</Modified>
+      <Modified>2019-12-08T07:59:39.923</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Boss.png">
       <PackagePath>Assets\Enemys\Ship_Boss.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.863</Modified>
+      <Modified>2019-12-08T07:59:39.921</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explosion_A.png">
       <PackagePath>Assets\Explosions\Ally\Explosion_A.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.866</Modified>
+      <Modified>2019-12-08T07:59:39.925</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explosion_B.png">
       <PackagePath>Assets\Explosions\Ally\Explosion_B.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.866</Modified>
+      <Modified>2019-12-08T07:59:39.926</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explosion_C.png">
       <PackagePath>Assets\Explosions\Ally\Explosion_C.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.867</Modified>
+      <Modified>2019-12-08T07:59:39.926</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explosion_D.png">
       <PackagePath>Assets\Explosions\Ally\Explosion_D.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.868</Modified>
+      <Modified>2019-12-08T07:59:39.927</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explosion_E.png">
       <PackagePath>Assets\Explosions\Ally\Explosion_E.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.868</Modified>
+      <Modified>2019-12-08T07:59:39.928</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explosion_F.png">
       <PackagePath>Assets\Explosions\Ally\Explosion_F.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.869</Modified>
+      <Modified>2019-12-08T07:59:39.929</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explosion_G.png">
       <PackagePath>Assets\Explosions\Ally\Explosion_G.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.869</Modified>
+      <Modified>2019-12-08T07:59:39.930</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explosion_H.png">
       <PackagePath>Assets\Explosions\Ally\Explosion_H.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.870</Modified>
+      <Modified>2019-12-08T07:59:39.930</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_1.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_1.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.872</Modified>
+      <Modified>2019-12-08T07:59:39.932</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp1.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp1.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.872</Modified>
+      <Modified>2019-12-08T07:59:39.933</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp10.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp10.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.873</Modified>
+      <Modified>2019-12-08T07:59:39.933</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp2.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp2.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.873</Modified>
+      <Modified>2019-12-08T07:59:39.934</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp3.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp3.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.874</Modified>
+      <Modified>2019-12-08T07:59:39.934</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp4.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp4.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.874</Modified>
+      <Modified>2019-12-08T07:59:39.935</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp5.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp5.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.875</Modified>
+      <Modified>2019-12-08T07:59:39.935</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp6.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp6.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.875</Modified>
+      <Modified>2019-12-08T07:59:39.936</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp7.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp7.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.876</Modified>
+      <Modified>2019-12-08T07:59:39.936</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp8.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp8.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.876</Modified>
+      <Modified>2019-12-08T07:59:39.937</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp9.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp9.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.876</Modified>
+      <Modified>2019-12-08T07:59:39.937</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_0_dead.png">
       <PackagePath>Assets\HealthPoints\hp_0_dead.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.877</Modified>
+      <Modified>2019-12-08T07:59:39.938</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_1.png">
       <PackagePath>Assets\HealthPoints\hp_1.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.877</Modified>
+      <Modified>2019-12-08T07:59:39.939</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_2.png">
       <PackagePath>Assets\HealthPoints\hp_2.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.878</Modified>
+      <Modified>2019-12-08T07:59:39.939</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_3.png">
       <PackagePath>Assets\HealthPoints\hp_3.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.878</Modified>
+      <Modified>2019-12-08T07:59:39.940</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_4.png">
       <PackagePath>Assets\HealthPoints\hp_4.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.879</Modified>
+      <Modified>2019-12-08T07:59:39.940</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_5.png">
       <PackagePath>Assets\HealthPoints\hp_5.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.880</Modified>
+      <Modified>2019-12-08T07:59:39.941</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_6.png">
       <PackagePath>Assets\HealthPoints\hp_6.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.880</Modified>
+      <Modified>2019-12-08T07:59:39.942</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_7.png">
       <PackagePath>Assets\HealthPoints\hp_7.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.881</Modified>
+      <Modified>2019-12-08T07:59:39.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\HealthPoints\hp_8_full.png">
       <PackagePath>Assets\HealthPoints\hp_8_full.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.882</Modified>
+      <Modified>2019-12-08T07:59:39.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Granade_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Granade_Shell.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.953</Modified>
+      <Modified>2019-12-08T07:59:40.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Heavy_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Heavy_Shell.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.954</Modified>
+      <Modified>2019-12-08T07:59:40.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Laser.png">
       <PackagePath>Assets\SpaceShip\Bullets\Laser.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.954</Modified>
+      <Modified>2019-12-08T07:59:40.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Light_Shell_Default.png">
       <PackagePath>Assets\SpaceShip\Bullets\Light_Shell_Default.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.955</Modified>
+      <Modified>2019-12-08T07:59:40.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Medium_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Medium_Shell.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.955</Modified>
+      <Modified>2019-12-08T07:59:40.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Plasma.png">
       <PackagePath>Assets\SpaceShip\Bullets\Plasma.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.956</Modified>
+      <Modified>2019-12-08T07:59:40.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Sniper_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Sniper_Shell.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.956</Modified>
+      <Modified>2019-12-08T07:59:40.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Shield.png">
       <PackagePath>Assets\SpaceShip\Shield.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.959</Modified>
+      <Modified>2019-12-08T07:59:40.020</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\spaceship_1.png">
       <PackagePath>Assets\SpaceShip\spaceship_1.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.962</Modified>
+      <Modified>2019-12-08T07:59:40.022</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\spaceship_2.png">
       <PackagePath>Assets\SpaceShip\spaceship_2.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.963</Modified>
+      <Modified>2019-12-08T07:59:40.023</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\spaceship_3.png">
       <PackagePath>Assets\SpaceShip\spaceship_3.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.964</Modified>
+      <Modified>2019-12-08T07:59:40.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Spaceship_Default.png">
       <PackagePath>Assets\SpaceShip\Spaceship_Default.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.961</Modified>
+      <Modified>2019-12-08T07:59:40.021</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2019-12-02T13:12:07.883</Modified>
+      <Modified>2019-12-08T07:59:39.944</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-12-02T13:12:07.965</Modified>
+      <Modified>2019-12-08T07:59:40.025</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-12-02T13:12:07.965</Modified>
+      <Modified>2019-12-08T07:59:40.026</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-12-02T13:12:07.966</Modified>
+      <Modified>2019-12-08T07:59:40.027</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-12-02T13:12:07.966</Modified>
+      <Modified>2019-12-08T07:59:40.027</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-12-02T13:12:07.967</Modified>
+      <Modified>2019-12-08T07:59:40.029</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-12-02T13:12:07.967</Modified>
+      <Modified>2019-12-08T07:59:40.029</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Enemy_Bullet_Start.gif">
       <PackagePath>Assets\Enemys\Enemy_Bullet_Start.gif</PackagePath>
-      <Modified>2019-12-02T13:12:07.861</Modified>
+      <Modified>2019-12-08T07:59:39.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Ally\Explotion_Ally.gif">
       <PackagePath>Assets\Explosions\Ally\Explotion_Ally.gif</PackagePath>
-      <Modified>2019-12-02T13:12:07.871</Modified>
+      <Modified>2019-12-08T07:59:39.931</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\Enemy_Explosion.gif">
       <PackagePath>Assets\Explosions\Enemy\Enemy_Explosion.gif</PackagePath>
-      <Modified>2019-12-02T13:12:07.871</Modified>
+      <Modified>2019-12-08T07:59:39.932</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2019-12-02T13:12:07.975</Modified>
+      <Modified>2019-12-08T07:59:40.037</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.xr.xml">
       <PackagePath>Final Project.xr.xml</PackagePath>
-      <Modified>2019-12-02T13:12:08.876</Modified>
+      <Modified>2019-12-08T07:59:40.813</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-12-08T06:39:10.965</Modified>
+      <Modified>2019-12-08T09:02:32.524</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\GamePage.xbf">
       <PackagePath>Pages\GamePage.xbf</PackagePath>
-      <Modified>2019-12-08T06:39:10.966</Modified>
+      <Modified>2019-12-08T09:02:32.524</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage.xbf">
       <PackagePath>Pages\ShopPage.xbf</PackagePath>
-      <Modified>2019-12-08T06:39:10.966</Modified>
+      <Modified>2019-12-08T09:02:32.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-12-08T06:39:10.966</Modified>
+      <Modified>2019-12-08T09:02:32.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -784,11 +784,11 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-12-02T13:12:56.322</Modified>
+      <Modified>2019-12-08T08:39:33.305</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\Final Project.exe">
       <PackagePath>Final Project.exe</PackagePath>
-      <Modified>2019-12-08T06:39:12.279</Modified>
+      <Modified>2019-12-08T09:02:32.959</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

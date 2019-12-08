@@ -37,7 +37,7 @@ namespace Final_Project.Pages
             //initalize componenets when the game starts
             player = new Player(10, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
 
-            List<Bullet> bullet_Control = new List<Bullet>(); // this list also allows to remove hit bullets from the canvas and stop timers by each bullet
+            bullet_Control = new List<Bullet>(); // this list also allows to remove hit bullets from the canvas and stop timers by each bullet
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown; ; //if key was press give control to windows or event
         }
@@ -62,7 +62,7 @@ namespace Final_Project.Pages
             bullet = new Bullet(player.getPlayerLocation()[0] - 25, player.getPlayerLocation()[1], canvas, bulletType); // this is global so we can access his axis and ayis
 
             //then createTimer
-            bullet.bullet_timer_movement.Interval = TimeSpan.FromTicks(1); // when you create a new bullet a new timer creates
+            bullet.bullet_timer_movement.Interval = TimeSpan.FromMilliseconds(150); // when you create a new bullet a new timer creates
 
             bullet_Control.Add(bullet); // add to the control list the current bullet
 
@@ -73,7 +73,10 @@ namespace Final_Project.Pages
         {
             // when the bullet moves he goes up
             if (!goUp())
+            {
                 bullet_Control.Remove(bullet);
+                bullet.bullet_timer_movement.Stop(); // stop timer, remove from canvas and list
+            }
 
             //collustion
         }
