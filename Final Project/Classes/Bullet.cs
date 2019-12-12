@@ -110,14 +110,10 @@ namespace Final_Project.Classes
             canvas.Children.Add(bullet_image);
 
 
-            Debug.WriteLine("actual width - " + bullet_image.ActualWidth + " actual height - " + bullet_image.ActualHeight);
+            //Debug.WriteLine("actual width - " + bullet_image.ActualWidth + " actual height - " + bullet_image.ActualHeight);
 
             height = bullet_image.ActualHeight;
             weight = bullet_image.ActualWidth;
-            // bullet_image.Width = weight;
-            //bullet_image.Height = height;
-
-
             //bullet_timer_movement.Interval = TimeSpan.FromTicks(1); set of interval timer is being set in the game page and is not needing in the bullet
         }
 
