@@ -50,7 +50,7 @@ namespace Final_Project.Pages
             if (args.VirtualKey == VirtualKey.Right) // if its right we move right
                 player.Move("Right");
             if (args.VirtualKey == VirtualKey.Space)
-                ShotBullet(Bullets.Light_Shell_Default); // for now its a default value of bullets, but you need to debug
+                ShotBullet(Bullets.Laser); // for now its a default value of bullets, but you need to debug
             //you need to debug any bullet type and hits of border and movement
 
             //for late makes this as user wanted
@@ -86,7 +86,7 @@ namespace Final_Project.Pages
             double[] bulletInfo =  bullet.getBulletInfo();
             double bulletSpeed = bullet.GetBulletSpeed();
 
-            if(bulletInfo[1] + bulletSpeed <= 0) // if he reaches the border bulletInfo[2]
+            if(bulletInfo[1] + bulletSpeed < 0) // if he reaches the border  - (bulletInfo[2])
             { // maybe remove from list and stop timer from here and not from outside the function
                 //Debug.WriteLine("y = " + bulletInfo[1] + " bulletSpeed = " + bulletSpeed + " canvas.ActualHeight = " + canvas.ActualHeight +  " bullet height - " + bulletInfo[2]);
                 canvas.Children.Remove(bullet.GetBulletImage()); // remove the image

@@ -35,6 +35,8 @@ namespace Final_Project.Classes
             this.canvas = canvas;
             this.bullet_type = bullet_type;
             this.bullet_image = new Image();
+            this.x = Shipx - 10; // x and y are set by ship so we dont know the given locations only the ship gives it
+
 
             // bullet type defines which speed, dmg and which image will be places, ship places the bullet on the canvas
             switch (bullet_type)
@@ -51,16 +53,17 @@ namespace Final_Project.Classes
                     speedDy = -15; // medium speed but good dmg
                     damage = 2;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Medium_Shell.png"));
-                    bullet_image.Width = 27;
-                    bullet_image.Height = 41;
+                    bullet_image.Width = 22;
+                    bullet_image.Height = 31;
                     break;
 
                 case Bullets.Heavy_Shell:
                     speedDy = -10;
                     damage = 3; // slow but big dmg
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Heavy_Shell.png"));
-                    bullet_image.Width = 36;
-                    bullet_image.Height = 59;
+                    bullet_image.Width = 31;
+                    bullet_image.Height = 49;
+                    this.x -= 5;
                     break;
 
                 case Bullets.Sniper_Shell:
@@ -69,22 +72,24 @@ namespace Final_Project.Classes
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Sniper_Shell.png"));
                     bullet_image.Width = 28;
                     bullet_image.Height = 58;
+                    this.x -= 5;
                     break;
 
                 case Bullets.Granade_Shell:
                     speedDy = -20;
                     damage = 5;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Granade_Shell.png"));
-                    bullet_image.Width = 24;
-                    bullet_image.Height = 47;
+                    bullet_image.Width = 19;
+                    bullet_image.Height = 37;
                     break;
 
                 case Bullets.Plasma:
                     speedDy = -35;
                     damage = 6;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Plasma.png"));
-                    bullet_image.Width = 29;
-                    bullet_image.Height = 97;
+                    bullet_image.Width = 24;
+                    bullet_image.Height = 87;
+                    this.x -= 2.5;
                     break;
 
                 case Bullets.Laser:
@@ -93,11 +98,11 @@ namespace Final_Project.Classes
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Laser.png"));
                     bullet_image.Width = 15;
                     bullet_image.Height = 92;
+                    this.x += 2.5;
                     break;
             }
 
             this.y = Shipy - bullet_image.Height;
-            this.x = Shipx - 10; // x and y are set by ship so we dont know the given locations only the ship gives it
             //+ bullet_image.Width + 10
 
             Canvas.SetLeft(bullet_image, this.x); // place and add to canvas
