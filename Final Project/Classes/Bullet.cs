@@ -32,8 +32,6 @@ namespace Final_Project.Classes
 
         public Bullet(double Shipx, double Shipy, Canvas canvas, Bullets bullet_type)
         {
-            this.x = Shipx; // x and y are set by ship so we dont know the given locations only the ship gives it
-            this.y = Shipy - height;
             this.canvas = canvas;
             this.bullet_type = bullet_type;
             this.bullet_image = new Image();
@@ -97,6 +95,10 @@ namespace Final_Project.Classes
                     bullet_image.Height = 92;
                     break;
             }
+
+            this.y = Shipy - bullet_image.Height;
+            this.x = Shipx - 10; // x and y are set by ship so we dont know the given locations only the ship gives it
+            //+ bullet_image.Width + 10
 
             Canvas.SetLeft(bullet_image, this.x); // place and add to canvas
             Canvas.SetTop(bullet_image, this.y);

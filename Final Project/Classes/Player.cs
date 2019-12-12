@@ -58,5 +58,9 @@ namespace Final_Project.Classes
             return ret;
         }
 
+        public double GetWidth()
+        {
+            return this.image.Width;
+        }
     }
 }
