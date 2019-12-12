@@ -19,9 +19,7 @@
             <Image x:ConnectionId='8' Name="shield_hp_2" Height="181" Width="208" Source="ms-appx:///Assets/HealthPoints/hp_8_full.png" Canvas.Left="906" Canvas.Top="716"/>
 
 
-            <Image Height="75" Width="75" Source="ms-appx:///Assets/SpaceShip/Spaceship_Default.png" Canvas.Left="1090" Canvas.Top="936" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            <Image Height="39" Width="89" Source="ms-appx:///Assets/SpaceShip/Bullets/Light_Shell_Default.png" Canvas.Left="1082" Canvas.Top="891"/>
-        </Canvas>
+             </Canvas>
     </Grid>
 </Page>
 

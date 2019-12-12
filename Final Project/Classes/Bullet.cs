@@ -28,8 +28,6 @@ namespace Final_Project.Classes
         private int damage; // speed of bullet, dmg and image
         Image bullet_image;
 
-        public DispatcherTimer bullet_timer_movement = new DispatcherTimer();
-
         public Bullet(double Shipx, double Shipy, Canvas canvas, Bullets bullet_type)
         {
             this.canvas = canvas;

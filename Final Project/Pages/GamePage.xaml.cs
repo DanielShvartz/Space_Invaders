@@ -49,40 +49,37 @@ namespace Final_Project.Pages
             //create a timer that moves the bullets, also if there are no bullets it wont move ( count = 0 )
             // if there are bullets it will iterate the list and move all the bullets
             bullet_timer_movement = new DispatcherTimer();
-            bullet_timer_movement.Interval = TimeSpan.FromMilliseconds(150);
+            bullet_timer_movement.Interval = TimeSpan.FromTicks(1); // CHANGE FromMilliseconds(150)
             bullet_timer_movement.Tick += Bullet_timer_movement_Tick; ;
             bullet_timer_movement.Start(); // this timer is always running and moving bullets no matter what
         }
 
         private void Bullet_timer_movement_Tick(object sender, object e)
         {
-            if (bullet_Control.Count == 0) // if there are no bullets
+            if (bullet_Control.Count() == 0) // if there are no bullets
                 return;
             else
             {
-                foreach(Bullet bullet in bullet_Control)
-                {
+                for (int i=0;i<bullet_Control.Count();i++)
+                    MoveBullet(bullet_Control[i]);
+            }
+        }
 
-                    double[] bulletInfo = bullet.getBulletInfo();
-                    double bulletSpeed = bullet.GetBulletSpeed();
+        private void MoveBullet(Bullet bullet)
+        {
+            double[] bulletInfo = bullet.getBulletInfo();
+            double bulletSpeed = bullet.GetBulletSpeed();
 
-                    if (bulletInfo[1] + bulletSpeed < 0) // if he reaches the border  - (bulletInfo[2])
-                    { // maybe remove from list and stop timer from here and not from outside the function
-                      //Debug.WriteLine("y = " + bulletInfo[1] + " bulletSpeed = " + bulletSpeed + " canvas.ActualHeight = " + canvas.ActualHeight +  " bullet height - " + bulletInfo[2]);
-                        canvas.Children.Remove(bullet.GetBulletImage()); // remove the image
-                        return false; // false means he needs to be removed from the list
+            if (bulletInfo[1] + bulletSpeed < 0)  // if he reaches the border
+            { 
+                canvas.Children.Remove(bullet.GetBulletImage()); // remove the image
+                bullet_Control.Remove(bullet); // we just remove it from the list and from the canvas, no need to stop timer
 
-                        bullet_Control.Remove(bullet);
-                        bullet.bullet_timer_movement.Stop(); // stop timer, remove from canvas and list
-
-                    }
-                    else
-                    {
-                        bullet.Move();
-                        Canvas.SetTop(bullet.GetBulletImage(), bullet.getBulletInfo()[1]);
-                        return true; // true means he moves
-                    }
-                }
+            }
+            else
+            {
+                bullet.Move();
+                Canvas.SetTop(bullet.GetBulletImage(), bullet.getBulletInfo()[1]); // move
             }
         }
 
@@ -92,7 +89,7 @@ namespace Final_Project.Pages
                 player.Move("Left");
             if (args.VirtualKey == VirtualKey.Right) // if its right we move right
                 player.Move("Right");
-            if (args.VirtualKey == VirtualKey.Space)
+            if (args.VirtualKey == VirtualKey.Space) // if he presses space it greats a new bullet for the player
             {
                 //first place the bullet on the canvas places in the middle of the ship
                 bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
