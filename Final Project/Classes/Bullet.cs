@@ -40,7 +40,7 @@ namespace Final_Project.Classes
             switch (bullet_type)
             {
                 case Bullets.Light_Shell_Default:
-                    speedDy = -20; // fast but no dmg
+                    speedDy = -17; // fast but no dmg
                     damage = 1;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Light_Shell_Default.png"));
                     bullet_image.Width = 19;
@@ -48,7 +48,7 @@ namespace Final_Project.Classes
                     break;
 
                 case Bullets.Medium_Shell:
-                    speedDy = -15; // medium speed but good dmg
+                    speedDy = -12; // medium speed but good dmg
                     damage = 2;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Medium_Shell.png"));
                     bullet_image.Width = 22;
@@ -56,7 +56,7 @@ namespace Final_Project.Classes
                     break;
 
                 case Bullets.Heavy_Shell:
-                    speedDy = -10;
+                    speedDy = -7;
                     damage = 3; // slow but big dmg
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Heavy_Shell.png"));
                     bullet_image.Width = 31;
@@ -65,7 +65,7 @@ namespace Final_Project.Classes
                     break;
 
                 case Bullets.Sniper_Shell:
-                    speedDy = -30; // fast and very high dmg
+                    speedDy = -27; // fast and very high dmg
                     damage = 4;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Sniper_Shell.png"));
                     bullet_image.Width = 28;
@@ -74,7 +74,7 @@ namespace Final_Project.Classes
                     break;
 
                 case Bullets.Granade_Shell:
-                    speedDy = -20;
+                    speedDy = -17;
                     damage = 5;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Granade_Shell.png"));
                     bullet_image.Width = 19;
@@ -82,7 +82,7 @@ namespace Final_Project.Classes
                     break;
 
                 case Bullets.Plasma:
-                    speedDy = -35;
+                    speedDy = -32;
                     damage = 6;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Plasma.png"));
                     bullet_image.Width = 24;
@@ -91,7 +91,7 @@ namespace Final_Project.Classes
                     break;
 
                 case Bullets.Laser:
-                    speedDy = -40; // highest dmg unit in game
+                    speedDy = -34; // highest dmg unit in game
                     damage = 7;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Laser.png"));
                     bullet_image.Width = 15;

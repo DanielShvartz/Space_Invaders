@@ -92,7 +92,7 @@ namespace Final_Project.Pages
             if (args.VirtualKey == VirtualKey.Space) // if he presses space it greats a new bullet for the player
             {
                 //first place the bullet on the canvas places in the middle of the ship
-                bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
+                bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Laser);
                 bullet_Control.Add(bullet); // add to the control list the current bullet
             }
         }  
