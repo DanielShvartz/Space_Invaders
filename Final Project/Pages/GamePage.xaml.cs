@@ -29,7 +29,7 @@ namespace Final_Project.Pages
         Player player;
         Bullet bullet;
         DispatcherTimer bullet_timer_movement;
-
+        int counterPress = 0;
 
         public GamePage()
         {
@@ -38,6 +38,8 @@ namespace Final_Project.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            counterPress = 0;
+
             //initalize componenets when the game starts
             player = new Player(10, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
 
@@ -52,6 +54,7 @@ namespace Final_Project.Pages
             bullet_timer_movement.Interval = TimeSpan.FromTicks(1); // CHANGE FromMilliseconds(150)
             bullet_timer_movement.Tick += Bullet_timer_movement_Tick; ;
             bullet_timer_movement.Start(); // this timer is always running and moving bullets no matter what
+
         }
 
         private void Bullet_timer_movement_Tick(object sender, object e)
@@ -83,8 +86,17 @@ namespace Final_Project.Pages
             }
         }
 
+
         private void CoreWindow_KeyDown(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
         {
+            //cooldown
+            if (counterPress >= 10 && counterPress <= 20) // if he got to the 10 - we check it before the keys to block key pressing
+            {
+                counterPress++; //  we keep uploading and block him 10 times from checking the other keys so he blocks the keys from pressing
+                return;
+            }
+            if (counterPress == 21) // after that we unblock agai
+                counterPress = 0;
             if (args.VirtualKey == VirtualKey.Left) // if its left it moves left
                 player.Move("Left");
             if (args.VirtualKey == VirtualKey.Right) // if its right we move right
@@ -92,9 +104,14 @@ namespace Final_Project.Pages
             if (args.VirtualKey == VirtualKey.Space) // if he presses space it greats a new bullet for the player
             {
                 //first place the bullet on the canvas places in the middle of the ship
-                bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Laser);
+                bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
                 bullet_Control.Add(bullet); // add to the control list the current bullet
             }
-        }  
+            counterPress++; // each press we count how much time it was pressed
+        }
+
+
+
+
     }
 }
