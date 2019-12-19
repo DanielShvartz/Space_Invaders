@@ -28,12 +28,54 @@ namespace Final_Project.Pages
         List<Bullet> bullet_Control; // we will have a list of bullets to control the bullets movement
         Player player;
         Bullet bullet;
+        Enemy enemy;
+        List<Enemy> enemy_Control;
         DispatcherTimer bullet_timer_movement;
         int counterPress = 0;
 
         public GamePage()
         {
             this.InitializeComponent();
+        }
+
+        private void initEnemies(Canvas canvas)
+        {
+            const double startingX = 155;
+            const double spacingX = 120;
+            const double startingY = -16;
+            const double spacingY = -150;
+
+            string imLocation = "";
+            int counter = 1; // after each 12 moves  - changes the enemys pictures and moves down
+            for (int i = 3; i >= 1; ) // this loops runs 3 times and create 3 rows
+            {
+                if (counter <= 12) // each 12 runs create 12 aliens
+                {
+                    switch(i)
+                    {
+                        case 3:
+                            imLocation = "ms-appx:///Assets/Enemys/Ship_Level3.png";
+                            break;
+                        case 2:
+                            imLocation = "ms-appx:///Assets/Enemys/Ship_Level2.png";
+                            break;
+                        case 1:
+                            imLocation = "ms-appx:///Assets/Enemys/Ship_Level1.png";
+                            break;
+                    }
+
+                    // the x and y is also the space between them
+                    enemy = new Enemy(startingX + (spacingX * counter), startingY + (spacingY * (i-3)), 10, 10, this.canvas, imLocation); // dx and dy are not yet given
+                    enemy_Control.Add(enemy);
+                    counter++;
+                }
+                else // if we have 12 in a row - we move 1 down, and start from the left
+                {
+                    i--;
+                    counter = 1; // we reset the counter to have more 12
+                }
+            }
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -44,7 +86,9 @@ namespace Final_Project.Pages
             player = new Player(10, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
 
             // when the page is loaded we create a new list
-            bullet_Control = new List<Bullet>(); // this list also allows to remove hit bullets from the canvas and check for bullet collution
+            bullet_Control = new List<Bullet>(); // this lists also allows to remove hit bullets from the canvas and check for bullet collution
+            enemy_Control = new List<Enemy>();
+            initEnemies(canvas);
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown; ; //if key was press give control to windows or event
 

@@ -13,7 +13,6 @@ namespace Final_Project.Classes
         // when you create a new player you give him the location of the image to be initialized
         // because the x and y is changing different in the enemy and in the player 
         //we cant init it in the base only in the players class
-        Bullet bullet;
 
         public Player(double dxSpeed, Canvas canvas, string imageLocation) : base(dxSpeed, canvas, imageLocation)
         {

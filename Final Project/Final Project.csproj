@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Classes\Base.cs" />
     <Compile Include="Classes\Bullet.cs" />
+    <Compile Include="Classes\Enemy.cs" />
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Pages\GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
