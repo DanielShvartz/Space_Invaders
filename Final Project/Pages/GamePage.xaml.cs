@@ -30,7 +30,7 @@ namespace Final_Project.Pages
         Bullet bullet;
         Enemy enemy;
         List<Enemy> enemy_Control;
-        DispatcherTimer bullet_timer_movement;
+        DispatcherTimer game_timer_movement;
         int counterPress = 0;
 
         public GamePage()
@@ -65,7 +65,7 @@ namespace Final_Project.Pages
                     }
 
                     // the x and y is also the space between them
-                    enemy = new Enemy(startingX + (spacingX * counter), startingY + (spacingY * (i-3)), 10, 10, this.canvas, imLocation); // dx and dy are not yet given
+                    enemy = new Enemy(startingX + (spacingX * counter), startingY + (spacingY * (i-3)), 10, 10, this.canvas, imLocation, i); // dx and dy are not yet given
                     enemy_Control.Add(enemy); // add to list
                     counter++; // add the counter
                 }
@@ -94,23 +94,35 @@ namespace Final_Project.Pages
 
             //create a timer that moves the bullets, also if there are no bullets it wont move ( count = 0 )
             // if there are bullets it will iterate the list and move all the bullets
-            bullet_timer_movement = new DispatcherTimer();
-            bullet_timer_movement.Interval = TimeSpan.FromTicks(1); // CHANGE FromMilliseconds(150)
-            bullet_timer_movement.Tick += Bullet_timer_movement_Tick; ;
-            bullet_timer_movement.Start(); // this timer is always running and moving bullets no matter what
+            game_timer_movement = new DispatcherTimer(); // this also checks for hits collusions
+            game_timer_movement.Interval = TimeSpan.FromTicks(1); // CHANGE FromMilliseconds(150)
+            game_timer_movement.Tick += Game_timer_movement_Tick;
+            game_timer_movement.Start(); // this timer is always running and moving bullets no matter what
 
         }
 
-        private void Bullet_timer_movement_Tick(object sender, object e)
+        private void Game_timer_movement_Tick(object sender, object e)
         {
+            // we run on both lists, the first loop runs on each bullet and then each bullet
+            // runs in second loop that checks the other enemies.
             if (bullet_Control.Count() == 0) // if there are no bullets
                 return;
             else
-            {
-                for (int i=0;i<bullet_Control.Count();i++)
-                    MoveBullet(bullet_Control[i]);
+            {// we check for collusion and then move
+                for (int i = 0; i < bullet_Control.Count(); i++) //move on each enemy
+                {
+                    Rect enemyRectangle;
+                    Rect bulletRectangle = new Rect(bullet_Control[i].getBulletInfo()[0], bullet_Control[i].getBulletInfo()[1], bullet_Control[i].getBulletInfo()[2], bullet_Control[i].getBulletInfo()[3]);
+                    //
+                    MoveBullet(bullet_Control[i]); // move them
+
+                    //todo:
+                    //check before and move or move and check, do in same function? do in other function? run on 1 bullet check on other bullets
+                }
+
             }
         }
+
 
         private void MoveBullet(Bullet bullet)
         {

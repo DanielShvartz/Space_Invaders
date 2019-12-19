@@ -20,7 +20,7 @@ namespace Final_Project.Classes
         private double y; // x and y given by ships location and canvas
         private Canvas canvas;
 
-        private double weight; // are set as each images, values are different
+        private double width; // are set as each images, values are different
         private double height;
 
         private Bullets bullet_type; // set values by chosen bullet type
@@ -111,13 +111,13 @@ namespace Final_Project.Classes
             //Debug.WriteLine("actual width - " + bullet_image.ActualWidth + " actual height - " + bullet_image.ActualHeight);
 
             height = bullet_image.ActualHeight;
-            weight = bullet_image.ActualWidth;
+            width = bullet_image.ActualWidth;
             //bullet_timer_movement.Interval = TimeSpan.FromTicks(1); set of interval timer is being set in the game page and is not needing in the bullet
         }
 
-        public double[] getBulletInfo()
+        public double[] getBulletInfo() // bullets height and width are different
         {
-            double[] ret = { this.x, this.y, 75}; // height and weight are the same so we return the value
+            double[] ret = { this.x, this.y, this.width, this.height};
             return ret;
         }
 

@@ -51,7 +51,9 @@ namespace Final_Project.Classes
             }
         }
 
-        public double[] getPlayerLocation()
+        /*
+         * 
+         * public double[] getPlayerLocation()
         {
             double[] ret = { this.x, this.y };
             return ret;
@@ -61,5 +63,11 @@ namespace Final_Project.Classes
         {
             return this.image.Width;
         }
+
+        public double GetHeight()
+        {
+            return this.image.Height;
+        }
+        */
     }
 }
