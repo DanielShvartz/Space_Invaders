@@ -40,7 +40,7 @@ namespace Final_Project.Pages
 
         private void initEnemies(Canvas canvas)
         {
-            const double startingX = 155;
+            const double startingX = 155; //defualt values which can adjust the settings of the enemies creaiton
             const double spacingX = 120;
             const double startingY = -16;
             const double spacingY = -150;
@@ -54,7 +54,7 @@ namespace Final_Project.Pages
                     switch(i)
                     {
                         case 3:
-                            imLocation = "ms-appx:///Assets/Enemys/Ship_Level3.png";
+                            imLocation = "ms-appx:///Assets/Enemys/Ship_Level3.png"; // each run we have different ship image
                             break;
                         case 2:
                             imLocation = "ms-appx:///Assets/Enemys/Ship_Level2.png";
@@ -66,8 +66,8 @@ namespace Final_Project.Pages
 
                     // the x and y is also the space between them
                     enemy = new Enemy(startingX + (spacingX * counter), startingY + (spacingY * (i-3)), 10, 10, this.canvas, imLocation); // dx and dy are not yet given
-                    enemy_Control.Add(enemy);
-                    counter++;
+                    enemy_Control.Add(enemy); // add to list
+                    counter++; // add the counter
                 }
                 else // if we have 12 in a row - we move 1 down, and start from the left
                 {
