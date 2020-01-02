@@ -103,23 +103,26 @@ namespace Final_Project.Pages
 
         private void Game_timer_movement_Tick(object sender, object e)
         {
-            // we run on both lists, the first loop runs on each bullet and then each bullet
-            // runs in second loop that checks the other enemies.
             if (bullet_Control.Count() == 0) // if there are no bullets
                 return;
-            else
+            else // we run on both lists, the first loop runs on each bullet and then each bullet, runs in second loop that checks the other enemies.
             {// we check for collusion and then move
-                for (int i = 0; i < bullet_Control.Count(); i++) //move on each enemy
+                for (int i = 0; i < bullet_Control.Count(); i++) //move on each bullet
                 {
                     Rect enemyRectangle;
                     Rect bulletRectangle = new Rect(bullet_Control[i].getBulletInfo()[0], bullet_Control[i].getBulletInfo()[1], bullet_Control[i].getBulletInfo()[2], bullet_Control[i].getBulletInfo()[3]);
-                    //
+                    // we create a rectangle for the bullet and then we create a rectangle for each enemy and check if they were hit
+                    for (int j = 0; j < this.enemy_Control.Count(); j++)
+                    {
+                        enemyRectangle = new Rect(enemy_Control[j].getPlayerLocation()[0], enemy_Control[j].getPlayerLocation()[1], enemy_Control[j].GetWidth(), enemy_Control[j].GetHeight());
+                        Rect r = RectHelper.Intersect(bulletRectangle, enemyRectangle);
+                        if (r.Width > 0 || r.Height > 0) // if there is collusion
+                        {
+                            Debug.WriteLine("Hit!");
+                        }
+                    }
                     MoveBullet(bullet_Control[i]); // move them
-
-                    //todo:
-                    //check before and move or move and check, do in same function? do in other function? run on 1 bullet check on other bullets
                 }
-
             }
         }
 
@@ -145,25 +148,29 @@ namespace Final_Project.Pages
 
         private void CoreWindow_KeyDown(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
         {
-            //cooldown
-            if (counterPress >= 10 && counterPress <= 20) // if he got to the 10 - we check it before the keys to block key pressing
-            {
-                counterPress++; //  we keep uploading and block him 10 times from checking the other keys so he blocks the keys from pressing
-                return;
-            }
+            
             if (counterPress == 21) // after that we unblock agai
                 counterPress = 0;
             if (args.VirtualKey == VirtualKey.Left) // if its left it moves left
                 player.Move("Left");
             if (args.VirtualKey == VirtualKey.Right) // if its right we move right
                 player.Move("Right");
-            if (args.VirtualKey == VirtualKey.Space) // if he presses space it greats a new bullet for the player
+            if (args.VirtualKey == VirtualKey.Space) // if he presses space it creates a new bullet for the player
             {
-                //first place the bullet on the canvas places in the middle of the ship
-                bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
-                bullet_Control.Add(bullet); // add to the control list the current bullet
-            }
-            counterPress++; // each press we count how much time it was pressed
+                ////cooldown
+                if (counterPress >= 10 && counterPress <= 20) // if he got to the 10 - we check it before the keys to block key pressing
+                {
+                    counterPress++; //  we keep uploading and block him 10 times from checking the other keys so he blocks the keys from pressing
+                    return;
+                }
+                else // if he is not on cooldown
+                {
+                    //first place the bullet on the canvas places in the middle of the ship
+                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
+                    bullet_Control.Add(bullet); // add to the control list the current bullet
+                    counterPress++; // each press we count how much time it was pressed
+                }
+            }     
         }
 
 
