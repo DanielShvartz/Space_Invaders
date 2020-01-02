@@ -118,7 +118,7 @@ namespace Final_Project.Pages
                         Rect r = RectHelper.Intersect(bulletRectangle, enemyRectangle);
                         if (r.Width > 0 || r.Height > 0) // if there is collusion
                         {
-                            Debug.WriteLine("Hit!");
+                            Debug.WriteLine("Hit!"); //TODO: make the hit system and hp system move on hp system and check for changes
                         }
                     }
                     MoveBullet(bullet_Control[i]); // move them
