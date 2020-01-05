@@ -40,10 +40,10 @@ namespace Final_Project.Pages
 
         private void initEnemies(Canvas canvas)
         {
-            const double startingX = 155; //defualt values which can adjust the settings of the enemies creaiton
+            const double startingX = 165; //defualt values which can adjust the settings of the enemies creaiton
             const double spacingX = 120;
-            const double startingY = -16;
-            const double spacingY = -150;
+            const double startingY = -10;
+            const double spacingY = -140;
 
             string imLocation = "";
             int counter = 1; // after each 12 moves  - changes the enemys pictures and moves down
@@ -113,7 +113,6 @@ namespace Final_Project.Pages
                     hitRemoved = true;
                     Rect enemyRectangle;
                     Rect bulletRectangle = new Rect(bullet_Control[i].getBulletInfo()[0], bullet_Control[i].getBulletInfo()[1], bullet_Control[i].getBulletInfo()[2], bullet_Control[i].getBulletInfo()[3]);
-                    Debug.WriteLine(bulletRectangle);
                     // we create a rectangle for the bullet and then we create a rectangle for each enemy and check if they were hit
                     for (int j = 0; j < this.enemy_Control.Count(); j++)
                     {
@@ -198,7 +197,7 @@ namespace Final_Project.Pages
                 else // if he is not on cooldown
                 {
                     //first place the bullet on the canvas places in the middle of the ship
-                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
+                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Laser);
                     bullet_Control.Add(bullet); // add to the control list the current bullet
                     counterPress++; // each press we count how much time it was pressed
                 }

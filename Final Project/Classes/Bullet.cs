@@ -57,7 +57,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Heavy_Shell:
                     speedDy = -7;
-                    damage = 2; // slow but big dmg
+                    damage = 1.5; // slow but big dmg
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Heavy_Shell.png"));
                     bullet_image.Width = 31;
                     bullet_image.Height = 49;
@@ -66,7 +66,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Sniper_Shell:
                     speedDy = -27; // fast and very high dmg
-                    damage = 3;
+                    damage = 2.5;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Sniper_Shell.png"));
                     bullet_image.Width = 28;
                     bullet_image.Height = 58;
@@ -75,7 +75,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Granade_Shell:
                     speedDy = -16;
-                    damage = 3.5;
+                    damage = 2;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Granade_Shell.png"));
                     bullet_image.Width = 19;
                     bullet_image.Height = 37;
@@ -83,7 +83,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Plasma:
                     speedDy = -32;
-                    damage = 5;
+                    damage = 3.5;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Plasma.png"));
                     bullet_image.Width = 24;
                     bullet_image.Height = 87;
@@ -92,7 +92,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Laser:
                     speedDy = -34; // highest dmg unit in game
-                    damage = 6;
+                    damage = 4.5;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Laser.png"));
                     bullet_image.Width = 15;
                     bullet_image.Height = 92;

@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-01-05T08:03:16.197</Modified>
+      <Modified>2020-01-05T09:04:14.656</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.exe">
       <PackagePath>entrypoint\Final Project.exe</PackagePath>
-      <Modified>2020-01-05T08:03:15.813</Modified>
+      <Modified>2020-01-05T09:04:14.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -529,19 +529,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Level1.png">
       <PackagePath>Assets\Enemys\Ship_Level1.png</PackagePath>
-      <Modified>2019-12-08T07:59:39.922</Modified>
+      <Modified>2020-01-05T08:44:45.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Level2.png">
       <PackagePath>Assets\Enemys\Ship_Level2.png</PackagePath>
-      <Modified>2019-12-08T07:59:39.922</Modified>
+      <Modified>2020-01-05T08:46:19.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Level3.png">
       <PackagePath>Assets\Enemys\Ship_Level3.png</PackagePath>
-      <Modified>2019-12-08T07:59:39.923</Modified>
+      <Modified>2020-01-05T08:47:17.688</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Level4.png">
       <PackagePath>Assets\Enemys\Ship_Level4.png</PackagePath>
-      <Modified>2019-12-08T07:59:39.923</Modified>
+      <Modified>2020-01-05T08:48:08.309</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Enemys\Ship_Boss.png">
       <PackagePath>Assets\Enemys\Ship_Boss.png</PackagePath>
@@ -763,19 +763,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-01-05T08:03:15.681</Modified>
+      <Modified>2020-01-05T09:04:14.092</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\GamePage.xbf">
       <PackagePath>Pages\GamePage.xbf</PackagePath>
-      <Modified>2020-01-05T08:03:15.681</Modified>
+      <Modified>2020-01-05T09:04:14.092</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage.xbf">
       <PackagePath>Pages\ShopPage.xbf</PackagePath>
-      <Modified>2020-01-05T08:03:15.681</Modified>
+      <Modified>2020-01-05T09:04:14.092</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-01-05T08:03:15.681</Modified>
+      <Modified>2020-01-05T09:04:14.092</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -788,7 +788,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\Final Project.exe">
       <PackagePath>Final Project.exe</PackagePath>
-      <Modified>2020-01-05T08:03:16.138</Modified>
+      <Modified>2020-01-05T09:04:14.584</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

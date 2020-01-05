@@ -22,18 +22,21 @@ namespace Final_Project.Classes
             {
                 case 1:
                     hitPoints = 2;
+                    this.image.Width = 39;
+                    this.image.Height = 104;
                     break;
                 case 2:
                     hitPoints = 3;
+                    this.image.Width = 56;
+                    this.image.Height = 108;
                     break;
                 case 3:
                     hitPoints = 4;
+                    this.image.Width = 90; 
+                    this.image.Height = 108;
                     break;
             }
             this.dy = dySpeed;
-
-            this.image.Width = 128; // after image got initalized
-            this.image.Height = 128;
 
             this.x = x; // values are given by an array that initalizes some enemies, 
             this.y = y; // he will give values and add to aray
