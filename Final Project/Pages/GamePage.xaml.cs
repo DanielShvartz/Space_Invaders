@@ -113,6 +113,7 @@ namespace Final_Project.Pages
                     hitRemoved = true;
                     Rect enemyRectangle;
                     Rect bulletRectangle = new Rect(bullet_Control[i].getBulletInfo()[0], bullet_Control[i].getBulletInfo()[1], bullet_Control[i].getBulletInfo()[2], bullet_Control[i].getBulletInfo()[3]);
+                    Debug.WriteLine(bulletRectangle);
                     // we create a rectangle for the bullet and then we create a rectangle for each enemy and check if they were hit
                     for (int j = 0; j < this.enemy_Control.Count(); j++)
                     {
@@ -179,8 +180,7 @@ namespace Final_Project.Pages
 
 
         private void CoreWindow_KeyDown(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
-        {
-            
+        {  
             if (counterPress == 21) // after that we unblock agai
                 counterPress = 0;
             if (args.VirtualKey == VirtualKey.Left) // if its left it moves left
@@ -190,7 +190,7 @@ namespace Final_Project.Pages
             if (args.VirtualKey == VirtualKey.Space) // if he presses space it creates a new bullet for the player
             {
                 ////cooldown
-                if (counterPress >= 10 && counterPress <= 20) // if he got to the 10 - we check it before the keys to block key pressing
+                if (counterPress >= 9 && counterPress <= 20) // if he got to the 10 - we check it before the keys to block key pressing
                 {
                     counterPress++; //  we keep uploading and block him 10 times from checking the other keys so he blocks the keys from pressing
                     return;

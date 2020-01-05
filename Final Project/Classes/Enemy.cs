@@ -21,13 +21,13 @@ namespace Final_Project.Classes
             switch(EnemyLevel) // maybe changed the way he gets hp, maybe from the constrcutor get a hp or from outside
             {
                 case 1:
-                    hitPoints = 1;
-                    break;
-                case 2:
                     hitPoints = 2;
                     break;
-                case 3:
+                case 2:
                     hitPoints = 3;
+                    break;
+                case 3:
+                    hitPoints = 4;
                     break;
             }
             this.dy = dySpeed;

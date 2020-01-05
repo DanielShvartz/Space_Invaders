@@ -48,7 +48,7 @@ namespace Final_Project.Classes
                     break;
 
                 case Bullets.Medium_Shell:
-                    speedDy = -12; // medium speed but good dmg
+                    speedDy = -11; // medium speed but good dmg
                     damage = 1;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Medium_Shell.png"));
                     bullet_image.Width = 22;
@@ -74,8 +74,8 @@ namespace Final_Project.Classes
                     break;
 
                 case Bullets.Granade_Shell:
-                    speedDy = -17;
-                    damage = 4;
+                    speedDy = -16;
+                    damage = 3.5;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Granade_Shell.png"));
                     bullet_image.Width = 19;
                     bullet_image.Height = 37;
