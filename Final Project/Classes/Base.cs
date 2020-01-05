@@ -49,5 +49,10 @@ namespace Final_Project.Classes
         {
             return this.image.Height;
         }
+
+        public Image GetImage()
+        {
+            return this.image;
+        }
     }
 }
