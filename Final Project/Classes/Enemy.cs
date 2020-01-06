@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Final_Project.Classes
     class Enemy : Base
     {
         public double hitPoints;
-        private double dy; // the enemys also move up and down
+        private double dy; // the enemys also move up and down - each level sets new speed
         
         // when you create a new player you give him the location of the image to be initialized
         // because the x and y is changing different in the enemy and in the player 
@@ -32,7 +33,7 @@ namespace Final_Project.Classes
                     break;
                 case 3:
                     hitPoints = 4;
-                    this.image.Width = 90; 
+                    this.image.Width = 80; 
                     this.image.Height = 108;
                     break;
             }
@@ -44,6 +45,26 @@ namespace Final_Project.Classes
             Canvas.SetLeft(this.image, this.x); // place and add to canvas
             Canvas.SetTop(this.image, this.y);
             canvas.Children.Add(this.image);
+        }
+
+        public void Move()
+        {
+            //Debug.WriteLine("dy = " + dy + " dx = " + dx);
+            //dx and dy are either negetive or positive
+            if (x + dx < 0 || x + dx > canvas.ActualWidth - this.image.ActualWidth)
+                dx *= -1; // if it goes the border from the left or right reverse
+            else
+            {
+                x += dx; // we move him and update him
+                Canvas.SetLeft(this.image, x);
+            }
+            if (y + dy < 0 || y + dy > 575) // if it passes the middle
+                dy *= -1;
+            else
+            {
+                this.y += dy; // move and update
+                Canvas.SetTop(this.image, this.y);
+            }
         }
     }
 }

@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-01-05T09:04:14.656</Modified>
+      <Modified>2020-01-06T13:33:04.595</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.exe">
       <PackagePath>entrypoint\Final Project.exe</PackagePath>
-      <Modified>2020-01-05T09:04:14.258</Modified>
+      <Modified>2020-01-06T13:33:04.160</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -689,7 +689,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Shield.png">
       <PackagePath>Assets\SpaceShip\Shield.png</PackagePath>
-      <Modified>2019-12-08T07:59:40.020</Modified>
+      <Modified>2020-01-06T12:41:28.731</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\spaceship_1.png">
       <PackagePath>Assets\SpaceShip\spaceship_1.png</PackagePath>
@@ -759,23 +759,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.xr.xml">
       <PackagePath>Final Project.xr.xml</PackagePath>
-      <Modified>2019-12-08T07:59:40.813</Modified>
+      <Modified>2020-01-06T12:46:36.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-01-05T09:04:14.092</Modified>
+      <Modified>2020-01-06T13:33:04.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\GamePage.xbf">
       <PackagePath>Pages\GamePage.xbf</PackagePath>
-      <Modified>2020-01-05T09:04:14.092</Modified>
+      <Modified>2020-01-06T13:33:04.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage.xbf">
       <PackagePath>Pages\ShopPage.xbf</PackagePath>
-      <Modified>2020-01-05T09:04:14.092</Modified>
+      <Modified>2020-01-06T13:33:04.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-01-05T09:04:14.092</Modified>
+      <Modified>2020-01-06T13:33:04.036</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -788,7 +788,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\Final Project.exe">
       <PackagePath>Final Project.exe</PackagePath>
-      <Modified>2020-01-05T09:04:14.584</Modified>
+      <Modified>2020-01-06T13:33:04.476</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

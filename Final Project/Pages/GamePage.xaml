@@ -11,9 +11,9 @@
 
     <Grid>
         <Canvas Name="canvas">
-            <Image Name="shield_1" Height="432" Width="518" Source="ms-appx:///Assets/SpaceShip/Shield.png" Canvas.Left="152" Canvas.Top="598" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Image Name="shield_2" Height="432" Width="518" Source="ms-appx:///Assets/SpaceShip/Shield.png" Canvas.Left="752" Canvas.Top="598" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Image Name="shield_3" Height="432" Width="518" Source="ms-appx:///Assets/SpaceShip/Shield.png" Canvas.Left="1352" Canvas.Top="598" RenderTransformOrigin="0.1,0.606" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Image Name="shield_1" Height="290" Width="332" Source="ms-appx:///Assets/SpaceShip/Shield.png" Canvas.Left="250" Canvas.Top="638" />
+            <Image Name="shield_2" Height="290" Width="332" Source="ms-appx:///Assets/SpaceShip/Shield.png" Canvas.Left="842" Canvas.Top="638" />
+            <Image Name="shield_3" Height="290" Width="332" Source="ms-appx:///Assets/SpaceShip/Shield.png" Canvas.Left="1442" Canvas.Top="638" RenderTransformOrigin="0.1,0.606" />
             <Image Name="shield_hp_3" Height="181" Width="208" Source="ms-appx:///Assets/HealthPoints/hp_8_full.png" Canvas.Left="1508" Canvas.Top="716"/>
             <Image Name="shield_hp_1" Height="181" Width="208" Source="ms-appx:///Assets/HealthPoints/hp_8_full.png" Canvas.Left="310" Canvas.Top="716"/>
             <Image Name="shield_hp_2" Height="181" Width="208" Source="ms-appx:///Assets/HealthPoints/hp_8_full.png" Canvas.Left="906" Canvas.Top="716"/>
