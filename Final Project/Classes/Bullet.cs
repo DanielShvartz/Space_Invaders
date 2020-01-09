@@ -12,7 +12,7 @@ namespace Final_Project.Classes
 {
     public enum Bullets
     {
-        Light_Shell_Default = 0, Medium_Shell, Heavy_Shell, Sniper_Shell, Granade_Shell, Plasma, Laser
+        Light_Shell_Default = 0, Enemy_Shell, Plasma, Laser, Medium_Shell, Heavy_Shell, Sniper_Shell, Granade_Shell
     };
     class Bullet
     {
@@ -39,6 +39,7 @@ namespace Final_Project.Classes
             // bullet type defines which speed, dmg and which image will be places, ship places the bullet on the canvas
             switch (bullet_type)
             {
+                //user bullets - go from down to up so speed is minues
                 case Bullets.Light_Shell_Default:
                     speedDy = -17; // fast but no dmg
                     damage = 0.5;
@@ -70,7 +71,7 @@ namespace Final_Project.Classes
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Sniper_Shell.png"));
                     bullet_image.Width = 28;
                     bullet_image.Height = 58;
-                    this.x -= 5;
+                    this.x -= 5; // location set
                     break;
 
                 case Bullets.Granade_Shell:
@@ -81,22 +82,32 @@ namespace Final_Project.Classes
                     bullet_image.Height = 37;
                     break;
 
+                //enemy bullets - go up to down - so speed plus
+                // to adujst by enemy levels these are as enemy levels so we can choose each much easly
                 case Bullets.Plasma:
-                    speedDy = -32;
-                    damage = 3.5;
-                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Plasma.png"));
+                    speedDy = 19;
+                    damage = 2.5;
+                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Plasma_Enemy.png"));
                     bullet_image.Width = 24;
                     bullet_image.Height = 87;
                     this.x -= 2.5;
                     break;
 
                 case Bullets.Laser:
-                    speedDy = -34; // highest dmg unit in game
-                    damage = 4.5;
-                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Laser.png"));
+                    speedDy = 21; 
+                    damage = 3.5;
+                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Laser_Enemy.png"));
                     bullet_image.Width = 15;
                     bullet_image.Height = 92;
                     this.x += 2.5;
+                    break;
+
+                case Bullets.Enemy_Shell:
+                    speedDy = 17;
+                    damage = 1.5;
+                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/Enemys/Enemy_Bullet.png"));
+                    bullet_image.Width = 21;
+                    bullet_image.Height = 96;
                     break;
             }
 
@@ -134,6 +145,12 @@ namespace Final_Project.Classes
         public void Move()
         {
             this.y += speedDy;
+        }
+
+        public bool isPlayerBullet()
+        {
+            // if the bullet is between 1-3 is enemy if not its players
+            return !((int)this.bullet_type >= 1 && (int)bullet_type <= 3);
         }
     }
 }

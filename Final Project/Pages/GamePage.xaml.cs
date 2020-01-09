@@ -32,6 +32,8 @@ namespace Final_Project.Pages
         List<Enemy> enemy_Control;
         DispatcherTimer game_timer_movement;
         int counterPress = 0;
+        DispatcherTimer enemy_create_bullet_timer;
+        List<Bullet> enemy_bullet_control;
 
         static Random rnd;
         const int RANDOM_MAX_VALUE = 8;
@@ -95,6 +97,7 @@ namespace Final_Project.Pages
 
             // when the page is loaded we create a new list
             bullet_Control = new List<Bullet>(); // this lists also allows to remove hit bullets from the canvas and check for bullet collution
+            enemy_bullet_control = new List<Bullet>();
             enemy_Control = new List<Enemy>();
             initEnemies(canvas);
 
@@ -107,6 +110,23 @@ namespace Final_Project.Pages
             game_timer_movement.Tick += Game_timer_movement_Tick;
             game_timer_movement.Start(); // this timer is always running and moving bullets no matter what
 
+            //create a timer that create a bullets for the enemys. it create a bullet and the game movement timer will move it.
+            // the game movement timer needs also to move on all the enemy bullets and check for collusion
+            enemy_create_bullet_timer = new DispatcherTimer();
+            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(1);
+            enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
+            enemy_create_bullet_timer.Start();
+        }
+
+        private void Enemy_create_bullet_timer_Tick(object sender, object e) // create bullets for enemy each X times and add to list
+        {
+            //if the player won - we stop this timer and not check because we dont have any more enemies
+
+            int chosenEnemy = rnd.Next(0, enemy_Control.Count()); // choose enemy to get him a new bullet
+
+            //create a bullet for the enemy, in the middle of the enemy, where the enemy level can adjust its bullet type, so level one is normal two is plasma 3 is laser
+            bullet = new Bullet(enemy_Control[chosenEnemy].getPlayerLocation()[0] + (enemy_Control[chosenEnemy].GetWidth() / 2), enemy_Control[chosenEnemy].getPlayerLocation()[1], canvas, (Bullets)enemy_Control[chosenEnemy].enemyLevel);
+            enemy_bullet_control.Add(bullet); // add to the control list the current enemy bullet
         }
 
         private void Game_timer_movement_Tick(object sender, object e)
@@ -163,11 +183,11 @@ namespace Final_Project.Pages
                 }
             }
             if(enemy_Control.Count() != 0)
-            {
                 for (int i = 0; i < enemy_Control.Count(); i++)
                     enemy_Control[i].Move();
 
-            }
+            for (int i = 0; i < enemy_bullet_control.Count(); i++)
+                MoveBullet(enemy_bullet_control[i]);
         }
 
 
@@ -176,11 +196,19 @@ namespace Final_Project.Pages
             double[] bulletInfo = bullet.getBulletInfo();
             double bulletSpeed = bullet.GetBulletSpeed();
 
-            if (bulletInfo[1] + bulletSpeed < 0)  // if he reaches the border
+            //todo: command tihs, explain why removes from the right list, check bullet movement and see what happends
+
+            if (bulletInfo[1] + bulletSpeed < 0 || bulletInfo[1] + bulletSpeed > canvas.ActualHeight)  // if he reaches the border
             { 
                 canvas.Children.Remove(bullet.GetBulletImage()); // remove the image
-                bullet_Control.Remove(bullet); // we just remove it from the list and from the canvas, no need to stop timer
-
+                if(bullet.isPlayerBullet())
+                {
+                    bullet_Control.Remove(bullet); // we just remove it from the list and from the canvas, no need to stop timer
+                }
+                else
+                {
+                    enemy_bullet_control.Remove(bullet);
+                }
             }
             else
             {

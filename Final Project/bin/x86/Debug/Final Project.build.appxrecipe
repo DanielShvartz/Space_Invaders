@@ -499,8 +499,8 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Heavy_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Heavy_Shell.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Laser.png">
-      <PackagePath>Assets\SpaceShip\Bullets\Laser.png</PackagePath>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Laser_Enemy.png">
+      <PackagePath>Assets\SpaceShip\Bullets\Laser_Enemy.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Light_Shell_Default.png">
       <PackagePath>Assets\SpaceShip\Bullets\Light_Shell_Default.png</PackagePath>
@@ -508,8 +508,8 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Medium_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Medium_Shell.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Plasma.png">
-      <PackagePath>Assets\SpaceShip\Bullets\Plasma.png</PackagePath>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Plasma_Enemy.png">
+      <PackagePath>Assets\SpaceShip\Bullets\Plasma_Enemy.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Sniper_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Sniper_Shell.png</PackagePath>

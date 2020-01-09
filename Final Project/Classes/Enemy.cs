@@ -12,13 +12,15 @@ namespace Final_Project.Classes
     {
         public double hitPoints;
         private double dy; // the enemys also move up and down - each level sets new speed
-        
+        public int enemyLevel;
+
         // when you create a new player you give him the location of the image to be initialized
         // because the x and y is changing different in the enemy and in the player 
         //we cant init it in the base only in the players class
            
         public Enemy(double x, double y, double dySpeed, double dxSpeed, Canvas canvas, string imageLocation, int EnemyLevel) : base(dxSpeed, canvas, imageLocation)
         {
+            this.enemyLevel = EnemyLevel; // to know level
             switch(EnemyLevel) // maybe changed the way he gets hp, maybe from the constrcutor get a hp or from outside
             {
                 case 1:
