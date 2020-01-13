@@ -113,7 +113,7 @@ namespace Final_Project.Pages
             //create a timer that create a bullets for the enemys. it create a bullet and the game movement timer will move it.
             // the game movement timer needs also to move on all the enemy bullets and check for collusion
             enemy_create_bullet_timer = new DispatcherTimer();
-            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(1);
+            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(1); // you can always change how much fast enemys shoot
             enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
             enemy_create_bullet_timer.Start();
         }
@@ -183,10 +183,10 @@ namespace Final_Project.Pages
                 }
             }
             if(enemy_Control.Count() != 0)
-                for (int i = 0; i < enemy_Control.Count(); i++)
+                for (int i = 0; i < enemy_Control.Count(); i++) // move the the enemies 
                     enemy_Control[i].Move();
 
-            for (int i = 0; i < enemy_bullet_control.Count(); i++)
+            for (int i = 0; i < enemy_bullet_control.Count(); i++) // move the enemy bullets
                 MoveBullet(enemy_bullet_control[i]);
         }
 
@@ -198,10 +198,11 @@ namespace Final_Project.Pages
 
             //todo: command tihs, explain why removes from the right list, check bullet movement and see what happends
 
-            if (bulletInfo[1] + bulletSpeed < 0 || bulletInfo[1] + bulletSpeed > canvas.ActualHeight)  // if he reaches the border
-            { 
+            if (bulletInfo[1] + bulletSpeed < 0 || bulletInfo[1] + bulletSpeed > canvas.ActualHeight)
+            { // if the bullet reaches the upper section of the screen(0 for the player) or the bullet reachers the lower section of the screen(canvas.ActualHeight - for the enemy bullet)
+
                 canvas.Children.Remove(bullet.GetBulletImage()); // remove the image
-                if(bullet.isPlayerBullet())
+                if(bullet.isPlayerBullet()) // check if the bullet is player or enemies
                 {
                     bullet_Control.Remove(bullet); // we just remove it from the list and from the canvas, no need to stop timer
                 }
@@ -212,8 +213,8 @@ namespace Final_Project.Pages
             }
             else
             {
-                bullet.Move();
-                Canvas.SetTop(bullet.GetBulletImage(), bullet.getBulletInfo()[1]); // move
+                bullet.Move(); // move the bullet and update image
+                Canvas.SetTop(bullet.GetBulletImage(), bullet.getBulletInfo()[1]); 
             }
         }
 
