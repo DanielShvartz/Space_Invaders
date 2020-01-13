@@ -121,9 +121,8 @@ namespace Final_Project.Pages
         private void Enemy_create_bullet_timer_Tick(object sender, object e) // create bullets for enemy each X times and add to list
         {
             //if the player won - we stop this timer and not check because we dont have any more enemies
-
             int chosenEnemy = rnd.Next(0, enemy_Control.Count()); // choose enemy to get him a new bullet
-
+            
             //create a bullet for the enemy, in the middle of the enemy, where the enemy level can adjust its bullet type, so level one is normal two is plasma 3 is laser
             bullet = new Bullet(enemy_Control[chosenEnemy].getPlayerLocation()[0] + (enemy_Control[chosenEnemy].GetWidth() / 2), enemy_Control[chosenEnemy].getPlayerLocation()[1], canvas, (Bullets)enemy_Control[chosenEnemy].enemyLevel);
             enemy_bullet_control.Add(bullet); // add to the control list the current enemy bullet

@@ -60,7 +60,7 @@ namespace Final_Project.Classes
                 x += dx; // we move him and update him
                 Canvas.SetLeft(this.image, x);
             }
-            if (y + dy < 0 || y + dy > 575) // if it passes the middle
+            if (y + dy < 0 || y + dy > 545) // if it passes the middle
                 dy *= -1;
             else
             {

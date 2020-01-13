@@ -84,24 +84,6 @@ namespace Final_Project.Classes
 
                 //enemy bullets - go up to down - so speed plus
                 // to adujst by enemy levels these are as enemy levels so we can choose each much easly
-                case Bullets.Plasma:
-                    speedDy = 19;
-                    damage = 2.5;
-                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Plasma_Enemy.png"));
-                    bullet_image.Width = 24;
-                    bullet_image.Height = 87;
-                    this.x -= 2.5;
-                    break;
-
-                case Bullets.Laser:
-                    speedDy = 21; 
-                    damage = 3.5;
-                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Laser_Enemy.png"));
-                    bullet_image.Width = 15;
-                    bullet_image.Height = 92;
-                    this.x += 2.5;
-                    break;
-
                 case Bullets.Enemy_Shell:
                     speedDy = 17;
                     damage = 1.5;
@@ -109,21 +91,42 @@ namespace Final_Project.Classes
                     bullet_image.Width = 21;
                     bullet_image.Height = 96;
                     break;
+
+                case Bullets.Plasma:
+                    speedDy = 19;
+                    damage = 2.5;
+                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Plasma_Enemy.png"));
+                    bullet_image.Width = 24;
+                    bullet_image.Height = 87;
+                    this.x -= 3.5;
+                    break;
+
+                case Bullets.Laser:
+                    speedDy = 21; 
+                    damage = 3.5;
+                    bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Laser_Enemy.png"));
+                    bullet_image.Width = 12;
+                    bullet_image.Height = 72;
+                    this.x -= 6;
+                    break;
+
+               
             }
 
-            this.y = Shipy - bullet_image.Height;
-            //+ bullet_image.Width + 10
+            if (isPlayerBullet()) // if the bullet is players
+                this.y = Shipy - bullet_image.Height; // we move the image up
+            else
+                this.y = Shipy + bullet_image.Height; // if its enemy we move the image down
+
+            if (bullet_type == Bullets.Laser)
+                this.y += 20;
 
             Canvas.SetLeft(bullet_image, this.x); // place and add to canvas
             Canvas.SetTop(bullet_image, this.y);
             canvas.Children.Add(bullet_image);
 
-
-            //Debug.WriteLine("actual width - " + bullet_image.ActualWidth + " actual height - " + bullet_image.ActualHeight);
-
             height = bullet_image.ActualHeight;
             width = bullet_image.ActualWidth;
-            //bullet_timer_movement.Interval = TimeSpan.FromTicks(1); set of interval timer is being set in the game page and is not needing in the bullet
         }
 
         public double[] getBulletInfo() // bullets height and width are different
