@@ -42,9 +42,11 @@ namespace Final_Project.Pages
         double levelSpeedY = 1; // for now this is the level speed, each level updates the speed of the enemy
         double levelSpeedX = 1;
 
+        List<Image> Shields_list;
+        List<Image> Shields_hp_list;
         List<double> ShieldHp; // init array of 3 shield hp
         List<Rect> shieldRectangles; // init array of 3 rectnagle of the shields to check hits
-
+        
         public GamePage()
         {
             this.InitializeComponent();
@@ -104,8 +106,9 @@ namespace Final_Project.Pages
             enemy_Control = new List<Enemy>();
             initEnemies(canvas);
 
-            ShieldHp = new List<double>() { 20, 20, 20 };
-
+            Shields_list = new List<Image> { shield_1, shield_2, shield_3}; // init list of shields to be able to remove them easly and thier hp
+            Shields_hp_list = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
+            ShieldHp = new List<double>() { 20, 20, 20 }; // shields hp
             shieldRectangles = new List<Rect>() // init rectangle for collusion
             {
                new Rect(250, 638, 290, 332),  new Rect(842, 638, 290, 332), new Rect(1442, 638, 290, 332)
@@ -200,14 +203,28 @@ namespace Final_Project.Pages
             for (int i = 0; i < enemy_bullet_control.Count(); i++) // move on each bullet of the enemy
             {
                 shieldHit = true;
-                Rect enemybullet = new Rect(enemy_bullet_control[i].getBulletInfo()[0], enemy_bullet_control[i].getBulletInfo()[1], enemy_bullet_control[i].getBulletInfo()[2], enemy_bullet_control[i].getBulletInfo()[3]);
+                Rect enemybulletRect = new Rect(enemy_bullet_control[i].getBulletInfo()[0], enemy_bullet_control[i].getBulletInfo()[1], enemy_bullet_control[i].getBulletInfo()[2], enemy_bullet_control[i].getBulletInfo()[3]);
                 for(int j = 0; j < shieldRectangles.Count(); j++) // create a rect for each bullet and move on the shield that were already made
                 {
-                    Rect r = RectHelper.Intersect(enemybullet, shieldRectangles[j]);
+                    Rect r = RectHelper.Intersect(enemybulletRect, shieldRectangles[j]);
                     if (r.Width > 20 || r.Height > 20) // if they were hit
                     {
                         canvas.Children.Remove(enemy_bullet_control[i].GetBulletImage()); // remove from canavas first
-                        ShieldHp[j] -= enemy_bullet_control[i].damage; // then reduce hp from shield on the array
+                        
+                        if(ShieldHp[j] - enemy_bullet_control[i].damage <= 0) // if the shield has 0 hp
+                        {
+                            //remove images
+                            canvas.Children.Remove(Shields_list[j]); //we remove him from the canvas
+                            canvas.Children.Remove(Shields_hp_list[j]); //we remove the hearts also
+
+                            Shields_hp_list.Remove(Shields_hp_list[j]); // we remove the image of the hearts from the list
+                            Shields_list.Remove(Shields_list[j]); // we remove the image of the shield from the list
+                            //remove from lists
+                            shieldRectangles.Remove(shieldRectangles[j]); // we also remove him from the rectangles to not check anymore
+                            ShieldHp.Remove(ShieldHp[j]); // we remove its hp
+                        }
+                        else
+                            ShieldHp[j] -= enemy_bullet_control[i].damage; // then reduce hp from shield on the array
                         enemy_bullet_control.Remove(enemy_bullet_control[i]); // at the end remove bullet
                         shieldHit = false; // mark they were hit and bullet doesnt need to move
 
