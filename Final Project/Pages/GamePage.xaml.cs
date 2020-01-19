@@ -42,6 +42,9 @@ namespace Final_Project.Pages
         double levelSpeedY = 1; // for now this is the level speed, each level updates the speed of the enemy
         double levelSpeedX = 1;
 
+        List<double> ShieldHp; // init array of 3 shield hp
+        List<Rect> shieldRectangles; // init array of 3 rectnagle of the shields to check hits
+
         public GamePage()
         {
             this.InitializeComponent();
@@ -93,7 +96,7 @@ namespace Final_Project.Pages
             rnd = new Random();
 
             //initalize componenets when the game starts
-            player = new Player(10, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
+            player = new Player(15, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
 
             // when the page is loaded we create a new list
             bullet_Control = new List<Bullet>(); // this lists also allows to remove hit bullets from the canvas and check for bullet collution
@@ -101,7 +104,14 @@ namespace Final_Project.Pages
             enemy_Control = new List<Enemy>();
             initEnemies(canvas);
 
-            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown; ; //if key was press give control to windows or event
+            ShieldHp = new List<double>() { 20, 20, 20 };
+
+            shieldRectangles = new List<Rect>() // init rectangle for collusion
+            {
+               new Rect(250, 638, 290, 332),  new Rect(842, 638, 290, 332), new Rect(1442, 638, 290, 332)
+            };
+
+            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;//if key was press give control to windows or event
 
             //create a timer that moves the bullets, also if there are no bullets it wont move ( count = 0 )
             // if there are bullets it will iterate the list and move all the bullets
@@ -131,6 +141,8 @@ namespace Final_Project.Pages
         private void Game_timer_movement_Tick(object sender, object e)
         {
             bool hitRemoved = true;
+            bool shieldHit = true;
+
             if(bullet_Control.Count() != 0) // if we have bullets we run on both lists , the first loop runs on each bullet and then each bullet,
             {//runs in second loop that checks the other enemies. we check for collusion and then move
                 for (int i = 0; i < bullet_Control.Count(); i++) //move on each bullet
@@ -185,10 +197,27 @@ namespace Final_Project.Pages
                 for (int i = 0; i < enemy_Control.Count(); i++) // move the the enemies 
                     enemy_Control[i].Move();
 
-            for (int i = 0; i < enemy_bullet_control.Count(); i++) // move the enemy bullets
-                MoveBullet(enemy_bullet_control[i]);
-        }
+            for (int i = 0; i < enemy_bullet_control.Count(); i++) // move on each bullet of the enemy
+            {
+                shieldHit = true;
+                Rect enemybullet = new Rect(enemy_bullet_control[i].getBulletInfo()[0], enemy_bullet_control[i].getBulletInfo()[1], enemy_bullet_control[i].getBulletInfo()[2], enemy_bullet_control[i].getBulletInfo()[3]);
+                for(int j = 0; j < shieldRectangles.Count(); j++) // create a rect for each bullet and move on the shield that were already made
+                {
+                    Rect r = RectHelper.Intersect(enemybullet, shieldRectangles[j]);
+                    if (r.Width > 20 || r.Height > 20) // if they were hit
+                    {
+                        canvas.Children.Remove(enemy_bullet_control[i].GetBulletImage()); // remove from canavas first
+                        ShieldHp[j] -= enemy_bullet_control[i].damage; // then reduce hp from shield on the array
+                        enemy_bullet_control.Remove(enemy_bullet_control[i]); // at the end remove bullet
+                        shieldHit = false; // mark they were hit and bullet doesnt need to move
 
+                        Debug.WriteLine("Shield-" + (j + 1) + " hp-" + ShieldHp[j]);
+                    }
+                }
+                if(shieldHit)
+                    MoveBullet(enemy_bullet_control[i]);
+            }
+        }
 
         private void MoveBullet(Bullet bullet)
         {
@@ -237,15 +266,12 @@ namespace Final_Project.Pages
                 else // if he is not on cooldown
                 {
                     //first place the bullet on the canvas places in the middle of the ship
-                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
+                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Sniper_Shell);
                     bullet_Control.Add(bullet); // add to the control list the current bullet
                     counterPress++; // each press we count how much time it was pressed
                 }
             }     
         }
-
-
-
-
     }
 }
+
