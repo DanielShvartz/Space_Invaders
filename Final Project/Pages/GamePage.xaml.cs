@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -38,15 +39,16 @@ namespace Final_Project.Pages
         static Random rnd;
         const int RANDOM_MAX_VALUE = 8;
         const int RANDOM_MIN_VALUE = 2;
-
+        const double SHIELD_HP_NUM = 24;
+        const double SHIELD_REDUCEMENT = SHIELD_HP_NUM / 8;
         double levelSpeedY = 1; // for now this is the level speed, each level updates the speed of the enemy
         double levelSpeedX = 1;
 
-        List<Image> Shields_list;
-        List<Image> Shields_hp_list;
+        List<Image> Shields_Images;
+        List<Image> Shields_hp_Images;
         List<double> ShieldHp; // init array of 3 shield hp
-        List<Rect> shieldRectangles; // init array of 3 rectnagle of the shields to check hits
-        
+        List<Rect> ShieldRectangles; // init array of 3 rectnagle of the shields to check hits
+
         public GamePage()
         {
             this.InitializeComponent();
@@ -106,10 +108,10 @@ namespace Final_Project.Pages
             enemy_Control = new List<Enemy>();
             initEnemies(canvas);
 
-            Shields_list = new List<Image> { shield_1, shield_2, shield_3}; // init list of shields to be able to remove them easly and thier hp
-            Shields_hp_list = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
-            ShieldHp = new List<double>() { 20, 20, 20 }; // shields hp
-            shieldRectangles = new List<Rect>() // init rectangle for collusion
+            Shields_Images = new List<Image> { shield_1, shield_2, shield_3}; // init list of shields to be able to remove them easly and thier hp
+            Shields_hp_Images = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
+            ShieldHp = new List<double>() { SHIELD_HP_NUM, SHIELD_HP_NUM, SHIELD_HP_NUM }; // shields hp
+            ShieldRectangles = new List<Rect>() // init rectangle for collusion
             {
                new Rect(250, 638, 290, 332),  new Rect(842, 638, 290, 332), new Rect(1442, 638, 290, 332)
             };
@@ -145,8 +147,9 @@ namespace Final_Project.Pages
         {
             bool hitRemoved = true;
             bool shieldHit = true;
+            double remainHP;
 
-            if(bullet_Control.Count() != 0) // if we have bullets we run on both lists , the first loop runs on each bullet and then each bullet,
+            if (bullet_Control.Count() != 0) // if we have bullets we run on both lists , the first loop runs on each bullet and then each bullet,
             {//runs in second loop that checks the other enemies. we check for collusion and then move
                 for (int i = 0; i < bullet_Control.Count(); i++) //move on each bullet
                 {
@@ -200,40 +203,90 @@ namespace Final_Project.Pages
                 for (int i = 0; i < enemy_Control.Count(); i++) // move the the enemies 
                     enemy_Control[i].Move();
 
-            for (int i = 0; i < enemy_bullet_control.Count(); i++) // move on each bullet of the enemy
+            for (int bullet = 0; bullet < enemy_bullet_control.Count(); bullet++) // i - per bullet - move on each bullet of the enemy
             {
                 shieldHit = true;
-                Rect enemybulletRect = new Rect(enemy_bullet_control[i].getBulletInfo()[0], enemy_bullet_control[i].getBulletInfo()[1], enemy_bullet_control[i].getBulletInfo()[2], enemy_bullet_control[i].getBulletInfo()[3]);
-                for(int j = 0; j < shieldRectangles.Count(); j++) // create a rect for each bullet and move on the shield that were already made
+                Rect enemybulletRect = new Rect(enemy_bullet_control[bullet].getBulletInfo()[0], enemy_bullet_control[bullet].getBulletInfo()[1], enemy_bullet_control[bullet].getBulletInfo()[2], enemy_bullet_control[bullet].getBulletInfo()[3]);
+                for(int shield = 0; shield < ShieldRectangles.Count(); shield++) // j - per shield - create a rect for each bullet and move on the shield that were already made
                 {
-                    Rect r = RectHelper.Intersect(enemybulletRect, shieldRectangles[j]);
-                    if (r.Width > 20 || r.Height > 20) // if they were hit
+                    Rect r = RectHelper.Intersect(enemybulletRect, ShieldRectangles[shield]);
+                    if (r.Width > 20 || r.Height > 20) //if they were hit
                     {
-                        canvas.Children.Remove(enemy_bullet_control[i].GetBulletImage()); // remove from canavas first
-                        
-                        if(ShieldHp[j] - enemy_bullet_control[i].damage <= 0) // if the shield has 0 hp
-                        {
-                            //remove images
-                            canvas.Children.Remove(Shields_list[j]); //we remove him from the canvas
-                            canvas.Children.Remove(Shields_hp_list[j]); //we remove the hearts also
+                        canvas.Children.Remove(enemy_bullet_control[bullet].GetBulletImage()); // remove from canavas first
 
-                            Shields_hp_list.Remove(Shields_hp_list[j]); // we remove the image of the hearts from the list
-                            Shields_list.Remove(Shields_list[j]); // we remove the image of the shield from the list
-                            //remove from lists
-                            shieldRectangles.Remove(shieldRectangles[j]); // we also remove him from the rectangles to not check anymore
-                            ShieldHp.Remove(ShieldHp[j]); // we remove its hp
-                        }
-                        else
-                            ShieldHp[j] -= enemy_bullet_control[i].damage; // then reduce hp from shield on the array
-                        enemy_bullet_control.Remove(enemy_bullet_control[i]); // at the end remove bullet
+                        remainHP = ShieldHp[shield] - enemy_bullet_control[bullet].damage;
+
+                        //if the hp updates - we update no the canvas, the lists of images
+                        UpdateShieldHpImage(remainHP, shield, bullet);
+
+                        enemy_bullet_control.Remove(enemy_bullet_control[bullet]); // at the end remove bullet
                         shieldHit = false; // mark they were hit and bullet doesnt need to move
 
-                        Debug.WriteLine("Shield-" + (j + 1) + " hp-" + ShieldHp[j]);
+                        //Debug.WriteLine("Shield-" + (j + 1) + " hp-" + ShieldHp[j]);
                     }
                 }
                 if(shieldHit)
-                    MoveBullet(enemy_bullet_control[i]);
+                    MoveBullet(enemy_bullet_control[bullet]);
             }
+        }
+
+        /// <summary>
+        /// This function update an image. Removes the old one, update with the new one with given locaiton and update rectnangle size
+        /// </summary>
+        /// <param name="shieldNum"></param> -
+        /// <param name="newX"></param>
+        /// <param name="newY"></param>
+        /// <param name="ImageLocation"></param> -gets new image each time
+        void UpdateImage(int shieldNum, double newX, double newY, string ImageLocation)
+        {
+            //remove old image from canvas
+            canvas.Children.Remove(Shields_hp_Images[shieldNum]);
+            //update list of hearts image with the right image
+            Shields_hp_Images[shieldNum].Source = new BitmapImage(new Uri(ImageLocation));
+            //add new image on canvas
+            Canvas.SetTop(Shields_hp_Images[shieldNum], newY); // preview new heart image on the canvas by given X AND Y
+            Canvas.SetLeft(Shields_hp_Images[shieldNum], newX);
+            canvas.Children.Add(Shields_hp_Images[shieldNum]);
+            //update rectnangle size
+            ShieldRectangles[shieldNum] = new Rect(newX, newY, Shields_hp_Images[shieldNum].Width, Shields_hp_Images[shieldNum].Height);
+        }
+
+        void UpdateShieldHpImage(double remainHP, int shieldNum, int bulletNum)
+        {
+            double newX = 0, newY = 716; // Y is always the same
+            if (shieldNum == 0) // to know where to place the new image, we do it by the shield numbers
+                newX = 310;
+            else if (shieldNum == 1)
+                newX = 906;
+            else if (shieldNum == 2)
+                newX = 1508;
+            if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 1 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 2) // 7 hp (21 - 19)
+                UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_7.png");
+            else if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 2 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 3) // 6 hp (18 - 16)
+                UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_6.png");
+            else if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 3 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 4) // 5 hp (15 - 13)
+                UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_5.png");
+            else if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 4 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 5) // 4 hp (12 - 10)
+                UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_4.png");
+            else if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 5 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 6) // 3 hp (9 - 7)
+                UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_3.png");
+            else if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 6 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 7) // 2 hp (6 - 4)
+                UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_2.png");
+            else if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 7 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 8) // 1 hp (3-1)
+                UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_1.png");
+            else if (ShieldHp[shieldNum] - enemy_bullet_control[bulletNum].damage <= 0) // if the shield has 0 hp
+            {
+                //remove images
+                canvas.Children.Remove(Shields_Images[shieldNum]); //we remove him from the canvas
+                canvas.Children.Remove(Shields_hp_Images[shieldNum]); //we remove the hearts also
+
+                Shields_hp_Images.Remove(Shields_hp_Images[shieldNum]); // we remove the image of the hearts from the list
+                Shields_Images.Remove(Shields_Images[shieldNum]); // we remove the image of the shield from the list
+                                                               //remove from lists
+                ShieldRectangles.Remove(ShieldRectangles[shieldNum]); // we also remove him from the rectangles to not check anymore
+                ShieldHp.Remove(ShieldHp[shieldNum]); // we remove its hp
+            }
+            ShieldHp[shieldNum] -= enemy_bullet_control[bulletNum].damage; // at the end reduce hp from shield on the array
         }
 
         private void MoveBullet(Bullet bullet)
