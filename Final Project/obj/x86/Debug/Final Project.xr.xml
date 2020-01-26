@@ -28,6 +28,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Source" />
       <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="Tag" />
       <RootProperty Name="Margin" />
       <RootProperty Name="UseLayoutRounding" />
       <RootProperty Name="HorizontalAlignment" />

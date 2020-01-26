@@ -121,14 +121,14 @@ namespace Final_Project.Pages
             //create a timer that moves the bullets, also if there are no bullets it wont move ( count = 0 )
             // if there are bullets it will iterate the list and move all the bullets
             game_timer_movement = new DispatcherTimer(); // this also checks for hits collusions
-            game_timer_movement.Interval = TimeSpan.FromTicks(1); // CHANGE FromMilliseconds(150)
+            game_timer_movement.Interval = TimeSpan.FromTicks((long)0.5); // CHANGE FromMilliseconds(150)
             game_timer_movement.Tick += Game_timer_movement_Tick;
             game_timer_movement.Start(); // this timer is always running and moving bullets no matter what
 
             //create a timer that create a bullets for the enemys. it create a bullet and the game movement timer will move it.
             // the game movement timer needs also to move on all the enemy bullets and check for collusion
             enemy_create_bullet_timer = new DispatcherTimer();
-            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(1); // you can always change how much fast enemys shoot
+            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(0.5); // you can always change how much fast enemys shoot
             enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
             enemy_create_bullet_timer.Start();
         }
@@ -212,11 +212,11 @@ namespace Final_Project.Pages
                     Rect r = RectHelper.Intersect(enemybulletRect, ShieldRectangles[shield]);
                     if (r.Width > 20 || r.Height > 20) //if they were hit
                     {
-                        canvas.Children.Remove(enemy_bullet_control[bullet].GetBulletImage()); // remove from canavas first
+                        canvas.Children.Remove(enemy_bullet_control[bullet].GetBulletImage()); // remove from the bullet from the canavas first
 
-                        remainHP = ShieldHp[shield] - enemy_bullet_control[bullet].damage;
+                        remainHP = ShieldHp[shield] - enemy_bullet_control[bullet].damage; // take how much hp remained to calculate which image to preview
 
-                        //if the hp updates - we update no the canvas, the lists of images
+                        //if the hp updates - we update on the canvas, the lists of images shield and list of images hp
                         UpdateShieldHpImage(remainHP, shield, bullet);
 
                         enemy_bullet_control.Remove(enemy_bullet_control[bullet]); // at the end remove bullet
@@ -254,12 +254,17 @@ namespace Final_Project.Pages
         void UpdateShieldHpImage(double remainHP, int shieldNum, int bulletNum)
         {
             double newX = 0, newY = 716; // Y is always the same
-            if (shieldNum == 0) // to know where to place the new image, we do it by the shield numbers
+
+            //To know where to place the image of the shield hp image we need to know which x to set
+            //beacuse we doesnt know which x to set we access the tag of the same image that we have set and its permanent
+            //this fixes index image that are getting new index when shield is destroyed
+            if (int.Parse(Shields_hp_Images[shieldNum].Tag.ToString()) == 0) 
                 newX = 310;
-            else if (shieldNum == 1)
-                newX = 906;
-            else if (shieldNum == 2)
-                newX = 1508;
+            else if (int.Parse(Shields_hp_Images[shieldNum].Tag.ToString()) == 1)
+                newX = 902;
+            else if (int.Parse(Shields_hp_Images[shieldNum].Tag.ToString()) == 2)
+                newX = 1502;
+
             if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 1 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 2) // 7 hp (21 - 19)
                 UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_7.png");
             else if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 2 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 3) // 6 hp (18 - 16)
@@ -285,6 +290,7 @@ namespace Final_Project.Pages
                                                                //remove from lists
                 ShieldRectangles.Remove(ShieldRectangles[shieldNum]); // we also remove him from the rectangles to not check anymore
                 ShieldHp.Remove(ShieldHp[shieldNum]); // we remove its hp
+                return; // if the enemy is dead we doesnt continue - fixed index access problem
             }
             ShieldHp[shieldNum] -= enemy_bullet_control[bulletNum].damage; // at the end reduce hp from shield on the array
         }
