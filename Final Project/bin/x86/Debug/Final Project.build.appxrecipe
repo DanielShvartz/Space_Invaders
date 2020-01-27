@@ -382,6 +382,9 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\veryFinalBackGround.png">
       <PackagePath>Assets\BackGrounds\veryFinalBackGround.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Buttons\Button_Template.png">
+      <PackagePath>Assets\Buttons\Button_Template.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Buttons\mp_logout_button.png">
       <PackagePath>Assets\Buttons\mp_logout_button.png</PackagePath>
     </AppxPackagedFile>

@@ -121,6 +121,7 @@
     <Content Include="Assets\BackGrounds\background_game.jpg" />
     <Content Include="Assets\BackGrounds\bgbg.png" />
     <Content Include="Assets\BackGrounds\veryFinalBackGround.png" />
+    <Content Include="Assets\Buttons\Button_Template.png" />
     <Content Include="Assets\Buttons\mp_logout_button.png" />
     <Content Include="Assets\Buttons\mp_shop_button.png" />
     <Content Include="Assets\Buttons\mp_start_button.png" />

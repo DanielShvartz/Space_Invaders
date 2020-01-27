@@ -26,17 +26,16 @@ namespace Final_Project.Pages
     /// </summary>
     public sealed partial class GamePage : Page
     { 
-        List<Bullet> bullet_Control; // we will have a list of bullets to control the bullets movement
         Player player;
         Bullet bullet;
         Enemy enemy;
-        List<Enemy> enemy_Control;
-        DispatcherTimer game_timer_movement;
-        int counterPress = 0;
-        DispatcherTimer enemy_create_bullet_timer;
-        List<Bullet> enemy_bullet_control;
-
         static Random rnd;
+
+        DispatcherTimer game_timer_movement;
+        DispatcherTimer enemy_create_bullet_timer;
+
+        double Player_HitPoints = 100;
+        int counterPress = 0;
         const int RANDOM_MAX_VALUE = 8;
         const int RANDOM_MIN_VALUE = 2;
         const double SHIELD_HP_NUM = 24;
@@ -44,10 +43,14 @@ namespace Final_Project.Pages
         double levelSpeedY = 1; // for now this is the level speed, each level updates the speed of the enemy
         double levelSpeedX = 1;
 
+        List<Bullet> bullet_Control; // we will have a list of bullets to control the bullets movement
+        List<Bullet> enemy_bullet_control;
+        List<Enemy> enemy_Control;
         List<Image> Shields_Images;
         List<Image> Shields_hp_Images;
         List<double> ShieldHp; // init array of 3 shield hp
         List<Rect> ShieldRectangles; // init array of 3 rectnagle of the shields to check hits
+        
 
         public GamePage()
         {
@@ -146,10 +149,11 @@ namespace Final_Project.Pages
         private void Game_timer_movement_Tick(object sender, object e)
         {
             bool hitRemoved = true;
-            bool shieldHit = true;
+            bool bulletGotHit = true;
             double remainHP;
 
-            if (bullet_Control.Count() != 0) // if we have bullets we run on both lists , the first loop runs on each bullet and then each bullet,
+            if (bullet_Control.Count() != 0) // bullets from player - check for hit with enemys and remove them:
+                //if we have bullets we run on both lists , the first loop runs on each bullet and then each bullet,
             {//runs in second loop that checks the other enemies. we check for collusion and then move
                 for (int i = 0; i < bullet_Control.Count(); i++) //move on each bullet
                 {
@@ -199,17 +203,19 @@ namespace Final_Project.Pages
                     }
                 }
             }
-            if(enemy_Control.Count() != 0)
+            if(enemy_Control.Count() != 0) // move enemys
                 for (int i = 0; i < enemy_Control.Count(); i++) // move the the enemies 
                     enemy_Control[i].Move();
 
-            for (int bullet = 0; bullet < enemy_bullet_control.Count(); bullet++) // i - per bullet - move on each bullet of the enemy
+            for (int bullet = 0; bullet < enemy_bullet_control.Count(); bullet++) //  - for each bullet i - per bullet - move on each bullet of the enemy
             {
-                shieldHit = true;
+                bulletGotHit = false;
+                Rect r;
                 Rect enemybulletRect = new Rect(enemy_bullet_control[bullet].getBulletInfo()[0], enemy_bullet_control[bullet].getBulletInfo()[1], enemy_bullet_control[bullet].getBulletInfo()[2], enemy_bullet_control[bullet].getBulletInfo()[3]);
-                for(int shield = 0; shield < ShieldRectangles.Count(); shield++) // j - per shield - create a rect for each bullet and move on the shield that were already made
+                //check hit with shield
+                for (int shield = 0; shield < ShieldRectangles.Count(); shield++) // j - per shield - create a rect for each bullet and move on the shield that were already made
                 {
-                    Rect r = RectHelper.Intersect(enemybulletRect, ShieldRectangles[shield]);
+                    r = RectHelper.Intersect(enemybulletRect, ShieldRectangles[shield]);
                     if (r.Width > 20 || r.Height > 20) //if they were hit
                     {
                         canvas.Children.Remove(enemy_bullet_control[bullet].GetBulletImage()); // remove from the bullet from the canavas first
@@ -220,12 +226,25 @@ namespace Final_Project.Pages
                         UpdateShieldHpImage(remainHP, shield, bullet);
 
                         enemy_bullet_control.Remove(enemy_bullet_control[bullet]); // at the end remove bullet
-                        shieldHit = false; // mark they were hit and bullet doesnt need to move
+                        bulletGotHit = true; // mark they were hit and bullet doesnt need to move
 
                         //Debug.WriteLine("Shield-" + (j + 1) + " hp-" + ShieldHp[j]);
                     }
                 }
-                if(shieldHit)
+                // check hit with player
+                //create rect for player - player moves so rect is changing
+                Rect playerRect = new Rect(player.getPlayerLocation()[0], player.getPlayerLocation()[1], player.GetWidth(), player.GetHeight());
+                r = RectHelper.Intersect(enemybulletRect, playerRect); // check for hit between bullet of enemy and player
+                if (r.Width > 20 || r.Height > 20) // if they were hit
+                {
+                    canvas.Children.Remove(enemy_bullet_control[bullet].GetBulletImage()); // remove from the bullet from the canavas first
+                    Player_HitPoints -= enemy_bullet_control[bullet].damage; // reduce hp
+                    Health_Text.Text = "Health: " + Player_HitPoints.ToString() + '%'; // update text box
+                    //here check for 0
+                    enemy_bullet_control.Remove(enemy_bullet_control[bullet]); // remove bullet from the list
+                    bulletGotHit = true; // bullet got hit so he doesnt move
+                }
+                if (!bulletGotHit)
                     MoveBullet(enemy_bullet_control[bullet]);
             }
         }
