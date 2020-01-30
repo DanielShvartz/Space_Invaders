@@ -20,6 +20,9 @@
             <Image Name="shield_hp_3" Tag="2" Height="181" Width="208" Source="ms-appx:///Assets/HealthPoints/hp_8_full.png" Canvas.Left="1502" Canvas.Top="716"/>
 
             <TextBlock Text="Health: 100%"  Name="Health_Text" Width="494" Height="94" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0"/>
+
+            <Image Height="75" Width="75" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1"/>
+            <TextBlock Text="0"  Name="Coins_Text" Width="96" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="1" Margin="0,0,0,0"/>
         </Canvas>
     </Grid>
 </Page>

@@ -42,6 +42,7 @@ namespace Final_Project.Pages
         const double SHIELD_REDUCEMENT = SHIELD_HP_NUM / 8;
         double levelSpeedY = 1; // for now this is the level speed, each level updates the speed of the enemy
         double levelSpeedX = 1;
+        int coins = 0;
 
         List<Bullet> bullet_Control; // we will have a list of bullets to control the bullets movement
         List<Bullet> enemy_bullet_control;
@@ -155,52 +156,60 @@ namespace Final_Project.Pages
             if (bullet_Control.Count() != 0) // bullets from player - check for hit with enemys and remove them:
                 //if we have bullets we run on both lists , the first loop runs on each bullet and then each bullet,
             {//runs in second loop that checks the other enemies. we check for collusion and then move
-                for (int i = 0; i < bullet_Control.Count(); i++) //move on each bullet
+                for (int player_bullet = 0; player_bullet < bullet_Control.Count(); player_bullet++) //move on each bullet
                 {
                     hitRemoved = true;
                     Rect enemyRectangle;
-                    Rect bulletRectangle = new Rect(bullet_Control[i].getBulletInfo()[0], bullet_Control[i].getBulletInfo()[1], bullet_Control[i].getBulletInfo()[2], bullet_Control[i].getBulletInfo()[3]);
+                    Rect bulletRectangle = new Rect(bullet_Control[player_bullet].getBulletInfo()[0], bullet_Control[player_bullet].getBulletInfo()[1], bullet_Control[player_bullet].getBulletInfo()[2], bullet_Control[player_bullet].getBulletInfo()[3]);
                     // we create a rectangle for the bullet and then we create a rectangle for each enemy and check if they were hit
-                    for (int j = 0; j < this.enemy_Control.Count(); j++)
+                    for (int enemy = 0; enemy < this.enemy_Control.Count(); enemy++)
                     {
-                        enemyRectangle = new Rect(enemy_Control[j].getPlayerLocation()[0], enemy_Control[j].getPlayerLocation()[1], enemy_Control[j].GetWidth(), enemy_Control[j].GetHeight());
+                        enemyRectangle = new Rect(enemy_Control[enemy].getPlayerLocation()[0], enemy_Control[enemy].getPlayerLocation()[1], enemy_Control[enemy].GetWidth(), enemy_Control[enemy].GetHeight());
                         Rect r = RectHelper.Intersect(bulletRectangle, enemyRectangle);
                         if (r.Width > 0 || r.Height > 0) // if there is collusion
                         {
                             //bullet control - i , enemy control - j
-                            if(bullet_Control[i].damage > enemy_Control[j].hitPoints) // if the damage of the bullet is larger than the hitpoints
+                            if (bullet_Control[player_bullet].damage > enemy_Control[enemy].hitPoints)  // if the damage of the bullet is larger than the hitpoints - enemy dies here - getting coins
                             {
-                                bullet_Control[i].damage -= enemy_Control[j].hitPoints; //remove damage as much as hp
-                                canvas.Children.Remove(enemy_Control[j].GetImage()); // remove enemy from list and canvas
-                                enemy_Control.Remove(enemy_Control[j]); // the bullet continues to the next enemy that he gets
+                                bullet_Control[player_bullet].damage -= enemy_Control[enemy].hitPoints; //remove damage as much as hp
+                                canvas.Children.Remove(enemy_Control[enemy].GetImage()); // remove enemy from list and canvas
+
+                                coins += enemy_Control[enemy].enemyLevel; // add coins and then remove enemy
+                                Coins_Text.Text = coins.ToString();
+
+                                enemy_Control.Remove(enemy_Control[enemy]); // the bullet continues to the next enemy that he gets
                                 //explode enemy animation
-                                MoveBullet(bullet_Control[i]); // we move the bullet only if possible
+                                MoveBullet(bullet_Control[player_bullet]); // we move the bullet only if possible
+
+                                
                             }
-                            else if (bullet_Control[i].damage < enemy_Control[j].hitPoints) // if the damage of the bullet is less than the enemy hp
+                            else if (bullet_Control[player_bullet].damage < enemy_Control[enemy].hitPoints) // if the damage of the bullet is less than the enemy hp
                             {
-                                enemy_Control[j].hitPoints -= bullet_Control[i].damage; // remove hp as much dmg 
-                                canvas.Children.Remove(bullet_Control[i].GetBulletImage()); // remove bullet from canvas and from list
-                                bullet_Control.Remove(bullet_Control[i]);
+                                enemy_Control[enemy].hitPoints -= bullet_Control[player_bullet].damage; // remove hp as much dmg 
+                                canvas.Children.Remove(bullet_Control[player_bullet].GetBulletImage()); // remove bullet from canvas and from list
+                                bullet_Control.Remove(bullet_Control[player_bullet]);
                                 hitRemoved = false;
                                 break;  // if the bullet is already removed from the list there is no need to check we all the enemies for to continue
                                 //explode animation
                             }
-                            else if(bullet_Control[i].damage == enemy_Control[j].hitPoints)
+                            else if (bullet_Control[player_bullet].damage == enemy_Control[enemy].hitPoints) // enemy dies here - getting coins
                             {
                                 ////explode animation remove bullet and enemy from lists and canvas
-                                canvas.Children.Remove(bullet_Control[i].GetBulletImage());
-                                bullet_Control.Remove(bullet_Control[i]);
-                                canvas.Children.Remove(enemy_Control[j].GetImage());
-                                enemy_Control.Remove(enemy_Control[j]);
+                                canvas.Children.Remove(bullet_Control[player_bullet].GetBulletImage());
+                                bullet_Control.Remove(bullet_Control[player_bullet]);
+                                canvas.Children.Remove(enemy_Control[enemy].GetImage());
+
+                                coins += enemy_Control[enemy].enemyLevel; // add coins and then remove enemy
+                                Coins_Text.Text = coins.ToString();
+
+                                enemy_Control.Remove(enemy_Control[enemy]);
                                 hitRemoved = false;
                                 break; // if the bullet is already removed from the list there is no need to check we all the enemies for to continue
                             }
                         }
                     }
                     if (hitRemoved) // After moving on all the enemies, move ,if hit and removed, doesnt move. for each bullet
-                    {
-                        MoveBullet(bullet_Control[i]); // moves if hits and bigger dmg than hp or didnt hit at all
-                    }
+                        MoveBullet(bullet_Control[player_bullet]); // moves if hits and bigger dmg than hp or didnt hit at all
                 }
             }
             if(enemy_Control.Count() != 0) // move enemys
@@ -361,7 +370,7 @@ namespace Final_Project.Pages
                 else // if he is not on cooldown
                 {
                     //first place the bullet on the canvas places in the middle of the ship
-                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Sniper_Shell);
+                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
                     bullet_Control.Add(bullet); // add to the control list the current bullet
                     counterPress++; // each press we count how much time it was pressed
                 }

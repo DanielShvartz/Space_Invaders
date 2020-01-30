@@ -568,6 +568,9 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Explosions\Enemy\Enemy_Explosion.gif">
       <PackagePath>Assets\Explosions\Enemy\Enemy_Explosion.gif</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\coinGif.gif">
+      <PackagePath>Assets\SpaceShip\coinGif.gif</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

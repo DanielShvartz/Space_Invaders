@@ -169,6 +169,7 @@
     <Content Include="Assets\SpaceShip\Bullets\Medium_Shell.png" />
     <Content Include="Assets\SpaceShip\Bullets\Plasma_Enemy.png" />
     <Content Include="Assets\SpaceShip\Bullets\Sniper_Shell.png" />
+    <Content Include="Assets\SpaceShip\coinGif.gif" />
     <Content Include="Assets\SpaceShip\Shield.png" />
     <Content Include="Assets\SpaceShip\spaceship_1.png" />
     <Content Include="Assets\SpaceShip\spaceship_2.png" />
