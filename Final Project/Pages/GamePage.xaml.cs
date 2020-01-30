@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -96,6 +97,15 @@ namespace Final_Project.Pages
                 }
             }
 
+        }
+
+        async System.Threading.Tasks.Task MessageStartAsync()
+        {
+            var dialog = new MessageDialog("Press Ok To start!");
+            dialog.Title = "NewGame";
+            dialog.Commands.Add(new UICommand { Label = "Ok", Id = 0 });
+            await dialog.ShowAsync();
+            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

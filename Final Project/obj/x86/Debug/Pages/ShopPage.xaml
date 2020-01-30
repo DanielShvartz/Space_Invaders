@@ -1,15 +1,28 @@
 ﻿<Page
-    x:Class="Final_Project.Assets.Pages.ShopPage"
+    x:Class="Final_Project.Pages.ShopPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Final_Project.Assets.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
+    <Page.Background>
+        <ImageBrush ImageSource="ms-appx:///Assets/BackGrounds/shop_background.jpg"/>
+    </Page.Background>
 
     <Grid>
+        <TextBlock Text="Shop" Width="333" Height="203" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="SpaceShips" Width="782" Height="203" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,540,0,0"/>
+        <TextBlock Text="Bullets" Width="782" Height="203" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="638,0,0,0"/>
 
+        <Image x:ConnectionId='2' Name="Space_Ship1" Source="ms-appx:///Assets/SpaceShip/spaceship_1.png" Margin="-20,754,1322,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="0,684,1357,-75"/>
+
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="668,682,689,-73" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image x:ConnectionId='3' Name="Space_Ship2" Source="ms-appx:///Assets/SpaceShip/spaceship_2.png" Margin="790,761,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="246" Width="319"/>
+
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1357,684,0,-75" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image x:ConnectionId='4' Name="Space_Ship3" Source="ms-appx:///Assets/SpaceShip/spaceship_3.png" Margin="1464,759,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="262" Width="381"/>
     </Grid>
 </Page>
 

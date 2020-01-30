@@ -2,6 +2,7 @@ WinMetadata\Windows.winmd
 Assets\BackGrounds\background_final.jpg
 Assets\BackGrounds\background_game.jpg
 Assets\BackGrounds\bgbg.png
+Assets\BackGrounds\shop_background.jpg
 Assets\BackGrounds\veryFinalBackGround.png
 Assets\Buttons\Button_Template.png
 Assets\Buttons\mp_logout_button.png
@@ -54,6 +55,7 @@ Assets\SpaceShip\Bullets\Plasma_Enemy.png
 Assets\SpaceShip\Bullets\Sniper_Shell.png
 Assets\SpaceShip\coinGif.gif
 Assets\SpaceShip\Shield.png
+Assets\SpaceShip\space_ships_frame.png
 Assets\SpaceShip\spaceship_1.png
 Assets\SpaceShip\spaceship_2.png
 Assets\SpaceShip\spaceship_3.png

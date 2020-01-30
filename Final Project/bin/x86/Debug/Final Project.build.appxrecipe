@@ -376,6 +376,9 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\background_game.jpg">
       <PackagePath>Assets\BackGrounds\background_game.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\shop_background.jpg">
+      <PackagePath>Assets\BackGrounds\shop_background.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\bgbg.png">
       <PackagePath>Assets\BackGrounds\bgbg.png</PackagePath>
     </AppxPackagedFile>
@@ -531,6 +534,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Spaceship_Default.png">
       <PackagePath>Assets\SpaceShip\Spaceship_Default.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\space_ships_frame.png">
+      <PackagePath>Assets\SpaceShip\space_ships_frame.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

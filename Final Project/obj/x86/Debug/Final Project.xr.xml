@@ -30,9 +30,9 @@
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="Tag" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="UseLayoutRounding" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="UseLayoutRounding" />
       <RootProperty Name="RenderTransform" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
@@ -50,8 +50,7 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Final_Project.Pages.GamePage" />
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="Final_Project.Assets.Pages.ShopPage" />
+    <RootType FullName="Final_Project.Pages.ShopPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />

@@ -193,14 +193,14 @@ namespace Final_Project.Final_Project_XamlTypeInfo
             _typeNameTable[0] = "Final_Project.Pages.GamePage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Final_Project.Assets.Pages.ShopPage";
+            _typeNameTable[3] = "Final_Project.Pages.ShopPage";
             _typeNameTable[4] = "Final_Project.MainPage";
 
             _typeTable = new global::System.Type[5];
             _typeTable[0] = typeof(global::Final_Project.Pages.GamePage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Final_Project.Assets.Pages.ShopPage);
+            _typeTable[3] = typeof(global::Final_Project.Pages.ShopPage);
             _typeTable[4] = typeof(global::Final_Project.MainPage);
         }
 
@@ -237,7 +237,7 @@ namespace Final_Project.Final_Project_XamlTypeInfo
         }
 
         private object Activate_0_GamePage() { return new global::Final_Project.Pages.GamePage(); }
-        private object Activate_3_ShopPage() { return new global::Final_Project.Assets.Pages.ShopPage(); }
+        private object Activate_3_ShopPage() { return new global::Final_Project.Pages.ShopPage(); }
         private object Activate_4_MainPage() { return new global::Final_Project.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
@@ -265,7 +265,7 @@ namespace Final_Project.Final_Project_XamlTypeInfo
                 xamlType = new global::Final_Project.Final_Project_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Final_Project.Assets.Pages.ShopPage
+            case 3:   //  Final_Project.Pages.ShopPage
                 userType = new global::Final_Project.Final_Project_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_ShopPage;
                 userType.SetIsLocalType();

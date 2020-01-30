@@ -33,5 +33,10 @@ namespace Final_Project
         {
             Frame.Navigate(typeof(GamePage));
         }
+
+        private void shopButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ShopPage));
+        }
     }
 }

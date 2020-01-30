@@ -23,7 +23,7 @@
                 <ImageBrush ImageSource="Assets/Buttons/mp_start_button.png"/>
             </Button.Background>
         </Button>
-        <Button x:ConnectionId='3' Name="shopButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,180,0,0" VerticalAlignment="Top">
+        <Button x:ConnectionId='3' Name="shopButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,180,0,0" VerticalAlignment="Top"                         >
             <Button.Background>
                 <ImageBrush ImageSource="Assets/Buttons/mp_shop_button.png"/>
             </Button.Background>
