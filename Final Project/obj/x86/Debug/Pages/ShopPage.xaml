@@ -2,7 +2,6 @@
     x:Class="Final_Project.Pages.ShopPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Final_Project.Assets.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -11,9 +10,8 @@
     </Page.Background>
 
     <Grid>
-        <TextBlock Text="Shop" Width="333" Height="203" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Text="SpaceShips" Width="782" Height="203" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,540,0,0"/>
-        <TextBlock Text="Bullets" Width="782" Height="203" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="638,0,0,0"/>
+        <TextBlock Text="SpaceShips" Width="763" Height="134" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="575,478,0,0"/>
+        <TextBlock Text="Bullets" Width="534" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="656,-26,0,0"/>
 
         <Image x:ConnectionId='2' Name="Space_Ship1" Source="ms-appx:///Assets/SpaceShip/spaceship_1.png" Margin="-20,754,1322,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="0,684,1357,-75"/>
@@ -23,6 +21,29 @@
 
         <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1357,684,0,-75" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <Image x:ConnectionId='4' Name="Space_Ship3" Source="ms-appx:///Assets/SpaceShip/spaceship_3.png" Margin="1464,759,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="262" Width="381"/>
+
+        <Image x:ConnectionId='5' Name="Medium_Shell" Source="ms-appx:///Assets/SpaceShip/Bullets/Medium_Shell.png" Margin="48,271,1625,607" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="-41,200,1545,539" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <Image x:ConnectionId='6' Name="Heavy_Shell" Source="ms-appx:///Assets/SpaceShip/Bullets/Heavy_Shell.png" Margin="563,255,1084,605"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="487,200,1017,539" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <Image x:ConnectionId='7' Name="Sniper_Shell" Source="ms-appx:///Assets/SpaceShip/Bullets/Sniper_Shell.png" Margin="1106,261,591,622" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1005,200,499,539"/>
+
+        <Image x:ConnectionId='8' Name="Granade_Shell" Source="ms-appx:///Assets/SpaceShip/Bullets/Granade_Shell.png" Margin="1604,255,43,605" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1524,200,-20,539"/>
+
+        <TextBlock Text="Ship Level 1" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,635,0,0"/>
+        <TextBlock Text="Ship Level 2" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="705,635,0,0"/>
+        <TextBlock Text="Ship Level 3" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1379,635,0,0"/>
+
+        <TextBlock Text="Medium Bullet" Width="501" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,129,0,0"/>
+        <TextBlock Text="Heavy Bullet" Width="396" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="487,130,0,0"/>
+        <TextBlock Text="Sniper Bullet" Width="396" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1005,129,0,0"/>
+        <TextBlock Text="Granade Bullet" Width="438" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="35" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1531,129,0,0"/>
+
+
     </Grid>
 </Page>
 
