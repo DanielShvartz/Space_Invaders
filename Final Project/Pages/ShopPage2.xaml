@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Final_Project.Pages.ShopPage2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Final_Project.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Background>
+        <ImageBrush ImageSource="ms-appx:///Assets/BackGrounds/shop_background.jpg"/>
+    </Page.Background>
+
+    <Grid>
+        <Button Name="Hp50Upgrade_Button" Content="Buy 50 HP" Width="420" Height="103" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,96,0,0"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/heart_image.png" Margin="47,204,1172,517"/>
+
+        <Button Name="Hp100Upgrade_Button" Content="Buy 100 HP" Width="420" Height="103" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,624,0,0"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/heart_image.png" Margin="47,773,1172,-52" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <Button Name="ShieldUpgrade_Button" Content="Buy new Shield" Width="578" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1139,72,0,0"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/Shield.png" Margin="1164,199,228,540" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <Button Name="ShieldHeal_Button" Content="Heal Shields" Width="578" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1139,612,0,0"/>
+        <Image Source="ms-appx:///Assets/HealthPoints/hp_8_full.png" Margin="1164,700,228,39" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    </Grid>
+</Page>

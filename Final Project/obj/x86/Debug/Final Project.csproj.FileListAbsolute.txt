@@ -222,3 +222,8 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\quali
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\ProjectArchitectures.txt
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Final Project.csprojAssemblyReference.cache
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage2.xbf
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.g.i.cs
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.g.cs
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.xaml
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.xbf

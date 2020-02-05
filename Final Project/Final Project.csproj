@@ -108,6 +108,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ShopPage2.xaml.cs">
+      <DependentUpon>ShopPage2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +174,7 @@
     <Content Include="Assets\SpaceShip\Bullets\Plasma_Enemy.png" />
     <Content Include="Assets\SpaceShip\Bullets\Sniper_Shell.png" />
     <Content Include="Assets\SpaceShip\coinGif.gif" />
+    <Content Include="Assets\SpaceShip\heart_image.png" />
     <Content Include="Assets\SpaceShip\Shield.png" />
     <Content Include="Assets\SpaceShip\spaceship_1.png" />
     <Content Include="Assets\SpaceShip\spaceship_2.png" />
@@ -202,6 +206,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ShopPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -50,22 +50,29 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Final_Project.Pages.GamePage" />
-    <RootType FullName="Final_Project.Pages.ShopPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Background" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="FocusVisualSecondaryBrush" />
       <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="Final_Project.Pages.ShopPage" />
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
       <RootProperty Name="Rotation" />
       <RootProperty Name="TranslateX" />
       <RootProperty Name="TranslateY" />
     </RootType>
     <RootType FullName="Final_Project.MainPage" />
+    <RootType FullName="Final_Project.Pages.ShopPage2" />
   </Roots.RootTypes>
 </Roots>

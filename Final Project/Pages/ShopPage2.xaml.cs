@@ -20,16 +20,11 @@ namespace Final_Project.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ShopPage : Page
+    public sealed partial class ShopPage2 : Page
     {
-        public ShopPage()
+        public ShopPage2()
         {
             this.InitializeComponent();
-        }
-
-        private void ContinuePageButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(ShopPage2));
         }
     }
 }

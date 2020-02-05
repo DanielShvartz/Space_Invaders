@@ -54,6 +54,7 @@ Assets\SpaceShip\Bullets\Medium_Shell.png
 Assets\SpaceShip\Bullets\Plasma_Enemy.png
 Assets\SpaceShip\Bullets\Sniper_Shell.png
 Assets\SpaceShip\coinGif.gif
+Assets\SpaceShip\heart_image.png
 Assets\SpaceShip\Shield.png
 Assets\SpaceShip\space_ships_frame.png
 Assets\SpaceShip\spaceship_1.png
@@ -71,4 +72,5 @@ Final Project.xr.xml
 MainPage.xbf
 Pages\GamePage.xbf
 Pages\ShopPage.xbf
+Pages\ShopPage2.xbf
 Properties\Default.rd.xml

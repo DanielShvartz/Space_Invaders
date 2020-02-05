@@ -10,10 +10,15 @@
     </Page.Background>
 
     <Grid>
-        <TextBlock Text="SpaceShips" Width="763" Height="134" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="575,478,0,0"/>
-        <TextBlock Text="Bullets" Width="534" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="656,-26,0,0"/>
+        <TextBlock Text="SpaceShips" Width="763" Height="134" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127,508,0,0"/>
+        <TextBlock Text="Bullets" Width="534" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127,-26,0,0"/>
 
-        <Image Name="Space_Ship1" Source="ms-appx:///Assets/SpaceShip/spaceship_1.png" Margin="-20,754,1322,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Name="Space_Ship1_Button" Margin="68,759,1401,6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_1.png"/>
+            </Button.Background>
+        </Button>
+
         <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="0,684,1357,-75"/>
 
         <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="668,682,689,-73" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
@@ -43,6 +48,18 @@
         <TextBlock Text="Sniper Bullet" Width="396" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1005,129,0,0"/>
         <TextBlock Text="Granade Bullet" Width="438" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="35" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1531,129,0,0"/>
 
+        <Button Name="NextPageButton" Content="Next" FontFamily="Cosmic Alien" FontSize="35" FontWeight="Normal"
+                Height="79" Width="316" HorizontalAlignment="Left" Margin="1604,0,0,0" VerticalAlignment="Top" Foreground="White" Click="ContinuePageButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/Buttons/Button_Template.png"/>
+            </Button.Background>
+        </Button>
 
+        <Button Name="GameReturnPageButton" Content="Return To Game" FontFamily="Cosmic Alien" FontSize="30" FontWeight="Normal"
+                Height="79" Width="334" HorizontalAlignment="Left" Margin="1195,-3,0,0" VerticalAlignment="Top" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/Buttons/Button_Template.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

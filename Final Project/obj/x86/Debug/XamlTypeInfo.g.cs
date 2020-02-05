@@ -189,19 +189,21 @@ namespace Final_Project.Final_Project_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[5];
+            _typeNameTable = new string[6];
             _typeNameTable[0] = "Final_Project.Pages.GamePage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Final_Project.Pages.ShopPage";
             _typeNameTable[4] = "Final_Project.MainPage";
+            _typeNameTable[5] = "Final_Project.Pages.ShopPage2";
 
-            _typeTable = new global::System.Type[5];
+            _typeTable = new global::System.Type[6];
             _typeTable[0] = typeof(global::Final_Project.Pages.GamePage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Final_Project.Pages.ShopPage);
             _typeTable[4] = typeof(global::Final_Project.MainPage);
+            _typeTable[5] = typeof(global::Final_Project.Pages.ShopPage2);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -239,6 +241,7 @@ namespace Final_Project.Final_Project_XamlTypeInfo
         private object Activate_0_GamePage() { return new global::Final_Project.Pages.GamePage(); }
         private object Activate_3_ShopPage() { return new global::Final_Project.Pages.ShopPage(); }
         private object Activate_4_MainPage() { return new global::Final_Project.MainPage(); }
+        private object Activate_5_ShopPage2() { return new global::Final_Project.Pages.ShopPage2(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -275,6 +278,13 @@ namespace Final_Project.Final_Project_XamlTypeInfo
             case 4:   //  Final_Project.MainPage
                 userType = new global::Final_Project.Final_Project_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_4_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  Final_Project.Pages.ShopPage2
+                userType = new global::Final_Project.Final_Project_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_5_ShopPage2;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

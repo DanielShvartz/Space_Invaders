@@ -520,6 +520,9 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Sniper_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Sniper_Shell.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\heart_image.png">
+      <PackagePath>Assets\SpaceShip\heart_image.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\SpaceShip\Shield.png">
       <PackagePath>Assets\SpaceShip\Shield.png</PackagePath>
     </AppxPackagedFile>
@@ -594,6 +597,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage2.xbf">
+      <PackagePath>Pages\ShopPage2.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
