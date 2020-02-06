@@ -26,5 +26,20 @@ namespace Final_Project.Pages
         {
             this.InitializeComponent();
         }
+
+        private void Hp50Upgrade_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Hp100Upgrade_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShieldUpgrade_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

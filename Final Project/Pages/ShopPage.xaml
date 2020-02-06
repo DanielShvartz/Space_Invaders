@@ -13,38 +13,65 @@
         <TextBlock Text="SpaceShips" Width="763" Height="134" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127,508,0,0"/>
         <TextBlock Text="Bullets" Width="534" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127,-26,0,0"/>
 
-        <Button Name="Space_Ship1_Button" Margin="68,759,1401,6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="-3,744,1372,0" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Image.FocusVisualPrimaryBrush>
+                <ImageBrush/>
+            </Image.FocusVisualPrimaryBrush>
+        </Image>
+        <Button Canvas.ZIndex="2" Name="Space_Ship1" Height="217" Width="342" HorizontalAlignment="Left" Margin="108,768,0,0" VerticalAlignment="Top" Click="Space_Ship1_Click">
             <Button.Background>
-                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_1.png"/>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_1.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
 
-        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="0,684,1357,-75"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="662,744,693,0" Stretch="Fill"/>
+        <Button Canvas.ZIndex="2" Name="Space_Ship2" Height="227" Width="377" HorizontalAlignment="Left" Margin="763,762,0,0" VerticalAlignment="Top">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_2.png" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
 
-        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="668,682,689,-73" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Image Name="Space_Ship2" Source="ms-appx:///Assets/SpaceShip/spaceship_2.png" Margin="790,761,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="246" Width="319"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1338,744,1,2" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Canvas.ZIndex="2" Name="Space_Ship3" Height="245" Width="386" HorizontalAlignment="Left" Margin="1436,758,0,0" VerticalAlignment="Top" Click="Space_Ship3_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_3.png"/>
+            </Button.Background>
 
-        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1357,684,0,-75" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Image Name="Space_Ship3" Source="ms-appx:///Assets/SpaceShip/spaceship_3.png" Margin="1464,759,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="262" Width="381"/>
+        </Button>
+        <Button Canvas.ZIndex="2" Name="Medium_Shell" Margin="150,261,1651,627" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Medium_Shell_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/Bullets/Medium_Shell.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="0,222,1502,583" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
-        <Image Name="Medium_Shell" Source="ms-appx:///Assets/SpaceShip/Bullets/Medium_Shell.png" Margin="48,271,1625,607" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="-41,200,1545,539" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1010,222,492,583" Stretch="Fill"/>
+        <Button Canvas.ZIndex="2" Name="Sniper_Bullet" Height="131" Width="211" HorizontalAlignment="Left" Margin="1114,258,0,0" VerticalAlignment="Top" Click="Sniper_Bullet_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/Bullets/Sniper_Shell.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
 
-        <Image Name="Heavy_Shell" Source="ms-appx:///Assets/SpaceShip/Bullets/Heavy_Shell.png" Margin="563,255,1084,605"/>
-        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="487,200,1017,539" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="495,222,1007,583" Stretch="Fill"/>
+        <Button Height="107" Width="138" Name="Heavy_Bullet" Canvas.ZIndex="2" HorizontalAlignment="Left" Margin="638,257,0,0" VerticalAlignment="Top" Click="Heavy_Bullet_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/Bullets/Heavy_Shell.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
 
-        <Image Name="Sniper_Shell" Source="ms-appx:///Assets/SpaceShip/Bullets/Sniper_Shell.png" Margin="1106,261,591,622" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1005,200,499,539"/>
-
-        <Image Name="Granade_Shell" Source="ms-appx:///Assets/SpaceShip/Bullets/Granade_Shell.png" Margin="1604,255,43,605" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1524,200,-20,539"/>
+        <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1502,222,0,583" Stretch="Fill"/>
+        <Button Height="131" Width="152" Canvas.ZIndex="2" Name="Granade_Bullet" HorizontalAlignment="Left" Margin="1645,261,0,0" VerticalAlignment="Top" Click="Granade_Bullet_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/Bullets/Granade_Shell.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
 
         <TextBlock Text="Ship Level 1" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,635,0,0"/>
         <TextBlock Text="Ship Level 2" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="705,635,0,0"/>
         <TextBlock Text="Ship Level 3" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1379,635,0,0"/>
 
         <TextBlock Text="Medium Bullet" Width="501" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,129,0,0"/>
-        <TextBlock Text="Heavy Bullet" Width="396" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="487,130,0,0"/>
+        <TextBlock Text="Heavy Bullet" Width="396" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="495,129,0,0"/>
         <TextBlock Text="Sniper Bullet" Width="396" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1005,129,0,0"/>
         <TextBlock Text="Granade Bullet" Width="438" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="35" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1531,129,0,0"/>
 

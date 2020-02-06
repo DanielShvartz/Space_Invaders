@@ -31,5 +31,42 @@ namespace Final_Project.Pages
         {
             Frame.Navigate(typeof(ShopPage2));
         }
+        
+        //spaceships
+        private void Space_Ship1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Space_Ship2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Space_Ship3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //bullets
+        private void Medium_Shell_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sniper_Bullet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Heavy_Bullet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Granade_Bullet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

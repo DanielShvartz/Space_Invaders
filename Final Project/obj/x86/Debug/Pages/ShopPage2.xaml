@@ -11,17 +11,33 @@
     </Page.Background>
 
     <Grid>
-        <Button x:ConnectionId='2' Name="Hp50Upgrade_Button" Content="Buy 50 HP" Width="420" Height="103" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,96,0,0"/>
-        <Image Source="ms-appx:///Assets/SpaceShip/heart_image.png" Margin="47,204,1172,517"/>
+        <TextBlock Text="Buy 50 HP" Width="420" Height="103" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,96,0,0"/>
+        <Button x:ConnectionId='2' Canvas.ZIndex="2"  Name="Hp50Upgrade_Button" Margin="122,183,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="455" Height="374"                                 >
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/heart_image.png"/>
+            </Button.Background>
+        </Button>
 
-        <Button x:ConnectionId='3' Name="Hp100Upgrade_Button" Content="Buy 100 HP" Width="420" Height="103" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,624,0,0"/>
-        <Image Source="ms-appx:///Assets/SpaceShip/heart_image.png" Margin="47,773,1172,-52" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <TextBlock Text="Buy 100 HP" Width="420" Height="103" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,624,0,0"/>
+        <Button x:ConnectionId='3' Canvas.ZIndex="2" Name="Hp100Upgrade_Button" Margin="122,689,1301,-17" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                                  >
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/heart_image.png"/>
+            </Button.Background>
+        </Button>
 
-        <Button x:ConnectionId='4' Name="ShieldUpgrade_Button" Content="Buy new Shield" Width="578" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1139,72,0,0"/>
-        <Image Source="ms-appx:///Assets/SpaceShip/Shield.png" Margin="1164,199,228,540" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <TextBlock Text="Buy new Shield" Width="578" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1139,72,0,0" />
+        <Button x:ConnectionId='4' Canvas.ZIndex="2" Name="ShieldUpgrade_Button" Margin="1139,165,212,540" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                                   >
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/Shield.png"/>
+            </Button.Background>
+        </Button>
 
-        <Button x:ConnectionId='5' Name="ShieldHeal_Button" Content="Heal Shields" Width="578" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1139,612,0,0"/>
-        <Image Source="ms-appx:///Assets/HealthPoints/hp_8_full.png" Margin="1164,700,228,39" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <TextBlock Text="Heal Shields" Width="578" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1139,612,0,0"/>
+        <Button x:ConnectionId='5' Name="ShieldHeal_Button" Canvas.ZIndex="2" Margin="1164,700,228,39" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/Shield.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>
 
