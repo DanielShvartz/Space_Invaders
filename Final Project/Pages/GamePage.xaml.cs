@@ -142,7 +142,7 @@ namespace Final_Project.Pages
             //create a timer that create a bullets for the enemys. it create a bullet and the game movement timer will move it.
             // the game movement timer needs also to move on all the enemy bullets and check for collusion
             enemy_create_bullet_timer = new DispatcherTimer();
-            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(0.5); // you can always change how much fast enemys shoot
+            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(1); // you can always change how much fast enemys shoot
             enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
             enemy_create_bullet_timer.Start();
         }

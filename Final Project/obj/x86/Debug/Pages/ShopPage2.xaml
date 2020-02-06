@@ -38,6 +38,23 @@
                 <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/Shield.png"/>
             </Button.Background>
         </Button>
+
+        <Button x:ConnectionId='6' Name="GameReturnPageButton" Content="Return To Game" FontFamily="Cosmic Alien" FontSize="35" FontWeight="Normal"
+                Height="119" Width="394" HorizontalAlignment="Left" Margin="634,370,0,0" VerticalAlignment="Top" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/Buttons/Button_Template.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:ConnectionId='7' Name="BackPageButton" Content="Back" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal"
+                Height="117" Width="384" HorizontalAlignment="Left" Margin="644,583,0,0" VerticalAlignment="Top" Foreground="White"                             >
+            <Button.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/Buttons/Button_Template.png"/>
+            </Button.Background>
+        </Button>
+
+
+
     </Grid>
 </Page>
 
