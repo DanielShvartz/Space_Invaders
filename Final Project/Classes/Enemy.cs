@@ -18,23 +18,24 @@ namespace Final_Project.Classes
         // because the x and y is changing different in the enemy and in the player 
         //we cant init it in the base only in the players class
            
-        public Enemy(double x, double y, double dySpeed, double dxSpeed, Canvas canvas, string imageLocation, int EnemyLevel) : base(dxSpeed, canvas, imageLocation)
+        //Each level enemy gets stronger - more hp, more dmg, faster.
+        public Enemy(double x, double y, double dySpeed, double dxSpeed, Canvas canvas, string imageLocation, int EnemyLevel, int currentLevel) : base(dxSpeed, canvas, imageLocation)
         {
-            this.enemyLevel = EnemyLevel; // to know level
+            this.enemyLevel = EnemyLevel; // to know level of enemu
             switch(EnemyLevel) // maybe changed the way he gets hp, maybe from the constrcutor get a hp or from outside
             {
                 case 1:
-                    hitPoints = 2;
+                    hitPoints = enemyLevel + currentLevel; // hitpoints are going up in each level
                     this.image.Width = 39;
                     this.image.Height = 104;
                     break;
                 case 2:
-                    hitPoints = 3;
+                    hitPoints = enemyLevel + currentLevel;
                     this.image.Width = 56;
                     this.image.Height = 108;
                     break;
                 case 3:
-                    hitPoints = 4;
+                    hitPoints = enemyLevel + currentLevel;
                     this.image.Width = 80; 
                     this.image.Height = 108;
                     break;

@@ -1,4 +1,5 @@
 ﻿using Final_Project.Classes;
+using Final_Project.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,9 +29,10 @@ namespace Final_Project.Pages
     public sealed partial class GamePage : Page
     { 
         Player player;
-        Bullet bullet;
         Enemy enemy;
+        Bullet bullet;
         static Random rnd;
+        private Level Level;
 
         DispatcherTimer game_timer_movement;
         DispatcherTimer enemy_create_bullet_timer;
@@ -41,8 +43,9 @@ namespace Final_Project.Pages
         const int RANDOM_MIN_VALUE = 2;
         const double SHIELD_HP_NUM = 24;
         const double SHIELD_REDUCEMENT = SHIELD_HP_NUM / 8;
-        double levelSpeedY = 1; // for now this is the level speed, each level updates the speed of the enemy
-        double levelSpeedX = 1;
+        //double levelSpeedY = 1; 
+        // for now this is the level speed, each level updates the speed of the enemy
+        //double levelSpeedX = 1;
         int coins = 0;
 
         List<Bullet> bullet_Control; // we will have a list of bullets to control the bullets movement
@@ -53,13 +56,14 @@ namespace Final_Project.Pages
         List<double> ShieldHp; // init array of 3 shield hp
         List<Rect> ShieldRectangles; // init array of 3 rectnagle of the shields to check hits
         
-
         public GamePage()
         {
             this.InitializeComponent();
         }
 
-        private void initEnemies(Canvas canvas)
+        public void UpLevel() { }
+
+        private void InitEnemies(Canvas canvas)
         {
             const double startingX = 165; //defualt values which can adjust the settings of the enemies creaiton
             const double spacingX = 120;
@@ -86,7 +90,7 @@ namespace Final_Project.Pages
                     }
 
                     // the x and y is also the space between them
-                    enemy = new Enemy(startingX + (spacingX * counter), startingY + (spacingY * (i - 3)), rnd.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE) * levelSpeedY, rnd.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE) * levelSpeedX, this.canvas, imLocation, i); // dx and dy are not yet given
+                    enemy = new Enemy(startingX + (spacingX * counter), startingY + (spacingY * (i - 3)), rnd.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE) * Level.Currentlevel, rnd.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE) * Level.Currentlevel, this.canvas, imLocation, i, Level.Currentlevel); // dx and dy are not yet given
                     enemy_Control.Add(enemy); // add to list
                     counter++; // add the counter
                 }
@@ -108,10 +112,37 @@ namespace Final_Project.Pages
             
         }
 
+        private void BuildAllLevels()
+        {
+            // הפעולה בונה את מסד הנתונים של SQLITE 
+            // בודקת האם המסד נתונים ריק ואם כן 
+            // ומזמנת פעולה BuildLevel(i)  נוספת שתיצור 5 רמות
+
+            // we dont need to create the db
+            if (DataAccessLayer.GetAllLevels().Count == 0) // if we dont have level - no data
+                for (int i = 1; i <= 10; i++) // we create 5 levels
+                    BuildLevel(i); // for each level we build a level
+        }
+
+        private void BuildLevel(int numLevel)
+        {
+            // הפעולה מקבלת את מספר הרמה שרוצים ליצור עבורה רשומה במסד SQLITE
+            // מאתחלת את כל התכונות של הרמה ומוסיפה רמה למסד
+
+            Level level;
+            level = new Level(numLevel);
+            DataAccessLayer.Insert(level);
+        }
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             counterPress = 0;
             rnd = new Random();
+            //check if login - if so - load level by last level played - if not start at one
+            DataAccessLayer.DeleteAll(); // delete the data base if exist
+            DataAccessLayer.CreateDataBase(); //create db
+            BuildAllLevels(); // lost levels
+            Level = DataAccessLayer.SelectByNum(1); // at the start
 
             //initalize componenets when the game starts
             player = new Player(15, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
@@ -120,7 +151,7 @@ namespace Final_Project.Pages
             bullet_Control = new List<Bullet>(); // this lists also allows to remove hit bullets from the canvas and check for bullet collution
             enemy_bullet_control = new List<Bullet>();
             enemy_Control = new List<Enemy>();
-            initEnemies(canvas);
+            InitEnemies(canvas);
 
             Shields_Images = new List<Image> { shield_1, shield_2, shield_3}; // init list of shields to be able to remove them easly and thier hp
             Shields_hp_Images = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
@@ -153,7 +184,7 @@ namespace Final_Project.Pages
             int chosenEnemy = rnd.Next(0, enemy_Control.Count()); // choose enemy to get him a new bullet
             
             //create a bullet for the enemy, in the middle of the enemy, where the enemy level can adjust its bullet type, so level one is normal two is plasma 3 is laser
-            bullet = new Bullet(enemy_Control[chosenEnemy].getPlayerLocation()[0] + (enemy_Control[chosenEnemy].GetWidth() / 2), enemy_Control[chosenEnemy].getPlayerLocation()[1], canvas, (Bullets)enemy_Control[chosenEnemy].enemyLevel);
+            bullet = new Bullet(enemy_Control[chosenEnemy].getPlayerLocation()[0] + (enemy_Control[chosenEnemy].GetWidth() / 2), enemy_Control[chosenEnemy].getPlayerLocation()[1], canvas, (Bullets)enemy_Control[chosenEnemy].enemyLevel, Level.Currentlevel);
             enemy_bullet_control.Add(bullet); // add to the control list the current enemy bullet
         }
 
@@ -360,7 +391,6 @@ namespace Final_Project.Pages
             }
         }
 
-
         private void CoreWindow_KeyDown(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
         {  
             if (counterPress == 21) // after that we unblock agai
@@ -380,7 +410,7 @@ namespace Final_Project.Pages
                 else // if he is not on cooldown
                 {
                     //first place the bullet on the canvas places in the middle of the ship
-                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default);
+                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default, Level.Currentlevel);
                     bullet_Control.Add(bullet); // add to the control list the current bullet
                     counterPress++; // each press we count how much time it was pressed
                 }

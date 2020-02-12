@@ -227,3 +227,8 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.g.cs
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.xaml
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.xbf
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.dll
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.pdb
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.winmd
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Net.Platform.WinRT.dll
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Net.dll

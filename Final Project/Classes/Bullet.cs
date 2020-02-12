@@ -28,7 +28,7 @@ namespace Final_Project.Classes
         public double damage; // speed of bullet, dmg and image
         Image bullet_image;
 
-        public Bullet(double Shipx, double Shipy, Canvas canvas, Bullets bullet_type)
+        public Bullet(double Shipx, double Shipy, Canvas canvas, Bullets bullet_type, int currentLevel)
         {
             this.canvas = canvas;
             this.bullet_type = bullet_type;
@@ -86,7 +86,7 @@ namespace Final_Project.Classes
                 // to adujst by enemy levels these are as enemy levels so we can choose each much easly
                 case Bullets.Enemy_Shell:
                     speedDy = 17;
-                    damage = 1.5;
+                    damage = 0.5 + currentLevel;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/Enemys/Enemy_Bullet.png"));
                     bullet_image.Width = 21;
                     bullet_image.Height = 96;
@@ -94,7 +94,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Plasma:
                     speedDy = 19;
-                    damage = 2.5;
+                    damage = 1.5 + currentLevel;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Plasma_Enemy.png"));
                     bullet_image.Width = 24;
                     bullet_image.Height = 87;
@@ -103,7 +103,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Laser:
                     speedDy = 21; 
-                    damage = 3.5;
+                    damage = 2.5 + currentLevel;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Laser_Enemy.png"));
                     bullet_image.Width = 12;
                     bullet_image.Height = 72;
