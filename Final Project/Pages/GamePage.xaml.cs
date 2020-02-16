@@ -39,7 +39,7 @@ namespace Final_Project.Pages
 
         double Player_HitPoints = 100;
         int counterPress = 0;
-        const int RANDOM_MAX_VALUE = 8;
+        const int RANDOM_MAX_VALUE = 5;
         const int RANDOM_MIN_VALUE = 2;
         const double SHIELD_HP_NUM = 24;
         const double SHIELD_REDUCEMENT = SHIELD_HP_NUM / 8;
@@ -48,10 +48,10 @@ namespace Final_Project.Pages
         //double levelSpeedX = 1;
         int coins = 0;
 
-        List<Bullet> bullet_Control; // we will have a list of bullets to control the bullets movement
-        List<Bullet> enemy_bullet_control;
-        List<Enemy> enemy_Control;
-        List<Image> Shields_Images;
+        List<Bullet> bullet_Control;// we will have a list of bullets to control the bullets movement
+        List<Bullet> enemy_bullet_control;//enemys bullets
+        List<Enemy> enemy_Control; // enemies
+        List<Image> Shields_Images; 
         List<Image> Shields_hp_Images;
         List<double> ShieldHp; // init array of 3 shield hp
         List<Rect> ShieldRectangles; // init array of 3 rectnagle of the shields to check hits
@@ -90,7 +90,7 @@ namespace Final_Project.Pages
                     }
 
                     // the x and y is also the space between them
-                    enemy = new Enemy(startingX + (spacingX * counter), startingY + (spacingY * (i - 3)), rnd.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE) * Level.Currentlevel, rnd.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE) * Level.Currentlevel, this.canvas, imLocation, i, Level.Currentlevel); // dx and dy are not yet given
+                    enemy = new Enemy(startingX + (spacingX * counter), startingY + (spacingY * (i - 3)), rnd.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE) * Level.Currentlevel / 2, rnd.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE) * Level.Currentlevel / 2, this.canvas, imLocation, i, Level.Currentlevel); // dx and dy are not yet given
                     enemy_Control.Add(enemy); // add to list
                     counter++; // add the counter
                 }
@@ -101,15 +101,6 @@ namespace Final_Project.Pages
                 }
             }
 
-        }
-
-        async System.Threading.Tasks.Task MessageStartAsync()
-        {
-            var dialog = new MessageDialog("Press Ok To start!");
-            dialog.Title = "NewGame";
-            dialog.Commands.Add(new UICommand { Label = "Ok", Id = 0 });
-            await dialog.ShowAsync();
-            
         }
 
         private void BuildAllLevels()
@@ -143,6 +134,7 @@ namespace Final_Project.Pages
             DataAccessLayer.CreateDataBase(); //create db
             BuildAllLevels(); // lost levels
             Level = DataAccessLayer.SelectByNum(1); // at the start
+            Level_Text.Text = "Level: " + Level.Currentlevel;
 
             //initalize componenets when the game starts
             player = new Player(15, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
@@ -188,11 +180,54 @@ namespace Final_Project.Pages
             enemy_bullet_control.Add(bullet); // add to the control list the current enemy bullet
         }
 
+        async System.Threading.Tasks.Task LevelUpMessageAsync(int NewLevel)
+        {
+            NewLevel++;
+            //check if won the game
+            Level_Text.Text = "Level: " + NewLevel; 
+            var dialog = new MessageDialog("You Have Leveled Up To Level " + (NewLevel)  + " !" + "\nPlease Choose:");
+            dialog.Title = "Level Up!";
+
+            dialog.Commands.Add(new UICommand { Label = "Continue To The Next Level", Id = 0 });
+            dialog.Commands.Add(new UICommand { Label = "Continue To Shop", Id = 1 });
+            var ans = await dialog.ShowAsync(); 
+
+            if ((int)ans.Id == 0) // continue to next level
+            {
+                Level = DataAccessLayer.SelectByNum(NewLevel);
+                InitEnemies(canvas); //there is no enemies right now so we just init as usual but load a new level
+                Player_HitPoints += ((NewLevel / 3) + 1 * 10); //players gets more hp !
+                Health_Text.Text = "Health: " + Player_HitPoints + "%";
+                game_timer_movement.Start(); // start timer
+
+                enemy_create_bullet_timer = new DispatcherTimer();
+                enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds((double)1/NewLevel); // each level more enemies will shoot
+                enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
+                enemy_create_bullet_timer.Start();
+            }
+            if ((int)ans.Id == 1) // continue to the shop
+            {
+                Frame.Navigate(typeof(ShopPage));
+            }
+        }
+
         private void Game_timer_movement_Tick(object sender, object e)
         {
             bool hitRemoved = true;
             bool bulletGotHit = true;
             double remainHP;
+
+            if(enemy_Control.Count() == 0) // if these is no enemies  - we level up because he killed all the enemies
+            {
+                //stop clocks
+                enemy_create_bullet_timer.Stop(); // stop creating bullets for enemies because there are no more enemies.
+                game_timer_movement.Stop(); // stop the game timer - to not check 
+                LevelUpMessageAsync(Level.Currentlevel);
+                //now depends on the option he choose
+            }
+            else // move enemys
+                for (int i = 0; i < enemy_Control.Count(); i++) // move the the enemies 
+                    enemy_Control[i].Move();
 
             if (bullet_Control.Count() != 0) // bullets from player - check for hit with enemys and remove them:
                 //if we have bullets we run on both lists , the first loop runs on each bullet and then each bullet,
@@ -253,9 +288,6 @@ namespace Final_Project.Pages
                         MoveBullet(bullet_Control[player_bullet]); // moves if hits and bigger dmg than hp or didnt hit at all
                 }
             }
-            if(enemy_Control.Count() != 0) // move enemys
-                for (int i = 0; i < enemy_Control.Count(); i++) // move the the enemies 
-                    enemy_Control[i].Move();
 
             for (int bullet = 0; bullet < enemy_bullet_control.Count(); bullet++) //  - for each bullet i - per bullet - move on each bullet of the enemy
             {

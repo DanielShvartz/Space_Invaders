@@ -25,17 +25,17 @@ namespace Final_Project.Classes
             switch(EnemyLevel) // maybe changed the way he gets hp, maybe from the constrcutor get a hp or from outside
             {
                 case 1:
-                    hitPoints = enemyLevel + currentLevel; // hitpoints are going up in each level
+                    hitPoints = enemyLevel + currentLevel - 1; // hitpoints are going up in each level
                     this.image.Width = 39;
                     this.image.Height = 104;
                     break;
                 case 2:
-                    hitPoints = enemyLevel + currentLevel;
+                    hitPoints = enemyLevel + currentLevel - 1;
                     this.image.Width = 56;
                     this.image.Height = 108;
                     break;
                 case 3:
-                    hitPoints = enemyLevel + currentLevel;
+                    hitPoints = enemyLevel + currentLevel - 1;
                     this.image.Width = 80; 
                     this.image.Height = 108;
                     break;

@@ -2,6 +2,7 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\App.x
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\GamePage.xbf
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage.xbf
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\MainPage.xbf
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage2.xbf
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.xr.xml
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.exe
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.pdb
@@ -50,6 +51,11 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Syste
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\clrjit.dll
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\clrcompression.dll
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\System.Private.Uri.dll
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.dll
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.pdb
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.winmd
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Net.Platform.WinRT.dll
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Net.dll
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\System.AppContext.dll
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\System.Buffers.dll
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\System.Collections.Concurrent.dll
@@ -124,6 +130,7 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Syste
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\System.Xml.XDocument.dll
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\System.Xml.XmlDocument.dll
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\System.Xml.XmlSerializer.dll
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Final Project.csprojAssemblyReference.cache
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\App.g.i.cs
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\App.g.cs
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\GamePage.g.i.cs
@@ -132,15 +139,19 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage.g.cs
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\MainPage.g.i.cs
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\MainPage.g.cs
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.g.i.cs
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.g.cs
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\XamlTypeInfo.g.cs
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\App.xaml
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\GamePage.xaml
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage.xaml
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\MainPage.xaml
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.xaml
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\App.xbf
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\GamePage.xbf
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage.xbf
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\MainPage.xbf
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.xbf
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\XamlSaveStateFile.xml
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Final Project.csproj.CoreCompileInputs.cache
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Final Project.csproj.CopyComplete
@@ -221,14 +232,3 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\quali
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\qualifiers.txt.intermediate
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\ProjectArchitectures.txt
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Final Project.csprojAssemblyReference.cache
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage2.xbf
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.g.i.cs
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.g.cs
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.xaml
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\ShopPage2.xbf
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.dll
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.pdb
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Core.winmd
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Net.Platform.WinRT.dll
-D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\SQLite.Net.dll
