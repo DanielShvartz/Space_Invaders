@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Classes\Base.cs" />
     <Compile Include="Classes\Bullet.cs" />
+    <Compile Include="Classes\Data.cs" />
     <Compile Include="Classes\Enemy.cs" />
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Pages\GamePage.xaml.cs">
@@ -129,6 +130,7 @@
     <Content Include="Assets\BackGrounds\shop_background.jpg" />
     <Content Include="Assets\BackGrounds\veryFinalBackGround.png" />
     <Content Include="Assets\Buttons\Button_Template.png" />
+    <Content Include="Assets\Buttons\mp_login_Button.png" />
     <Content Include="Assets\Buttons\mp_logout_button.png" />
     <Content Include="Assets\Buttons\mp_shop_button.png" />
     <Content Include="Assets\Buttons\mp_start_button.png" />

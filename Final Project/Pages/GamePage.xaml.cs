@@ -27,12 +27,14 @@ namespace Final_Project.Pages
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class GamePage : Page
-    { 
+    {
+        Data toSend;
         Player player;
         Enemy enemy;
         Bullet bullet;
         static Random rnd;
         private Level Level;
+        Bullets playerBulletType;
 
         DispatcherTimer game_timer_movement;
         DispatcherTimer enemy_create_bullet_timer;
@@ -135,6 +137,8 @@ namespace Final_Project.Pages
             BuildAllLevels(); // lost levels
             Level = DataAccessLayer.SelectByNum(1); // at the start
             Level_Text.Text = "Level: " + Level.Currentlevel;
+            playerBulletType = Bullets.Light_Shell_Default; // for now start
+
 
             //initalize componenets when the game starts
             player = new Player(15, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
@@ -205,9 +209,10 @@ namespace Final_Project.Pages
                 enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
                 enemy_create_bullet_timer.Start();
             }
-            if ((int)ans.Id == 1) // continue to the shop
+            if ((int)ans.Id == 1) // continue to the shop - sends info to shop page
             {
-                Frame.Navigate(typeof(ShopPage));
+                toSend = new Data(NewLevel, coins, Player_HitPoints, player.GetImage(), playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles);
+                Frame.Navigate(typeof(ShopPage), toSend); // we send all the info needed for the shop to buy the wanted things 
             }
         }
 

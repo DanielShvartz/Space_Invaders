@@ -8,6 +8,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace Final_Project.Classes
 {
+    
     class Player : Base
     {
         // when you create a new player you give him the location of the image to be initialized

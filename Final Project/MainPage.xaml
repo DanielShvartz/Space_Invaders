@@ -28,9 +28,9 @@
                 <ImageBrush ImageSource="Assets/Buttons/mp_shop_button.png"/>
             </Button.Background>
         </Button>
-        <Button Name="logoutButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,630,0,0" VerticalAlignment="Top">
+        <Button Name="loginButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,630,0,0" VerticalAlignment="Top">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/Buttons/mp_logout_button.png"/>
+                <ImageBrush ImageSource="Assets/Buttons/mp_login_Button.png"/>
             </Button.Background>
         </Button>
 
