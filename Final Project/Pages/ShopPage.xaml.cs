@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_Project.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +23,28 @@ namespace Final_Project.Pages
     /// </summary>
     public sealed partial class ShopPage : Page
     {
+        Data data;
+        
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            data = (Data)e.Parameter;
+            if (data == null)
+                return;
+
+            if (data.player_Bullet >= Bullets.Heavy_Shell) // depands on past chooses
+                Medium_Shell.IsEnabled = false;
+            if (data.player_Bullet >= Bullets.Granade_Shell) // if the player has a specific bullet or spaceship
+                Heavy_Bullet.IsEnabled = false;
+            if (data.player_Bullet >= Bullets.Sniper_Shell) // we prevent him for buying weaker bullet
+                Granade_Bullet.IsEnabled = false;
+
+            if (data.player_SpaceShip_Level >= (int)SpaceShips.Level2)
+                Space_Ship1.IsEnabled = false;
+            if (data.player_SpaceShip_Level >= (int)SpaceShips.Level3)
+                Space_Ship2.IsEnabled = false;
+
+        }
+
         public ShopPage()
         {
             this.InitializeComponent();
@@ -35,7 +58,7 @@ namespace Final_Project.Pages
         //spaceships
         private void Space_Ship1_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void Space_Ship2_Click(object sender, RoutedEventArgs e)

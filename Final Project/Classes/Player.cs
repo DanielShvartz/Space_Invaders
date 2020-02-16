@@ -8,14 +8,18 @@ using Windows.UI.Xaml.Controls;
 
 namespace Final_Project.Classes
 {
-    
+    public enum SpaceShips
+    {
+        Default = 0, Level1, Level2, Level3
+    };
     class Player : Base
     {
         // when you create a new player you give him the location of the image to be initialized
         // because the x and y is changing different in the enemy and in the player 
         //we cant init it in the base only in the players class
 
-        public Player(double dxSpeed, Canvas canvas, string imageLocation) : base(dxSpeed, canvas, imageLocation)
+        public int SpaceShip_Level;
+        public Player(double dxSpeed, Canvas canvas, string imageLocation, int SpaceShip_Level) : base(dxSpeed, canvas, imageLocation)
         {
             this.image.Width = 75; // after image got initalized
             this.image.Height = 75;
@@ -26,6 +30,7 @@ namespace Final_Project.Classes
             Canvas.SetLeft(this.image, this.x); // place and add to canvas
             Canvas.SetTop(this.image, this.y);
             canvas.Children.Add(this.image);
+            this.SpaceShip_Level = SpaceShip_Level;
         }
 
         public override void Move(string direction)

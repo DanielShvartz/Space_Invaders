@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-02-16T09:53:22.639</Modified>
+      <Modified>2020-02-16T12:21:29.164</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.exe">
       <PackagePath>entrypoint\Final Project.exe</PackagePath>
-      <Modified>2020-02-16T09:53:22.250</Modified>
+      <Modified>2020-02-16T12:21:28.557</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -539,6 +539,10 @@
       <PackagePath>Assets\Buttons\Button_Template.png</PackagePath>
       <Modified>2020-01-27T11:24:39.330</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Buttons\mp_login_Button.png">
+      <PackagePath>Assets\Buttons\mp_login_Button.png</PackagePath>
+      <Modified>2020-02-16T11:19:11.727</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\Buttons\mp_logout_button.png">
       <PackagePath>Assets\Buttons\mp_logout_button.png</PackagePath>
       <Modified>2019-12-08T07:59:39.918</Modified>
@@ -803,23 +807,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-02-16T09:53:22.096</Modified>
+      <Modified>2020-02-16T12:21:28.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\GamePage.xbf">
       <PackagePath>Pages\GamePage.xbf</PackagePath>
-      <Modified>2020-02-16T09:53:22.096</Modified>
+      <Modified>2020-02-16T12:21:28.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage.xbf">
       <PackagePath>Pages\ShopPage.xbf</PackagePath>
-      <Modified>2020-02-16T09:53:22.096</Modified>
+      <Modified>2020-02-16T12:21:28.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-02-16T09:53:22.096</Modified>
+      <Modified>2020-02-16T12:21:28.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage2.xbf">
       <PackagePath>Pages\ShopPage2.xbf</PackagePath>
-      <Modified>2020-02-16T09:53:22.097</Modified>
+      <Modified>2020-02-16T12:21:28.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -828,11 +832,11 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-02-16T06:49:36.387</Modified>
+      <Modified>2020-02-16T11:41:05.147</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\Final Project.exe">
       <PackagePath>Final Project.exe</PackagePath>
-      <Modified>2020-02-16T09:53:22.574</Modified>
+      <Modified>2020-02-16T12:21:29.085</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

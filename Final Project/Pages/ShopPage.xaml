@@ -66,8 +66,8 @@
             </Button.Background>
         </Button>
 
-        <TextBlock Text="Ship Level 1" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,635,0,0"/>
-        <TextBlock Text="Ship Level 2" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="705,635,0,0"/>
+        <TextBlock Text="Ship Level 1" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-9,663,0,0"/>
+        <TextBlock Text="Ship Level 2" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="690,644,0,0"/>
         <TextBlock Text="Ship Level 3" Width="467" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1379,635,0,0"/>
 
         <TextBlock Text="Medium Bullet" Width="501" Height="80" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="40" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,129,0,0"/>

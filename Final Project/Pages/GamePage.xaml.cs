@@ -138,10 +138,8 @@ namespace Final_Project.Pages
             Level = DataAccessLayer.SelectByNum(1); // at the start
             Level_Text.Text = "Level: " + Level.Currentlevel;
             playerBulletType = Bullets.Light_Shell_Default; // for now start
-
-
             //initalize componenets when the game starts
-            player = new Player(15, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png");
+            player = new Player(15, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png", (int)SpaceShips.Default);
 
             // when the page is loaded we create a new list
             bullet_Control = new List<Bullet>(); // this lists also allows to remove hit bullets from the canvas and check for bullet collution
@@ -211,7 +209,7 @@ namespace Final_Project.Pages
             }
             if ((int)ans.Id == 1) // continue to the shop - sends info to shop page
             {
-                toSend = new Data(NewLevel, coins, Player_HitPoints, player.GetImage(), playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles);
+                toSend = new Data(NewLevel, coins, Player_HitPoints, player.SpaceShip_Level, playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles);
                 Frame.Navigate(typeof(ShopPage), toSend); // we send all the info needed for the shop to buy the wanted things 
             }
         }
