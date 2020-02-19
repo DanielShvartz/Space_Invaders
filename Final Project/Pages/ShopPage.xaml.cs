@@ -52,7 +52,7 @@ namespace Final_Project.Pages
 
         private void ContinuePageButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(ShopPage2));
+            Frame.Navigate(typeof(ShopPage2), data);
         }
         
         //spaceships

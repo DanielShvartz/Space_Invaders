@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_Project.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,14 @@ namespace Final_Project.Pages
     /// </summary>
     public sealed partial class ShopPage2 : Page
     {
+        Data data;
         public ShopPage2()
         {
             this.InitializeComponent();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            data = (Data)e.Parameter;
         }
 
         private void Hp50Upgrade_Button_Click(object sender, RoutedEventArgs e)
