@@ -41,7 +41,7 @@ namespace Final_Project.Pages
 
         double Player_HitPoints = 100;
         int counterPress = 0;
-        const int RANDOM_MAX_VALUE = 5;
+        const int RANDOM_MAX_VALUE = 6;
         const int RANDOM_MIN_VALUE = 2;
         const double SHIELD_HP_NUM = 24;
         const double SHIELD_REDUCEMENT = SHIELD_HP_NUM / 8;

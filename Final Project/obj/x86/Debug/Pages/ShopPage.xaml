@@ -10,8 +10,8 @@
     </Page.Background>
 
     <Grid>
-        <TextBlock Canvas.ZIndex="1" Text="SpaceShips" Width="763" Height="134" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127,490,0,0"/>
-        <TextBlock Text="Bullets" Width="534" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127,-26,0,0"/>
+        <TextBlock Canvas.ZIndex="1" Text="SpaceShips" Width="763" Height="134" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,496,0,0"/>
+        <TextBlock Text="Bullets" Width="534" Height="127" Canvas.Left="2" FontFamily="Cosmic Alien" FontSize="100" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,-36,0,0"/>
 
         <Image Canvas.ZIndex="1" Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="-3,744,1372,0" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Image.FocusVisualPrimaryBrush>
@@ -109,6 +109,9 @@
 
         <TextBlock Text="700" Width="137" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1502,137,0,0"/>
         <Image Canvas.ZIndex="10" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1" Margin="1612,137,193,805" Stretch="Fill"/>
+
+        <TextBlock x:ConnectionId='11' Name="Coin_Text" Text="Coins:0" Width="510" Height="81" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="55" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="647,0,0,0"/>
+        <Image Canvas.ZIndex="10" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1" Margin="980,15,825,927" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
     </Grid>
 </Page>
