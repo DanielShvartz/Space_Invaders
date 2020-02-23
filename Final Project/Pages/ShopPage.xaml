@@ -83,7 +83,7 @@
         </Button>
 
         <Button Name="GameReturnPageButton" Content="Return To Game" FontFamily="Cosmic Alien" FontSize="30" FontWeight="Normal"
-                Height="79" Width="334" HorizontalAlignment="Left" Margin="1195,-3,0,0" VerticalAlignment="Top" Foreground="White">
+                Height="79" Width="334" HorizontalAlignment="Left" Margin="1195,-3,0,0" VerticalAlignment="Top" Foreground="White" Click="GameReturnPageButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="ms-appx:///Assets/Buttons/Button_Template.png"/>
             </Button.Background>

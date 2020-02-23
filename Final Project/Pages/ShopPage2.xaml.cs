@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -57,6 +58,34 @@ namespace Final_Project.Pages
             Frame.Navigate(typeof(ShopPage), data);
         }
 
+        void createNewShield(int itemNewIndex) //index of new item to insert
+        {
+            Image shield_image = new Image(); // create new shield image
+            shield_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
+            data.Shields_Images.Insert(itemNewIndex, shield_image);
+
+            Image shield_image_hp = new Image(); // create new shield hp image
+            shield_image_hp.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
+            data.Shields_hp_Images.Insert(itemNewIndex, shield_image_hp);
+
+            data.ShieldHp.Insert(itemNewIndex, 24); // insert new hp
+
+            Rect shield_rect;
+            switch(itemNewIndex)
+            {
+                case 0:
+                    shield_rect = new Rect(250, 638, 290, 332); // create new shield rect by index
+                    break;
+                case 1:
+                    shield_rect = new Rect(842, 638, 290, 332);
+                    break;
+                case 2:
+                    shield_rect = new Rect(1442, 638, 290, 332);
+                    break;
+            }
+            data.ShieldRectangles.Insert(itemNewIndex, shield_rect);
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -69,17 +98,33 @@ namespace Final_Project.Pages
             {
                 data.coins -= coinsNeeded; // if so we decrease his coins and set the item - to set in the game page
                 Coin_Text.Text = "Coins:" + data.coins;
-                if (itemType == ItemType.HealthUpgrade50) // we set the wanted item by its id
+                if (itemType == ItemType.HealthUpgrade50)// 50 hp buy  // we set the wanted item by its id
                     data.player_HitPoints += 50;
-                else if (itemType == ItemType.HealthUpgrade100)
+                else if (itemType == ItemType.HealthUpgrade100) // 50 hp buy
                     data.player_HitPoints += 100;
-                else if (itemType == ItemType.ShieldUpgradeNew)
+                else if (itemType == ItemType.ShieldUpgradeNew) // new shield buy
                 {
-                    //create new shield
+                    //if the player has 3 shields - doesnt buy - own respo
+                    //check which shield is missing
+                    var missing_shields = Enumerable.Repeat(false, 3).ToList(); // creates a list of 3 values of false - no shield existing
+                    for (int i = 0; i < data.Shields_hp_Images.Count(); i++)
+                        missing_shields[int.Parse(data.Shields_hp_Images[i].Tag.ToString())] = true; // we search which shield is existing
+                    //now missing shields has true - exists, false - doesnt exist
+                    for (int i = 0; i < missing_shields.Count(); i++) 
+                    {
+                        if (missing_shields[i] == false)
+                        {
+                            createNewShield(i);
+                            break; // dont continue the loop because we create only 1 shield
+                        }
+                    }
                 }
                 else if (itemType == ItemType.ShieldUpgradeRefresh)
                 {
-                    //refresh shields
+                    for (int i = 0; i < data.ShieldHp.Count(); i++)
+                        data.ShieldHp[i] = 24; // load full hp in the array
+                    for (int i = 0; i < data.Shields_hp_Images.Count(); i++)
+                        data.Shields_hp_Images[i].Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
                 }
                 buttonChosen.IsEnabled = false; // we disable the button
             }

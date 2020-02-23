@@ -28,6 +28,8 @@ namespace Final_Project.Classes
         public double damage; // speed of bullet, dmg and image
         Image bullet_image;
 
+        private const int PLAYER_EXTRA_DMG = 2;
+
         public Bullet(double Shipx, double Shipy, Canvas canvas, Bullets bullet_type, int currentLevel)
         {
             this.canvas = canvas;
@@ -35,14 +37,14 @@ namespace Final_Project.Classes
             this.bullet_image = new Image();
             this.x = Shipx - 10; // x and y are set by ship so we dont know the given locations only the ship gives it
 
-
+            //if the players spaceship is strong - it deals more dmg
             // bullet type defines which speed, dmg and which image will be places, ship places the bullet on the canvas
             switch (bullet_type)
             {
                 //user bullets - go from down to up so speed is minues
                 case Bullets.Light_Shell_Default:
                     speedDy = -17; // fast but no dmg
-                    damage = 0.5;
+                    damage = 0.5 + currentLevel * PLAYER_EXTRA_DMG; 
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Light_Shell_Default.png"));
                     bullet_image.Width = 19;
                     bullet_image.Height = 29;
@@ -50,7 +52,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Medium_Shell:
                     speedDy = -11; // medium speed but good dmg
-                    damage = 1;
+                    damage = 1 + currentLevel * PLAYER_EXTRA_DMG;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Medium_Shell.png"));
                     bullet_image.Width = 22;
                     bullet_image.Height = 31;
@@ -58,7 +60,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Heavy_Shell:
                     speedDy = -7;
-                    damage = 1.5; // slow but big dmg
+                    damage = 1.5 + currentLevel * PLAYER_EXTRA_DMG; // slow but big dmg
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Heavy_Shell.png"));
                     bullet_image.Width = 31;
                     bullet_image.Height = 49;
@@ -67,7 +69,7 @@ namespace Final_Project.Classes
 
                 case Bullets.Sniper_Shell:
                     speedDy = -27; // fast and very high dmg
-                    damage = 2.5;
+                    damage = 2.5 + currentLevel * PLAYER_EXTRA_DMG;
                     bullet_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Bullets/Sniper_Shell.png"));
                     bullet_image.Width = 28;
                     bullet_image.Height = 58;

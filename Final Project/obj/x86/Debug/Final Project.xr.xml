@@ -29,13 +29,13 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="Source" />
-      <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="Tag" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Stretch" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="FocusVisualPrimaryBrush" />
+      <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="UseLayoutRounding" />
       <RootProperty Name="RenderTransform" />
     </RootType>

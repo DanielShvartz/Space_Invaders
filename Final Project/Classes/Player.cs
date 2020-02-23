@@ -19,7 +19,9 @@ namespace Final_Project.Classes
         //we cant init it in the base only in the players class
 
         public int SpaceShip_Level;
-        public Player(double dxSpeed, Canvas canvas, string imageLocation, int SpaceShip_Level) : base(dxSpeed, canvas, imageLocation)
+        static Random rnd = new Random();
+        //spaceship speed is also declered by spaceship level - higher level - stronger and faster
+        public Player(double dxSpeed, Canvas canvas, string imageLocation, int SpaceShip_Level) : base(dxSpeed + SpaceShip_Level * rnd.Next(2, 6), canvas, imageLocation)
         {
             this.image.Width = 75; // after image got initalized
             this.image.Height = 75;
@@ -31,6 +33,7 @@ namespace Final_Project.Classes
             Canvas.SetTop(this.image, this.y);
             canvas.Children.Add(this.image);
             this.SpaceShip_Level = SpaceShip_Level;
+
         }
 
         public override void Move(string direction)

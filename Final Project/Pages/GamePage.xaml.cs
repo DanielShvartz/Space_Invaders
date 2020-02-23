@@ -28,7 +28,7 @@ namespace Final_Project.Pages
     /// </summary>
     public sealed partial class GamePage : Page
     {
-        Data toSend;
+        Data data_of_player;
         Player player;
         Enemy enemy;
         Bullet bullet;
@@ -50,9 +50,12 @@ namespace Final_Project.Pages
         //double levelSpeedX = 1;
         int coins = 0;
 
+        //conrtols
         List<Bullet> bullet_Control;// we will have a list of bullets to control the bullets movement
         List<Bullet> enemy_bullet_control;//enemys bullets
         List<Enemy> enemy_Control; // enemies
+
+        //shields
         List<Image> Shields_Images; 
         List<Image> Shields_hp_Images;
         List<double> ShieldHp; // init array of 3 shield hp
@@ -131,10 +134,24 @@ namespace Final_Project.Pages
         {
             counterPress = 0;
             rnd = new Random();
+
             //check if login - if so - load level by last level played - if not start at one
             DataAccessLayer.DeleteAll(); // delete the data base if exist
             DataAccessLayer.CreateDataBase(); //create db
             BuildAllLevels(); // lost levels
+
+            if (data_of_player == null) // if the player just registered of got new game - load new shields and data
+            {
+                Shields_Images = new List<Image> { shield_1, shield_2, shield_3 }; // init list of shields to be able to remove them easly and thier hp
+                Shields_hp_Images = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
+                ShieldHp = new List<double>() { SHIELD_HP_NUM, SHIELD_HP_NUM, SHIELD_HP_NUM }; // shields hp
+                ShieldRectangles = new List<Rect>() // init rectangle for collusion
+                {
+                   new Rect(250, 638, 290, 332),  new Rect(842, 638, 290, 332), new Rect(1442, 638, 290, 332)
+                };
+                data_of_player = new Data(1, 0, 100, 0, Bullets.Light_Shell_Default, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles);
+            }
+
             Level = DataAccessLayer.SelectByNum(1); // at the start
             Level_Text.Text = "Level: " + Level.Currentlevel;
             playerBulletType = Bullets.Light_Shell_Default; // for now start
@@ -146,14 +163,6 @@ namespace Final_Project.Pages
             enemy_bullet_control = new List<Bullet>();
             enemy_Control = new List<Enemy>();
             InitEnemies(canvas);
-
-            Shields_Images = new List<Image> { shield_1, shield_2, shield_3}; // init list of shields to be able to remove them easly and thier hp
-            Shields_hp_Images = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
-            ShieldHp = new List<double>() { SHIELD_HP_NUM, SHIELD_HP_NUM, SHIELD_HP_NUM }; // shields hp
-            ShieldRectangles = new List<Rect>() // init rectangle for collusion
-            {
-               new Rect(250, 638, 290, 332),  new Rect(842, 638, 290, 332), new Rect(1442, 638, 290, 332)
-            };
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;//if key was press give control to windows or event
 
@@ -211,8 +220,8 @@ namespace Final_Project.Pages
             }
             if ((int)ans.Id == 1) // continue to the shop - sends info to shop page
             {
-                toSend = new Data(NewLevel, coins, Player_HitPoints, player.SpaceShip_Level, playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles);
-                Frame.Navigate(typeof(ShopPage), toSend); // we send all the info needed for the shop to buy the wanted things 
+                data_of_player = new Data(NewLevel, coins, Player_HitPoints, player.SpaceShip_Level, playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles);
+                Frame.Navigate(typeof(ShopPage), data_of_player); // we send all the info needed for the shop to buy the wanted things 
             }
         }
 
@@ -354,7 +363,7 @@ namespace Final_Project.Pages
             Canvas.SetLeft(Shields_hp_Images[shieldNum], newX);
             canvas.Children.Add(Shields_hp_Images[shieldNum]);
             //update rectnangle size
-            ShieldRectangles[shieldNum] = new Rect(newX, newY, Shields_hp_Images[shieldNum].Width, Shields_hp_Images[shieldNum].Height);
+            ShieldRectangles[shieldNum] = new Rect(newX, newY, Shields_Images[shieldNum].Width, Shields_Images[shieldNum].Height); // the created rectangle creates on the shieldimage and not on the shieldhpimage
         }
 
         void UpdateShieldHpImage(double remainHP, int shieldNum, int bulletNum)
@@ -364,7 +373,7 @@ namespace Final_Project.Pages
             //To know where to place the image of the shield hp image we need to know which x to set
             //beacuse we doesnt know which x to set we access the tag of the same image that we have set and its permanent
             //this fixes index image that are getting new index when shield is destroyed
-            if (int.Parse(Shields_hp_Images[shieldNum].Tag.ToString()) == 0) 
+            if (int.Parse(Shields_hp_Images[shieldNum].Tag.ToString()) == 0)  //insert shield images of hp
                 newX = 310;
             else if (int.Parse(Shields_hp_Images[shieldNum].Tag.ToString()) == 1)
                 newX = 902;
@@ -447,7 +456,7 @@ namespace Final_Project.Pages
                 else // if he is not on cooldown
                 {
                     //first place the bullet on the canvas places in the middle of the ship
-                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default, Level.Currentlevel);
+                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default, data_of_player.player_SpaceShip_Level);
                     bullet_Control.Add(bullet); // add to the control list the current bullet
                     counterPress++; // each press we count how much time it was pressed
                 }

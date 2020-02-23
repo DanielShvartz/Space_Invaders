@@ -144,5 +144,10 @@ namespace Final_Project.Pages
         {
             BuyItem(400, ItemType.Bullet, Granade_Bullet, (int)Bullets.Granade_Shell);
         }
+
+        private void GameReturnPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(GamePage), data);
+        }
     }
 }
