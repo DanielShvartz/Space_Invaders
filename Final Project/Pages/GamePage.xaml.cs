@@ -176,8 +176,10 @@ namespace Final_Project.Pages
         {
             //if the player won - we stop this timer and not check because we dont have any more enemies
             int chosenEnemy = rnd.Next(0, enemy_Control.Count()); // choose enemy to get him a new bullet
-            
+
             //create a bullet for the enemy, in the middle of the enemy, where the enemy level can adjust its bullet type, so level one is normal two is plasma 3 is laser
+            if (enemy_Control.Count() == 0)
+                return; // if there is any error - try to disable here and call nextLevel function here - now its just returns so it closes the function and goes up level so it wont sotp
             bullet = new Bullet(enemy_Control[chosenEnemy].getPlayerLocation()[0] + (enemy_Control[chosenEnemy].GetWidth() / 2), enemy_Control[chosenEnemy].getPlayerLocation()[1], canvas, (Bullets)enemy_Control[chosenEnemy].enemyLevel, Level.Currentlevel);
             enemy_bullet_control.Add(bullet); // add to the control list the current enemy bullet
         }
@@ -253,7 +255,7 @@ namespace Final_Project.Pages
                                 bullet_Control[player_bullet].damage -= enemy_Control[enemy].hitPoints; //remove damage as much as hp
                                 canvas.Children.Remove(enemy_Control[enemy].GetImage()); // remove enemy from list and canvas
 
-                                coins += enemy_Control[enemy].enemyLevel; // add coins and then remove enemy
+                                coins += (enemy_Control[enemy].enemyLevel + Level.Currentlevel); // add coins - by enemy and then remove enemy
                                 Coins_Text.Text = coins.ToString();
 
                                 enemy_Control.Remove(enemy_Control[enemy]); // the bullet continues to the next enemy that he gets
@@ -278,7 +280,7 @@ namespace Final_Project.Pages
                                 bullet_Control.Remove(bullet_Control[player_bullet]);
                                 canvas.Children.Remove(enemy_Control[enemy].GetImage());
 
-                                coins += enemy_Control[enemy].enemyLevel; // add coins and then remove enemy
+                                coins += (enemy_Control[enemy].enemyLevel + Level.Currentlevel); // add coins and then remove enemy
                                 Coins_Text.Text = coins.ToString();
 
                                 enemy_Control.Remove(enemy_Control[enemy]);

@@ -25,7 +25,7 @@
         </Button>
 
         <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="662,744,693,0" Stretch="Fill"/>
-        <Button Canvas.ZIndex="2" Name="Space_Ship2" Height="227" Width="377" HorizontalAlignment="Left" Margin="763,762,0,0" VerticalAlignment="Top">
+        <Button Canvas.ZIndex="2" Name="Space_Ship2" Height="227" Width="377" HorizontalAlignment="Left" Margin="763,762,0,0" VerticalAlignment="Top" Click="Space_Ship2_Click">
             <Button.Background>
                 <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_2.png" Stretch="Fill"/>
             </Button.Background>
@@ -93,21 +93,21 @@
         <TextBlock Text="100" Width="96" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="0,137,0,0"/>
 
         <Image Canvas.ZIndex="10" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1" Margin="104,137,1701,805" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <TextBlock Canvas.ZIndex="2" Text="500" Width="125" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="375,652,0,0"/>
+        <TextBlock Canvas.ZIndex="2" Text="300" Width="125" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="375,652,0,0"/>
 
         <Image Canvas.ZIndex="10" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1" Margin="1178,659,627,283" Stretch="Fill"/>
-        <TextBlock Text="1500" Width="137" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1041,652,0,0"/>
+        <TextBlock Text="600" Width="137" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1041,652,0,0"/>
 
         <Image Canvas.ZIndex="10" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1" Margin="1863,659,-58,283" Stretch="Fill"/>
-        <TextBlock Text="3000" Width="144" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1721,648,0,0"/>
+        <TextBlock Text="1200" Width="144" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1721,648,0,0"/>
 
-        <TextBlock Text="400" Width="117" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="489,137,0,0"/>
+        <TextBlock Text="200" Width="117" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="489,137,0,0"/>
         <Image Canvas.ZIndex="10" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1" Margin="607,137,1198,805" Stretch="Fill"/>
 
-        <TextBlock Text="1000" Width="137" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1021,137,0,0"/>
+        <TextBlock Text="800" Width="137" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1021,137,0,0"/>
         <Image Canvas.ZIndex="10" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1" Margin="1145,137,660,805" Stretch="Fill"/>
 
-        <TextBlock Text="700" Width="137" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1502,137,0,0"/>
+        <TextBlock Text="400" Width="137" Height="68" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="50" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="1502,137,0,0"/>
         <Image Canvas.ZIndex="10" Source="ms-appx:///Assets/SpaceShip/coinGif.gif" Canvas.Left="1844" Canvas.Top="1" Margin="1612,137,193,805" Stretch="Fill"/>
 
         <TextBlock Name="Coin_Text" Text="Coins:0" Width="510" Height="81" Canvas.Left="1784" FontFamily="Cosmic Alien" FontSize="55" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FF636363" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1" Margin="647,0,0,0"/>
