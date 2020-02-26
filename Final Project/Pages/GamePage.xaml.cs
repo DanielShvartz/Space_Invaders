@@ -48,7 +48,8 @@ namespace Final_Project.Pages
         //double levelSpeedY = 1; 
         // for now this is the level speed, each level updates the speed of the enemy
         //double levelSpeedX = 1;
-        int coins = 0;
+        int coins;
+        static bool firstLoad = true;
 
         //conrtols
         List<Bullet> bullet_Control;// we will have a list of bullets to control the bullets movement
@@ -60,7 +61,18 @@ namespace Final_Project.Pages
         List<Image> Shields_hp_Images;
         List<double> ShieldHp; // init array of 3 shield hp
         List<Rect> ShieldRectangles; // init array of 3 rectnagle of the shields to check hits
-        
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            data_of_player = (Data)e.Parameter;
+            if (data_of_player == null)
+                return;
+            Shields_Images = data_of_player.Shields_Images;
+            Shields_hp_Images = data_of_player.Shields_hp_Images;
+            ShieldHp = data_of_player.ShieldHp;
+            ShieldRectangles = data_of_player.ShieldRectangles;
+        }
+
         public GamePage()
         {
             this.InitializeComponent();
@@ -130,15 +142,40 @@ namespace Final_Project.Pages
             DataAccessLayer.Insert(level);
         }
 
+        void CreateSpaceShip()
+        {
+            string ImageLocation = "";
+            switch (data_of_player.player_SpaceShip_Level)
+            {
+                case (int)SpaceShips.Default:
+                    ImageLocation = "ms-appx:///Assets/SpaceShip/Spaceship_Default.png";
+                    break;
+                case (int)SpaceShips.Level1:
+                    ImageLocation = "ms-appx:///Assets/SpaceShip/spaceship_1.png";
+                    break;
+                case (int)SpaceShips.Level2:
+                    ImageLocation = "ms-appx:///Assets/SpaceShip/spaceship_2.png";
+                    break;
+                case (int)SpaceShips.Level3:
+                    ImageLocation = "ms-appx:///Assets/SpaceShip/spaceship_3.png";
+                    break;
+            }
+            player = new Player(15, this.canvas, ImageLocation , data_of_player.player_SpaceShip_Level);
+        }
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            counterPress = 0;
             rnd = new Random();
+            
+            if(firstLoad == true) // when he first loads the game - we build the level
+            {
+                //check if login - if so - load level by last level played - if not start at one
+                DataAccessLayer.DeleteAll(); // delete the data base if exist
+                DataAccessLayer.CreateDataBase(); //create db
+                BuildAllLevels(); // lost levels
 
-            //check if login - if so - load level by last level played - if not start at one
-            DataAccessLayer.DeleteAll(); // delete the data base if exist
-            DataAccessLayer.CreateDataBase(); //create db
-            BuildAllLevels(); // lost levels
+                firstLoad = false;
+            }
 
             if (data_of_player == null) // if the player just registered of got new game - load new shields and data
             {
@@ -149,20 +186,21 @@ namespace Final_Project.Pages
                 {
                    new Rect(250, 638, 290, 332),  new Rect(842, 638, 290, 332), new Rect(1442, 638, 290, 332)
                 };
-                data_of_player = new Data(1, 0, 100, 0, Bullets.Light_Shell_Default, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles);
+                data_of_player = new Data(1, 0, 100, 0, Bullets.Light_Shell_Default, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles); // load level 1
             }
 
-            Level = DataAccessLayer.SelectByNum(1); // at the start
+            Level = DataAccessLayer.SelectByNum(data_of_player.Level); // load by level
             Level_Text.Text = "Level: " + Level.Currentlevel;
-            playerBulletType = Bullets.Light_Shell_Default; // for now start
+            playerBulletType = data_of_player.player_Bullet; // load by data
             //initalize componenets when the game starts
-            player = new Player(15, this.canvas, "ms-appx:///Assets/SpaceShip/Spaceship_Default.png", (int)SpaceShips.Default);
+
+            CreateSpaceShip();
 
             // when the page is loaded we create a new list
             bullet_Control = new List<Bullet>(); // this lists also allows to remove hit bullets from the canvas and check for bullet collution
             enemy_bullet_control = new List<Bullet>();
             enemy_Control = new List<Enemy>();
-            InitEnemies(canvas);
+            InitEnemies(canvas); //init enemies everytime but depands on level they are stronger
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;//if key was press give control to windows or event
 
@@ -456,7 +494,7 @@ namespace Final_Project.Pages
                 else // if he is not on cooldown
                 {
                     //first place the bullet on the canvas places in the middle of the ship
-                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, Bullets.Light_Shell_Default, data_of_player.player_SpaceShip_Level);
+                    bullet = new Bullet(player.getPlayerLocation()[0] + (player.GetWidth() / 2), player.getPlayerLocation()[1], canvas, data_of_player.player_Bullet, data_of_player.player_SpaceShip_Level);
                     bullet_Control.Add(bullet); // add to the control list the current bullet
                     counterPress++; // each press we count how much time it was pressed
                 }

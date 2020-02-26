@@ -39,17 +39,17 @@ namespace Final_Project.Pages
         {
             data = (Data)e.Parameter;
             Debug.WriteLine(data.ToString());
-            if(data == null)
+            if(data == null) //if he has no data 
             {
-                Hp50Upgrade_Button.IsEnabled = false;
+                Hp50Upgrade_Button.IsEnabled = false; // he cannot press on any buttons
                 ShieldUpgrade_Button.IsEnabled = false;
                 Hp100Upgrade_Button.IsEnabled = false;
                 ShieldHeal_Button.IsEnabled = false;
             }
-            if (data.ShieldHp.Count() == 3)
-                ShieldUpgrade_Button.IsEnabled = false;
+            if (data.ShieldHp.Count() == 3) // if he has 3 shields
+                ShieldUpgrade_Button.IsEnabled = false; // he cannot buy more
 
-            data.coins += 1500;
+            //data.coins += 1500;
             Coin_Text.Text = "Coins:" + data.coins;
         }
 
@@ -62,10 +62,12 @@ namespace Final_Project.Pages
         {
             Image shield_image = new Image(); // create new shield image
             shield_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
-            data.Shields_Images.Insert(itemNewIndex, shield_image);
+            data.Shields_Images.Insert(itemNewIndex, shield_image); // push by index (maybe push by tag)
+            
 
             Image shield_image_hp = new Image(); // create new shield hp image
             shield_image_hp.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
+            shield_image_hp.Tag = itemNewIndex; // to know which tag is he having
             data.Shields_hp_Images.Insert(itemNewIndex, shield_image_hp);
 
             data.ShieldHp.Insert(itemNewIndex, 24); // insert new hp
@@ -84,6 +86,8 @@ namespace Final_Project.Pages
                     break;
             }
             data.ShieldRectangles.Insert(itemNewIndex, shield_rect);
+
+            
         }
 
         /// <summary>
@@ -106,13 +110,13 @@ namespace Final_Project.Pages
                 {
                     //if the player has 3 shields - doesnt buy - own respo
                     //check which shield is missing
-                    var missing_shields = Enumerable.Repeat(false, 3).ToList(); // creates a list of 3 values of false - no shield existing
+                    var missing_shields = Enumerable.Repeat(false, 3).ToList(); // creates a list of 3 values of false - no shield existing - by TAGS
                     for (int i = 0; i < data.Shields_hp_Images.Count(); i++)
-                        missing_shields[int.Parse(data.Shields_hp_Images[i].Tag.ToString())] = true; // we search which shield is existing
+                        missing_shields[int.Parse(data.Shields_hp_Images[i].Tag.ToString())] = true; // we search which shield is existing - we move on all the shields and if a shield has a tag it means that it is existing
                     //now missing shields has true - exists, false - doesnt exist
                     for (int i = 0; i < missing_shields.Count(); i++) 
                     {
-                        if (missing_shields[i] == false)
+                        if (missing_shields[i] == false) // if he doesnt exist
                         {
                             createNewShield(i);
                             break; // dont continue the loop because we create only 1 shield
@@ -161,6 +165,11 @@ namespace Final_Project.Pages
 
             dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
             var ans = await dialog.ShowAsync();
+        }
+
+        private void GameReturnPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(GamePage), data);
         }
     }
 }
