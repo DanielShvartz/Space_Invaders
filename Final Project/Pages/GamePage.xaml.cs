@@ -60,22 +60,27 @@ namespace Final_Project.Pages
         List<Image> Shields_Images; 
         List<Image> Shields_hp_Images;
         List<double> ShieldHp; // init array of 3 shield hp
-        List<Rect> ShieldRectangles; // init array of 3 rectnagle of the shields to check hits
+        List<Rect> ShieldRectangles = new List<Rect>() // init rectangle for collusion - its const so we dont need to init twice
+                {
+                   new Rect(250, 638, 290, 332),  new Rect(842, 638, 290, 332), new Rect(1442, 638, 290, 332)
+                }; // init array of 3 rectnagle of the shields to check hits
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+
+    protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             data_of_player = (Data)e.Parameter;
             if (data_of_player == null)
                 return;
-            Shields_Images = data_of_player.Shields_Images;
-            Shields_hp_Images = data_of_player.Shields_hp_Images;
-            ShieldHp = data_of_player.ShieldHp;
-            ShieldRectangles = data_of_player.ShieldRectangles;
+
+            // load all components from last level
+ 
+            coins = data_of_player.coins; // done
         }
 
         public GamePage()
         {
-            this.InitializeComponent();
+            this.InitializeComponent(); // this initis componenets set in the xaml which means that if we init things in
+            //the xaml it will load them - this can fuck up things by loading children into the canvas
         }
 
         public void UpLevel() { }
@@ -179,21 +184,30 @@ namespace Final_Project.Pages
 
             if (data_of_player == null) // if the player just registered of got new game - load new shields and data
             {
+                shield_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
+                shield_2.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
+                shield_3.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png")); 
                 Shields_Images = new List<Image> { shield_1, shield_2, shield_3 }; // init list of shields to be able to remove them easly and thier hp
+
+                shield_hp_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
+                shield_hp_2.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
+                shield_hp_3.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
                 Shields_hp_Images = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
-                ShieldHp = new List<double>() { SHIELD_HP_NUM, SHIELD_HP_NUM, SHIELD_HP_NUM }; // shields hp
-                ShieldRectangles = new List<Rect>() // init rectangle for collusion
-                {
-                   new Rect(250, 638, 290, 332),  new Rect(842, 638, 290, 332), new Rect(1442, 638, 290, 332)
-                };
-                data_of_player = new Data(1, 0, 100, 0, Bullets.Light_Shell_Default, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles); // load level 1
+
+                ShieldHp = new List<double>() { SHIELD_HP_NUM, SHIELD_HP_NUM, SHIELD_HP_NUM }; // shields hp                
+                data_of_player = new Data(1, 0, 100, 0, Bullets.Light_Shell_Default, Shields_Images, Shields_hp_Images, ShieldHp); // load level 1
             }
+            //init lists of images on any case - Init componenet makes it easy because it create the objects to run on
+            Shields_Images = new List<Image> { shield_1, shield_2, shield_3 }; // init list of shields to be able to remove them easly and thier hp
+            Shields_hp_Images = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
+
+            LoadGame();
 
             Level = DataAccessLayer.SelectByNum(data_of_player.Level); // load by level
             Level_Text.Text = "Level: " + Level.Currentlevel;
             playerBulletType = data_of_player.player_Bullet; // load by data
             //initalize componenets when the game starts
-
+            
             CreateSpaceShip();
 
             // when the page is loaded we create a new list
@@ -201,6 +215,7 @@ namespace Final_Project.Pages
             enemy_bullet_control = new List<Bullet>();
             enemy_Control = new List<Enemy>();
             InitEnemies(canvas); //init enemies everytime but depands on level they are stronger
+
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;//if key was press give control to windows or event
 
@@ -217,8 +232,25 @@ namespace Final_Project.Pages
             enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(1); // you can always change how much fast enemys shoot
             enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
             enemy_create_bullet_timer.Start();
+
         }
 
+        void LoadGame()
+        {
+            for (int i = 0; i < Shields_Images.Count(); i++)
+            {
+                if(data_of_player.Shields_Images[i] != null) // so we dont access nulls we skip those
+                {
+                    Shields_Images[i].Source = data_of_player.Shields_Images[i].Source;
+                    Shields_hp_Images[i].Source = data_of_player.Shields_hp_Images[i].Source;
+                }
+            }
+            ShieldHp = data_of_player.ShieldHp; // import noramlluy
+            //shield rect statys the same
+            Coins_Text.Text = coins.ToString();
+            Health_Text.Text = "Health: " + Player_HitPoints + "%";
+        }
+        
         private void Enemy_create_bullet_timer_Tick(object sender, object e) // create bullets for enemy each X times and add to list
         {
             //if the player won - we stop this timer and not check because we dont have any more enemies
@@ -258,7 +290,7 @@ namespace Final_Project.Pages
             }
             if ((int)ans.Id == 1) // continue to the shop - sends info to shop page
             {
-                data_of_player = new Data(NewLevel, coins, Player_HitPoints, player.SpaceShip_Level, playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp, ShieldRectangles);
+                data_of_player = new Data(NewLevel, coins, Player_HitPoints, player.SpaceShip_Level, playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp);
                 Frame.Navigate(typeof(ShopPage), data_of_player); // we send all the info needed for the shop to buy the wanted things 
             }
         }
@@ -346,9 +378,11 @@ namespace Final_Project.Pages
                 bulletGotHit = false;
                 Rect r;
                 Rect enemybulletRect = new Rect(enemy_bullet_control[bullet].getBulletInfo()[0], enemy_bullet_control[bullet].getBulletInfo()[1], enemy_bullet_control[bullet].getBulletInfo()[2], enemy_bullet_control[bullet].getBulletInfo()[3]);
-                //check hit with shield
+                //check hit with shield - enemybullet -> shield
                 for (int shield = 0; shield < ShieldRectangles.Count(); shield++) // j - per shield - create a rect for each bullet and move on the shield that were already made
                 {
+                    if (ShieldHp[shield] == 0) // if we have a shield that doesnt exist, we just continue to the next shield
+                        continue;
                     r = RectHelper.Intersect(enemybulletRect, ShieldRectangles[shield]);
                     if (r.Width > 20 || r.Height > 20) //if they were hit
                     {
@@ -365,7 +399,7 @@ namespace Final_Project.Pages
                         //Debug.WriteLine("Shield-" + (j + 1) + " hp-" + ShieldHp[j]);
                     }
                 }
-                // check hit with player
+                // check hit with player - enemy bullet -> player
                 //create rect for player - player moves so rect is changing
                 Rect playerRect = new Rect(player.getPlayerLocation()[0], player.getPlayerLocation()[1], player.GetWidth(), player.GetHeight());
                 r = RectHelper.Intersect(enemybulletRect, playerRect); // check for hit between bullet of enemy and player
@@ -400,8 +434,8 @@ namespace Final_Project.Pages
             Canvas.SetTop(Shields_hp_Images[shieldNum], newY); // preview new heart image on the canvas by given X AND Y
             Canvas.SetLeft(Shields_hp_Images[shieldNum], newX);
             canvas.Children.Add(Shields_hp_Images[shieldNum]);
-            //update rectnangle size
-            ShieldRectangles[shieldNum] = new Rect(newX, newY, Shields_Images[shieldNum].Width, Shields_Images[shieldNum].Height); // the created rectangle creates on the shieldimage and not on the shieldhpimage
+            //we doesnt need to update the rectnagle size because the shield size stays the same
+            //to only things changes is the heart size which we doesnt care about
         }
 
         void UpdateShieldHpImage(double remainHP, int shieldNum, int bulletNum)
@@ -432,17 +466,21 @@ namespace Final_Project.Pages
                 UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_2.png");
             else if (remainHP <= SHIELD_HP_NUM - SHIELD_REDUCEMENT * 7 && remainHP > SHIELD_HP_NUM - SHIELD_REDUCEMENT * 8) // 1 hp (3-1)
                 UpdateImage(shieldNum, newX, newY, "ms-appx:///Assets/HealthPoints/hp_1.png");
-            else if (ShieldHp[shieldNum] - enemy_bullet_control[bulletNum].damage <= 0) // if the shield has 0 hp
+            else  if (ShieldHp[shieldNum] - enemy_bullet_control[bulletNum].damage <= 0) // if the shield has 0 hp
             {
                 //remove images
                 canvas.Children.Remove(Shields_Images[shieldNum]); //we remove him from the canvas
                 canvas.Children.Remove(Shields_hp_Images[shieldNum]); //we remove the hearts also
 
-                Shields_hp_Images.Remove(Shields_hp_Images[shieldNum]); // we remove the image of the hearts from the list
-                Shields_Images.Remove(Shields_Images[shieldNum]); // we remove the image of the shield from the list
-                                                               //remove from lists
-                ShieldRectangles.Remove(ShieldRectangles[shieldNum]); // we also remove him from the rectangles to not check anymore
-                ShieldHp.Remove(ShieldHp[shieldNum]); // we remove its hp
+                /*
+                 * When removing an image, Canvas.Children.Remove removes only the image and not the object itself, to remove the object it self we need to say that he equals null
+                 * When we remove images from the lists with images I.E ( shield images and heart image )
+                 * We dont want to reduce the list size - it can make things later worse by accessing with tag, we only place null so aster words we can access
+                 * by straight index to the right images instead of tags
+                 */
+                Shields_hp_Images[shieldNum] = null;
+                Shields_Images[shieldNum] = null;
+                ShieldHp[shieldNum] = 0;
                 return; // if the enemy is dead we doesnt continue - fixed index access problem
             }
             ShieldHp[shieldNum] -= enemy_bullet_control[bulletNum].damage; // at the end reduce hp from shield on the array

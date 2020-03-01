@@ -21,12 +21,10 @@ namespace Final_Project.Classes
         public int SpaceShip_Level;
         static Random rnd = new Random();
         //spaceship speed is also declered by spaceship level - higher level - stronger and faster
-        public Player(double dxSpeed, Canvas canvas, string imageLocation, int SpaceShip_Level) : base(dxSpeed + SpaceShip_Level * 2, canvas, imageLocation)
+        public Player(double dxSpeed, Canvas canvas, string imageLocation, int SpaceShip_Level) : base(dxSpeed + SpaceShip_Level * 3, canvas, imageLocation)
         {
             this.image.Width = 75; // after image got initalized
-            this.image.Height = 75;
-
-            
+            this.image.Height = 75;        
 
             this.x = (canvas.ActualWidth - image.ActualWidth)/2; // - to place at the middle 885
             this.y = (canvas.ActualHeight - image.ActualHeight);// - to place at  button - 930  

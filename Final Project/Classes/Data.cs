@@ -20,9 +20,9 @@ namespace Final_Project.Classes
         public List<Image> Shields_Images;
         public List<Image> Shields_hp_Images;
         public List<double> ShieldHp; // init array of 3 shield hp
-        public List<Rect> ShieldRectangles; // init array of 3 rectnagle of the shields to check hits
+        // there is no need to pass ShieldRectangles because it stays the same and we doesnt need to pass him
 
-        public Data(int level, int coins, double player_HitPoints, int player_SpaceShip_Level, Bullets player_Bullet, List<Image> shields_Images, List<Image> shields_hp_Images, List<double> shieldHp, List<Rect> shieldRectangles)
+        public Data(int level, int coins, double player_HitPoints, int player_SpaceShip_Level, Bullets player_Bullet, List<Image> shields_Images, List<Image> shields_hp_Images, List<double> shieldHp)
         {
             Level = level;
             this.coins = coins;
@@ -34,7 +34,6 @@ namespace Final_Project.Classes
             Shields_Images = shields_Images;
             Shields_hp_Images = shields_hp_Images;
             ShieldHp = shieldHp;
-            ShieldRectangles = shieldRectangles;
         }
     }
 }

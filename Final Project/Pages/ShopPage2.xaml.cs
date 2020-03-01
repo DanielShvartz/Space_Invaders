@@ -64,7 +64,6 @@ namespace Final_Project.Pages
             shield_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
             data.Shields_Images.Insert(itemNewIndex, shield_image); // push by index (maybe push by tag)
             
-
             Image shield_image_hp = new Image(); // create new shield hp image
             shield_image_hp.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
             shield_image_hp.Tag = itemNewIndex; // to know which tag is he having
@@ -85,9 +84,7 @@ namespace Final_Project.Pages
                     shield_rect = new Rect(1442, 638, 290, 332);
                     break;
             }
-            data.ShieldRectangles.Insert(itemNewIndex, shield_rect);
-
-            
+            //data.ShieldRectangles.Insert(itemNewIndex, shield_rect);
         }
 
         /// <summary>

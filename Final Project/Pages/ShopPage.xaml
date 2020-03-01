@@ -18,9 +18,9 @@
                 <ImageBrush/>
             </Image.FocusVisualPrimaryBrush>
         </Image>
-        <Button Canvas.ZIndex="2" Name="Space_Ship1" Height="217" Width="342" HorizontalAlignment="Left" Margin="108,768,0,0" VerticalAlignment="Top" Click="Space_Ship1_Click">
+        <Button Canvas.ZIndex="2" Name="Space_Ship1" Height="200" Width="273" HorizontalAlignment="Left" Margin="136,776,0,0" VerticalAlignment="Top" Click="Space_Ship1_Click">
             <Button.Background>
-                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_1.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_1.png" Stretch="Fill"/>
             </Button.Background>
         </Button>
 
