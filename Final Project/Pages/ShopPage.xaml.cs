@@ -47,18 +47,24 @@ namespace Final_Project.Pages
                 return;
             }
 
-
-            if (data.player_Bullet >= Bullets.Heavy_Shell) // depands on past chooses
+            // depands on past buyments, disable buttons that he cant buy, cant be own repso, if bought cant buy again
+            // but i just disable it
+            if(data.player_Bullet >= Bullets.Medium_Shell)
                 Medium_Shell.IsEnabled = false;
-            if (data.player_Bullet >= Bullets.Granade_Shell) // if the player has a specific bullet or spaceship
+            if (data.player_Bullet >= Bullets.Heavy_Shell) // depands on past chooses
                 Heavy_Bullet.IsEnabled = false;
-            if (data.player_Bullet >= Bullets.Sniper_Shell) // we prevent him for buying weaker bullet
+            if (data.player_Bullet >= Bullets.Granade_Shell) // if the player has a specific bullet or spaceship
                 Granade_Bullet.IsEnabled = false;
+            if (data.player_Bullet >= Bullets.Sniper_Shell) // we prevent him for buying weaker bullet
+                Sniper_Bullet.IsEnabled = false;
 
-            if (data.player_SpaceShip_Level >= (int)SpaceShips.Level2) 
+            if (data.player_SpaceShip_Level >= (int)SpaceShips.Level1)
                 Space_Ship1.IsEnabled = false;
-            if (data.player_SpaceShip_Level >= (int)SpaceShips.Level3)
+            if (data.player_SpaceShip_Level >= (int)SpaceShips.Level2)
                 Space_Ship2.IsEnabled = false;
+            if (data.player_SpaceShip_Level >= (int)SpaceShips.Level3)
+                Space_Ship3.IsEnabled = false;
+
 
             data.coins += 1500;
             Coin_Text.Text = "Coins:" + data.coins;

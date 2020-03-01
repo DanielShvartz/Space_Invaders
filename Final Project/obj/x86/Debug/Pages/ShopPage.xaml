@@ -25,14 +25,14 @@
         </Button>
 
         <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="662,744,693,0" Stretch="Fill"/>
-        <Button x:ConnectionId='3' Canvas.ZIndex="2" Name="Space_Ship2" Height="227" Width="377" HorizontalAlignment="Left" Margin="763,762,0,0" VerticalAlignment="Top"                          >
+        <Button x:ConnectionId='3' Canvas.ZIndex="2" Name="Space_Ship2" Height="199" Width="217" HorizontalAlignment="Left" Margin="842,776,0,0" VerticalAlignment="Top"                          >
             <Button.Background>
                 <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_2.png" Stretch="Fill"/>
             </Button.Background>
         </Button>
 
         <Image Source="ms-appx:///Assets/SpaceShip/space_ships_frame.png" Margin="1338,744,1,2" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Button x:ConnectionId='4' Canvas.ZIndex="2" Name="Space_Ship3" Height="245" Width="386" HorizontalAlignment="Left" Margin="1436,758,0,0" VerticalAlignment="Top"                           >
+        <Button x:ConnectionId='4' Canvas.ZIndex="2" Name="Space_Ship3" Height="209" Width="246" HorizontalAlignment="Left" Margin="1506,766,0,0" VerticalAlignment="Top"                           >
             <Button.Background>
                 <ImageBrush ImageSource="ms-appx:///Assets/SpaceShip/spaceship_3.png"/>
             </Button.Background>

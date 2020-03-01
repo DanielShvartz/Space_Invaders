@@ -38,16 +38,21 @@ namespace Final_Project.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             data = (Data)e.Parameter;
-            Debug.WriteLine(data.ToString());
             if(data == null) //if he has no data 
             {
                 Hp50Upgrade_Button.IsEnabled = false; // he cannot press on any buttons
                 ShieldUpgrade_Button.IsEnabled = false;
                 Hp100Upgrade_Button.IsEnabled = false;
                 ShieldHeal_Button.IsEnabled = false;
+                return;
             }
-            if (data.ShieldHp.Count() == 3) // if he has 3 shields
-                ShieldUpgrade_Button.IsEnabled = false; // he cannot buy more
+
+            int counterExist = 0; // check if he has 3 shields
+            for (int i = 0; i < data.Shields_Images.Count(); i++)
+                if (data.Shields_Images[i] != null) // if shield is not null - an image is exiting - we counter
+                    counterExist++;
+            if (counterExist == 3) // if he has 3 shields - he cannot buy more
+                ShieldUpgrade_Button.IsEnabled = false; // but if he has 2 or 1 or 0 shields he can buy.
 
             //data.coins += 1500;
             Coin_Text.Text = "Coins:" + data.coins;
@@ -58,33 +63,22 @@ namespace Final_Project.Pages
             Frame.Navigate(typeof(ShopPage), data);
         }
 
+        //doesnt add value just replace
         void createNewShield(int itemNewIndex) //index of new item to insert
         {
             Image shield_image = new Image(); // create new shield image
             shield_image.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
-            data.Shields_Images.Insert(itemNewIndex, shield_image); // push by index (maybe push by tag)
+            //no need to insert just pin point by index
+            data.Shields_Images[itemNewIndex] = shield_image; // push by index
             
             Image shield_image_hp = new Image(); // create new shield hp image
-            shield_image_hp.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
+            shield_image_hp.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
             shield_image_hp.Tag = itemNewIndex; // to know which tag is he having
-            data.Shields_hp_Images.Insert(itemNewIndex, shield_image_hp);
+            data.Shields_hp_Images[itemNewIndex] =  shield_image_hp;
 
-            data.ShieldHp.Insert(itemNewIndex, 24); // insert new hp
+            data.ShieldHp[itemNewIndex] =  24; // insert new hp
 
-            Rect shield_rect;
-            switch(itemNewIndex)
-            {
-                case 0:
-                    shield_rect = new Rect(250, 638, 290, 332); // create new shield rect by index
-                    break;
-                case 1:
-                    shield_rect = new Rect(842, 638, 290, 332);
-                    break;
-                case 2:
-                    shield_rect = new Rect(1442, 638, 290, 332);
-                    break;
-            }
-            //data.ShieldRectangles.Insert(itemNewIndex, shield_rect);
+            //no need to create shield rectangle because it stays the same
         }
 
         /// <summary>
@@ -106,28 +100,35 @@ namespace Final_Project.Pages
                 else if (itemType == ItemType.ShieldUpgradeNew) // new shield buy
                 {
                     //if the player has 3 shields - doesnt buy - own respo
-                    //check which shield is missing
-                    var missing_shields = Enumerable.Repeat(false, 3).ToList(); // creates a list of 3 values of false - no shield existing - by TAGS
-                    for (int i = 0; i < data.Shields_hp_Images.Count(); i++)
-                        missing_shields[int.Parse(data.Shields_hp_Images[i].Tag.ToString())] = true; // we search which shield is existing - we move on all the shields and if a shield has a tag it means that it is existing
-                    //now missing shields has true - exists, false - doesnt exist
-                    for (int i = 0; i < missing_shields.Count(); i++) 
+                    for (int i = 0; i < data.Shields_Images.Count(); i++)
                     {
-                        if (missing_shields[i] == false) // if he doesnt exist
+                        if (data.Shields_Images[i] == null) // found missing shield
                         {
-                            createNewShield(i);
-                            break; // dont continue the loop because we create only 1 shield
+                            createNewShield(i); // send index and not tag
+                            return;
+                            /*
+                             * If we break here - it will disable the button and then we can only buy 1 shield
+                             * if we return we can buy again because it doesnt disable the button
+                             * now we can buy few times but if he has 3 shields the button will get disabled because it
+                             * wont enter the loop
+                             */
                         }
+
                     }
                 }
                 else if (itemType == ItemType.ShieldUpgradeRefresh)
                 {
-                    for (int i = 0; i < data.ShieldHp.Count(); i++)
-                        data.ShieldHp[i] = 24; // load full hp in the array
-                    for (int i = 0; i < data.Shields_hp_Images.Count(); i++)
-                        data.Shields_hp_Images[i].Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
+                    for (int i = 0; i < data.Shields_Images.Count(); i++)
+                    {
+                        if(data.Shields_Images[i] != null) // if its null we cannot heal it - it doesnt exist
+                        {
+                            data.ShieldHp[i] = 24; // if its existing - load full hp in the array
+                            data.Shields_hp_Images[i].Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
+                            //set full hp image
+                        }
+                    }
                 }
-                buttonChosen.IsEnabled = false; // we disable the button
+                buttonChosen.IsEnabled = false; // we disable the button so he cant buy again
             }
             else
             {

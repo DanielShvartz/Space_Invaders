@@ -229,7 +229,7 @@ namespace Final_Project.Pages
             //create a timer that create a bullets for the enemys. it create a bullet and the game movement timer will move it.
             // the game movement timer needs also to move on all the enemy bullets and check for collusion
             enemy_create_bullet_timer = new DispatcherTimer();
-            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds(1); // you can always change how much fast enemys shoot
+            enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds((double)1 / Level.Currentlevel); // enemy shoot by level 1, 1/2, 1/3, 1/4, 1/5
             enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
             enemy_create_bullet_timer.Start();
 
@@ -248,6 +248,7 @@ namespace Final_Project.Pages
             ShieldHp = data_of_player.ShieldHp; // import noramlluy
             //shield rect statys the same
             Coins_Text.Text = coins.ToString();
+            Player_HitPoints = data_of_player.player_HitPoints;
             Health_Text.Text = "Health: " + Player_HitPoints + "%";
         }
         
@@ -271,16 +272,19 @@ namespace Final_Project.Pages
             var dialog = new MessageDialog("You Have Leveled Up To Level " + (NewLevel)  + " !" + "\nPlease Choose:");
             dialog.Title = "Level Up!";
 
-            dialog.Commands.Add(new UICommand { Label = "Continue To The Next Level", Id = 0 });
-            dialog.Commands.Add(new UICommand { Label = "Continue To Shop", Id = 1 });
-            var ans = await dialog.ShowAsync(); 
+            dialog.Commands.Add(new UICommand { Label = "Continue To Shop", Id = 0 });
+            dialog.Commands.Add(new UICommand { Label = "Continue To The Next Level", Id = 1 });
+            var ans = await dialog.ShowAsync();
 
-            if ((int)ans.Id == 0) // continue to next level
+            //he leveled up so any way he gets more hp
+            Player_HitPoints += ((NewLevel / 3) + 1 * 10); //players gets more hp !
+            Health_Text.Text = "Health: " + Player_HitPoints + "%";
+
+            if ((int)ans.Id == 1) // continue to next level
             {
                 Level = DataAccessLayer.SelectByNum(NewLevel);
                 InitEnemies(canvas); //there is no enemies right now so we just init as usual but load a new level
-                Player_HitPoints += ((NewLevel / 3) + 1 * 10); //players gets more hp !
-                Health_Text.Text = "Health: " + Player_HitPoints + "%";
+                
                 game_timer_movement.Start(); // start timer
 
                 enemy_create_bullet_timer = new DispatcherTimer();
@@ -288,7 +292,7 @@ namespace Final_Project.Pages
                 enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
                 enemy_create_bullet_timer.Start();
             }
-            if ((int)ans.Id == 1) // continue to the shop - sends info to shop page
+            if ((int)ans.Id == 0) // continue to the shop - sends info to shop page
             {
                 data_of_player = new Data(NewLevel, coins, Player_HitPoints, player.SpaceShip_Level, playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp);
                 Frame.Navigate(typeof(ShopPage), data_of_player); // we send all the info needed for the shop to buy the wanted things 
