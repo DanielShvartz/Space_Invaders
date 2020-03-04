@@ -1,0 +1,7 @@
+D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\bin\Debug\SpaceInvaders_Service.dll.config
+D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\bin\Debug\SpaceInvaders_Service.dll
+D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\bin\Debug\SpaceInvaders_Service.pdb
+D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.csprojAssemblyReference.cache
+D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.csproj.CoreCompileInputs.cache
+D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.dll
+D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.pdb

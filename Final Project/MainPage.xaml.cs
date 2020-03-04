@@ -31,12 +31,8 @@ namespace Final_Project
 
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(GamePage));
+            Frame.Navigate(typeof(LoginPage));
         }
 
-        private void shopButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(ShopPage));
-        }
     }
 }

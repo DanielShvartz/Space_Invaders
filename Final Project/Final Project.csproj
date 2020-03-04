@@ -100,8 +100,16 @@
     <Compile Include="Classes\Data.cs" />
     <Compile Include="Classes\Enemy.cs" />
     <Compile Include="Classes\Player.cs" />
+    <Compile Include="Connected Services\Player_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ShopPage.xaml.cs">
       <DependentUpon>ShopPage.xaml</DependentUpon>
@@ -121,12 +129,27 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Connected Services\Player_Service\Final_Project.Player_Service.Player.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Player_Service\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Player_Service\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Player_Service\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Player_Service\SavePlayer_Service.wsdl" />
     <None Include="Final Project_TemporaryKey.pfx" />
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\BackGrounds\background_final.jpg" />
     <Content Include="Assets\BackGrounds\background_game.jpg" />
     <Content Include="Assets\BackGrounds\bgbg.png" />
+    <Content Include="Assets\BackGrounds\login_background.jpg" />
     <Content Include="Assets\BackGrounds\shop_background.jpg" />
     <Content Include="Assets\BackGrounds\veryFinalBackGround.png" />
     <Content Include="Assets\Buttons\Button_Template.png" />
@@ -186,6 +209,13 @@
     <Content Include="Assets\SpaceShip\spaceship_3.png" />
     <Content Include="Assets\SpaceShip\Spaceship_Default.png" />
     <Content Include="Assets\SpaceShip\space_ships_frame.png" />
+    <None Include="Connected Services\Player_Service\item.disco" />
+    <None Include="Connected Services\Player_Service\configuration91.svcinfo" />
+    <None Include="Connected Services\Player_Service\configuration.svcinfo" />
+    <None Include="Connected Services\Player_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -201,6 +231,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Pages\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,8 +266,11 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.UWP.2015, Version=3.30.1">
-      <Name>SQLite for Universal Windows Platform %28SQLite.UWP.2015, Version=3.30.1%29</Name>
+    <WCFMetadataStorage Include="Connected Services\Player_Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.31.1">
+      <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

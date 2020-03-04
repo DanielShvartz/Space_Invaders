@@ -18,19 +18,9 @@
             </Image.RenderTransform>
         </Image>
 
-        <Button Name="playButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,409,0,0" VerticalAlignment="Top" Click="playButton_Click">
+        <Button Name="playButton" Height="244" Width="605" HorizontalAlignment="Left" Margin="1122,540,0,0" VerticalAlignment="Top" Click="playButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/Buttons/mp_start_button.png"/>
-            </Button.Background>
-        </Button>
-        <Button Name="shopButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,180,0,0" VerticalAlignment="Top" Click="shopButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Buttons/mp_shop_button.png"/>
-            </Button.Background>
-        </Button>
-        <Button Name="loginButton" Height="190" Width="535" HorizontalAlignment="Left" Margin="1218,630,0,0" VerticalAlignment="Top">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Buttons/mp_login_Button.png"/>
             </Button.Background>
         </Button>
 

@@ -232,3 +232,8 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\quali
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\qualifiers.txt.intermediate
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\ProjectArchitectures.txt
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\LoginPage.xbf
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\LoginPage.g.i.cs
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\LoginPage.g.cs
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\LoginPage.xaml
+D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\LoginPage.xbf

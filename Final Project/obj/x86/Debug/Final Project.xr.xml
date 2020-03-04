@@ -55,6 +55,7 @@
       <RootProperty Name="RenderTransformOrigin" />
     </RootType>
     <RootType FullName="Final_Project.Pages.GamePage" />
+    <RootType FullName="Final_Project.Pages.LoginPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />

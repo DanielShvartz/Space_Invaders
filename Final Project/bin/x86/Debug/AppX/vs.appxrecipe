@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>9FA5807842000EBCC03BE4373CAB3AE1ED7594718FAA6B29BDB024D04AE79E6C</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>4CDA267E840CC49331ED78FBA92F342889C77D7E3425B67E4F7B9D553F563902</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>4b5f0679-6f16-4769-98ee-88afec1c19fb_1.0.0.0_x86__ckpvgz13cfhxc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>4b5f0679-6f16-4769-98ee-88afec1c19fb_ckpvgz13cfhxc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>4b5f0679-6f16-4769-98ee-88afec1c19fb</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-03-01T12:12:23.518</Modified>
+      <Modified>2020-03-04T10:55:31.885</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.exe">
       <PackagePath>entrypoint\Final Project.exe</PackagePath>
-      <Modified>2020-03-01T12:12:23.093</Modified>
+      <Modified>2020-03-04T10:55:29.758</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -511,9 +511,9 @@
       <PackagePath>SQLite.Core.winmd</PackagePath>
       <Modified>2016-11-30T14:47:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.30.1\Redist\Debug\x86\sqlite3.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.31.1\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
-      <Modified>2019-10-30T08:49:56.447</Modified>
+      <Modified>2020-03-01T15:46:34.869</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\background_final.jpg">
       <PackagePath>Assets\BackGrounds\background_final.jpg</PackagePath>
@@ -522,6 +522,10 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\background_game.jpg">
       <PackagePath>Assets\BackGrounds\background_game.jpg</PackagePath>
       <Modified>2019-12-08T07:59:39.888</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\login_background.jpg">
+      <PackagePath>Assets\BackGrounds\login_background.jpg</PackagePath>
+      <Modified>2020-03-04T10:52:54.617</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\Assets\BackGrounds\shop_background.jpg">
       <PackagePath>Assets\BackGrounds\shop_background.jpg</PackagePath>
@@ -803,27 +807,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Final Project.xr.xml">
       <PackagePath>Final Project.xr.xml</PackagePath>
-      <Modified>2020-03-01T07:53:32.739</Modified>
+      <Modified>2020-03-04T10:55:29.561</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-03-01T12:12:22.913</Modified>
+      <Modified>2020-03-04T10:55:29.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\GamePage.xbf">
       <PackagePath>Pages\GamePage.xbf</PackagePath>
-      <Modified>2020-03-01T12:12:22.913</Modified>
+      <Modified>2020-03-04T10:55:29.580</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\LoginPage.xbf">
+      <PackagePath>Pages\LoginPage.xbf</PackagePath>
+      <Modified>2020-03-04T10:55:29.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage.xbf">
       <PackagePath>Pages\ShopPage.xbf</PackagePath>
-      <Modified>2020-03-01T12:12:22.914</Modified>
+      <Modified>2020-03-04T10:55:29.581</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-03-01T12:12:22.914</Modified>
+      <Modified>2020-03-04T10:55:29.581</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Pages\ShopPage2.xbf">
       <PackagePath>Pages\ShopPage2.xbf</PackagePath>
-      <Modified>2020-03-01T12:12:22.914</Modified>
+      <Modified>2020-03-04T10:55:29.581</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -832,11 +840,11 @@
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-03-01T07:11:17.479</Modified>
+      <Modified>2020-03-04T10:55:30.313</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\bin\x86\Debug\Core\Final Project.exe">
       <PackagePath>Final Project.exe</PackagePath>
-      <Modified>2020-03-01T12:12:23.433</Modified>
+      <Modified>2020-03-04T10:55:31.803</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

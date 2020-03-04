@@ -2,6 +2,7 @@ WinMetadata\Windows.winmd
 Assets\BackGrounds\background_final.jpg
 Assets\BackGrounds\background_game.jpg
 Assets\BackGrounds\bgbg.png
+Assets\BackGrounds\login_background.jpg
 Assets\BackGrounds\shop_background.jpg
 Assets\BackGrounds\veryFinalBackGround.png
 Assets\Buttons\Button_Template.png
@@ -72,6 +73,7 @@ App.xbf
 Final Project.xr.xml
 MainPage.xbf
 Pages\GamePage.xbf
+Pages\LoginPage.xbf
 Pages\ShopPage.xbf
 Pages\ShopPage2.xbf
 Properties\Default.rd.xml

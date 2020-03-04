@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7d64c70e-9a4d-442a-9f60-115477aa473b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="c57cf220-1b06-4106-ae70-52b0de201987" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd2" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="5ab021f8-a489-420b-b4a2-fbd84d2880a6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="cd226a2e-bef2-498f-885c-ff5894e2b745" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd1" />
+    <MetadataFile FileName="SavePlayer_Service.wsdl" MetadataType="Wsdl" ID="5f7952b0-a9c1-4db4-812b-43682c5ade42" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?wsdl" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="db4004cf-cde0-4cc4-b811-97b796a5f497" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
