@@ -8,7 +8,26 @@ namespace SpaceInvaders_Service
 {
     public class SavePlayer_Service : ISavePlayer_Service 
     {
-        //if he registers we login him with default values and given username and password
+        public bool IsPlayerExists(string username, string password)
+        {
+            string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            //delete by id
+            string query = string.Format("SELECT * FROM Player_Table, Where Username = '{0}' AND Password = '{1}' ", username, password);
+            SqlCommand cmd = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader SqlReader = cmd.ExecuteReader();
+
+            bool ans;
+            if (SqlReader.HasRows) // if he have rows - he exist
+                ans = true; // return exist
+            else // if he doesnt have rows he doesnt exists
+                ans = false; // doesnt exists
+            connection.Close();
+            return ans; // no need to check we just return true
+        }
+
+        //he wants to finish the game - we add him to table or update him
         public bool SavePlayer(Player player)
         {
             //we want to know where is our server so we search for connection string
@@ -32,6 +51,7 @@ namespace SpaceInvaders_Service
                 return false;
         }
 
+        //if he decides in the end of the level to finish - we save him
         public bool UpdatePlayer(Player player)
         {
             string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
@@ -46,30 +66,40 @@ namespace SpaceInvaders_Service
             return true; // no need to check we just return true
         }
 
+        // if we laod a player it means he exists - so we load the player
         public Player LoadPlayer(string username, string password)
         {
+            Player player = new Player();
+
             string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
             SqlConnection connection = new SqlConnection(ConnectionString);
             string query = string.Format("SELECT * FROM Player_Table, Where Username = '{0}' AND Password = '{1}' ", username, password);
             SqlCommand cmd = new SqlCommand(query, connection); // we get the wanted player
-            
             connection.Open();
             SqlDataReader SqlReader = cmd.ExecuteReader();
-            Player player = null;
-
-            // what to do if we didnt find that user?
-            if (!SqlReader.HasRows) // if he doesnt have rows - the user doesnt exist - so we return null
-                return null;
 
             while (SqlReader.Read()) // we read until we got nothing in the table
             {
-                player = new Player(); // we create a new champ for each row and add name score and id
-                SqlReader["name"].ToString(); 
-                //insert values
-                
+                player = new Player(); // we load the player info from the db
+
+                player.Username = username;
+                player.Password = password;
+
+                player.Current_Level = int.Parse(SqlReader["Current_Level"].ToString());
+                player.HP = int.Parse(SqlReader["HP"].ToString());
+                player.Coins = int.Parse(SqlReader["Coins"].ToString());
+                player.SpaceShip_Level = int.Parse(SqlReader["SpaceShip_Level"].ToString());
+                player.Bullet_Level = int.Parse(SqlReader["Bullet_Level"].ToString());
+                player.Shield1_HP = int.Parse(SqlReader["Shield1_HP"].ToString());
+                player.Shield2_HP = int.Parse(SqlReader["Shield2_HP"].ToString());
+                player.Shield3_HP = int.Parse(SqlReader["Shield3_HP"].ToString());
+                player.Shield1_Image = int.Parse(SqlReader["Shield1_Image"].ToString());
+                player.Shield2_Image = int.Parse(SqlReader["Shield2_Image"].ToString());
+                player.Shield3_Image = int.Parse(SqlReader["Shield3_Image"].ToString());
             }
             connection.Close(); // in end we close the connection.
             return player;
+
         }
     }
 }

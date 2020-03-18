@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7d64c70e-9a4d-442a-9f60-115477aa473b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a793b5af-ba5e-4396-8510-5c3c5b1d630c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,11 +24,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="c57cf220-1b06-4106-ae70-52b0de201987" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd2" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="5ab021f8-a489-420b-b4a2-fbd84d2880a6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?disco" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="cd226a2e-bef2-498f-885c-ff5894e2b745" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd1" />
-    <MetadataFile FileName="SavePlayer_Service.wsdl" MetadataType="Wsdl" ID="5f7952b0-a9c1-4db4-812b-43682c5ade42" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?wsdl" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="db4004cf-cde0-4cc4-b811-97b796a5f497" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd0" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="2060b33a-a939-499a-833c-7295fc789d1a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd2" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="f4289e8c-10fe-4a08-ad16-42671167558a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="94340cbf-098a-4512-9c59-d49bf241a644" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd1" />
+    <MetadataFile FileName="SavePlayer_Service.wsdl" MetadataType="Wsdl" ID="4928fd6f-ff58-40f0-a8a4-90376a97fb30" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?wsdl" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="856725be-bcf3-4b95-af27-327825e153c5" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/SpaceInvaders_Service/SavePlayer_Service/?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

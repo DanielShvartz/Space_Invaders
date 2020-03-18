@@ -8,8 +8,11 @@
       <xs:element minOccurs="0" name="HP" type="xs:int" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Shield1_HP" type="xs:int" />
+      <xs:element minOccurs="0" name="Shield1_Image" type="xs:int" />
       <xs:element minOccurs="0" name="Shield2_HP" type="xs:int" />
+      <xs:element minOccurs="0" name="Shield2_Image" type="xs:int" />
       <xs:element minOccurs="0" name="Shield3_HP" type="xs:int" />
+      <xs:element minOccurs="0" name="Shield3_Image" type="xs:int" />
       <xs:element minOccurs="0" name="SpaceShip_Level" type="xs:int" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
     </xs:sequence>

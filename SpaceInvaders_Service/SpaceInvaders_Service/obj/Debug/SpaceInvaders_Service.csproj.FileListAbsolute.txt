@@ -5,3 +5,10 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvade
 D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.csproj.CoreCompileInputs.cache
 D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.dll
 D:\Daniel Shvartz\Final Project\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.pdb
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\bin\Debug\SpaceInvaders_Service.dll.config
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\bin\Debug\SpaceInvaders_Service.dll
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\bin\Debug\SpaceInvaders_Service.pdb
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.csprojAssemblyReference.cache
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.csproj.CoreCompileInputs.cache
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.dll
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\SpaceInvaders_Service\SpaceInvaders_Service\obj\Debug\SpaceInvaders_Service.pdb

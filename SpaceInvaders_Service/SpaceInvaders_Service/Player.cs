@@ -38,5 +38,14 @@ namespace SpaceInvaders_Service
 
         [DataMember]
         public int Shield3_HP { get; set; }
+
+        [DataMember]
+        public int Shield1_Image { get; set; }
+
+        [DataMember]
+        public int Shield2_Image { get; set; }
+
+        [DataMember]
+        public int Shield3_Image { get; set; }
     }
 }

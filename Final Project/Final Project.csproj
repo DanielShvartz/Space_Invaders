@@ -11,7 +11,7 @@
     <AssemblyName>Final Project</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -100,7 +100,7 @@
     <Compile Include="Classes\Data.cs" />
     <Compile Include="Classes\Enemy.cs" />
     <Compile Include="Classes\Player.cs" />
-    <Compile Include="Connected Services\Player_Service\Reference.cs">
+    <Compile Include="Connected Services\Player_ServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -129,19 +129,19 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="ClassDiagram1.cd" />
-    <None Include="Connected Services\Player_Service\Final_Project.Player_Service.Player.datasource">
+    <None Include="Connected Services\Player_ServiceRef\Final_Project.Player_ServiceRef.Player.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\Player_Service\item.xsd">
+    <None Include="Connected Services\Player_ServiceRef\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Player_Service\item1.xsd">
+    <None Include="Connected Services\Player_ServiceRef\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Player_Service\item2.xsd">
+    <None Include="Connected Services\Player_ServiceRef\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Player_Service\SavePlayer_Service.wsdl" />
+    <None Include="Connected Services\Player_ServiceRef\SavePlayer_Service.wsdl" />
     <None Include="Final Project_TemporaryKey.pfx" />
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
   </ItemGroup>
@@ -209,10 +209,10 @@
     <Content Include="Assets\SpaceShip\spaceship_3.png" />
     <Content Include="Assets\SpaceShip\Spaceship_Default.png" />
     <Content Include="Assets\SpaceShip\space_ships_frame.png" />
-    <None Include="Connected Services\Player_Service\item.disco" />
-    <None Include="Connected Services\Player_Service\configuration91.svcinfo" />
-    <None Include="Connected Services\Player_Service\configuration.svcinfo" />
-    <None Include="Connected Services\Player_Service\Reference.svcmap">
+    <None Include="Connected Services\Player_ServiceRef\item.disco" />
+    <None Include="Connected Services\Player_ServiceRef\configuration91.svcinfo" />
+    <None Include="Connected Services\Player_ServiceRef\configuration.svcinfo" />
+    <None Include="Connected Services\Player_ServiceRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -266,7 +266,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\Player_Service\" />
+    <WCFMetadataStorage Include="Connected Services\Player_ServiceRef\" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="SQLite.UWP.2015, Version=3.31.1">

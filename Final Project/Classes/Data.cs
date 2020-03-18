@@ -35,5 +35,6 @@ namespace Final_Project.Classes
             Shields_hp_Images = shields_hp_Images;
             ShieldHp = shieldHp;
         }
+        public Data() { }
     }
 }

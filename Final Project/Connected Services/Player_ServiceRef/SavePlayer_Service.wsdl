@@ -25,6 +25,12 @@
   <wsdl:message name="ISavePlayer_Service_LoadPlayer_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoadPlayerResponse" />
   </wsdl:message>
+  <wsdl:message name="ISavePlayer_Service_IsPlayerExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPlayerExists" />
+  </wsdl:message>
+  <wsdl:message name="ISavePlayer_Service_IsPlayerExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPlayerExistsResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISavePlayer_Service">
     <wsdl:operation name="SavePlayer">
       <wsdl:input wsaw:Action="http://tempuri.org/ISavePlayer_Service/SavePlayer" message="tns:ISavePlayer_Service_SavePlayer_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="LoadPlayer">
       <wsdl:input wsaw:Action="http://tempuri.org/ISavePlayer_Service/LoadPlayer" message="tns:ISavePlayer_Service_LoadPlayer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISavePlayer_Service/LoadPlayerResponse" message="tns:ISavePlayer_Service_LoadPlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPlayerExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISavePlayer_Service/IsPlayerExists" message="tns:ISavePlayer_Service_IsPlayerExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISavePlayer_Service/IsPlayerExistsResponse" message="tns:ISavePlayer_Service_IsPlayerExists_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISavePlayer_Service" type="tns:ISavePlayer_Service">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="LoadPlayer">
       <soap:operation soapAction="http://tempuri.org/ISavePlayer_Service/LoadPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPlayerExists">
+      <soap:operation soapAction="http://tempuri.org/ISavePlayer_Service/IsPlayerExists" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -55,7 +55,21 @@
       <RootProperty Name="RenderTransformOrigin" />
     </RootType>
     <RootType FullName="Final_Project.Pages.GamePage" />
-    <RootType FullName="Final_Project.Pages.LoginPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="FocusVisualSecondaryBrush" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="RenderTransformOrigin" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />
@@ -71,6 +85,7 @@
       <RootProperty Name="Foreground" />
       <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="Final_Project.Pages.LoginPage" />
     <RootType FullName="Final_Project.Pages.ShopPage" />
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
       <RootProperty Name="Rotation" />
