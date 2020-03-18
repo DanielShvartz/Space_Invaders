@@ -72,7 +72,7 @@ namespace Final_Project.Pages
             data.Shields_Images[itemNewIndex] = shield_image; // push by index
             
             Image shield_image_hp = new Image(); // create new shield hp image
-            shield_image_hp.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
+            shield_image_hp.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
             shield_image_hp.Tag = itemNewIndex; // to know which tag is he having
             data.Shields_hp_Images[itemNewIndex] =  shield_image_hp;
 
@@ -123,7 +123,7 @@ namespace Final_Project.Pages
                         if(data.Shields_Images[i] != null) // if its null we cannot heal it - it doesnt exist
                         {
                             data.ShieldHp[i] = 24; // if its existing - load full hp in the array
-                            data.Shields_hp_Images[i].Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
+                            data.Shields_hp_Images[i].Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
                             //set full hp image
                         }
                     }

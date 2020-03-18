@@ -60,7 +60,6 @@
       <RootProperty Name="Text" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
-      <RootProperty Name="FontFamily" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="FocusVisualSecondaryBrush" />

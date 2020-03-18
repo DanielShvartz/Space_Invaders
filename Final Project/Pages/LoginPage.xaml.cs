@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -33,35 +34,47 @@ namespace Final_Project.Pages
             //we create a proxy to access the db
             Final_Project.Player_ServiceRef.SavePlayer_ServiceClient proxy = new Final_Project.Player_ServiceRef.SavePlayer_ServiceClient();
 
-            var result = await proxy.IsPlayerExistsAsync(UsernameText.Text, PasswordText.Text); // we check if the player exists
-            if (result == false) // if the user doesnt exist
+            var resultUsername = await proxy.IsUsernameExistsAsync(UsernameText.Text); // we check first if the username exists
+            if(resultUsername) // if he exists we check for the password
+            {
+                var result = await proxy.IsPlayerExistsAsync(UsernameText.Text, PasswordText.Text); // we check if the player exists (with the password
+                if (result)  // if he does exist
+                {
+                    //we dont know which hearts images to load to so we check
+                    var playerResult = await proxy.LoadPlayerAsync(UsernameText.Text, PasswordText.Text); // we load him
+
+                    List<double> ShieldHp = new List<double>() { playerResult.Shield1_HP, playerResult.Shield2_HP, playerResult.Shield3_HP }; // init array of 3 shield hp
+
+                    Image shield_Image_1 = new Image(); // we load the images of the shields
+                                                        //if any things doesnt work create 3 objects
+                    shield_Image_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png")); // we load shield images
+                    List<Image> Shields_Images = new List<Image>() { shield_Image_1, shield_Image_1, shield_Image_1 }; // to pass
+
+                    for (int i = 0; i < 3; i++) // check for missing shield
+                        if (ShieldHp[i] <= 0) // if shield hp is less then 0 or 0 
+                            Shields_Images[i] = null; // we delete its image
+
+                    List<Image> Shields_hp_Images; // we load the hp images of the shields
+                    Shields_hp_Images = LoadShieldImages(playerResult.Shield1_Image, playerResult.Shield2_Image, playerResult.Shield3_Image); // we dont know which images to load so we send the number of the image of each shield to load
+
+                    Classes.Data player_data = new Classes.Data(playerResult.Current_Level, playerResult.Coins, playerResult.HP,
+                        playerResult.SpaceShip_Level, (Final_Project.Classes.Bullets)playerResult.Bullet_Level, Shields_Images, Shields_hp_Images, ShieldHp);
+
+                    Frame.Navigate(typeof(GamePage), player_data); // pass to page after got all data
+                }
+                else // if he doesnt exist - we let him enter new password or create new player
+                {
+                    var dialog = new MessageDialog("You have entered a wrong password!\nPlease enter a new password or create a new player");
+                    dialog.Title = "Couldn't Login!";
+                    dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
+                    var ans = await dialog.ShowAsync();
+                }
+            }
+            else // if the username doesnt exist there is no need to check the password - we just start new game with the given info
             {
                 Frame.Navigate(typeof(GamePage), null); // we send that he has no data and the data will be create thoughout the game
             }
-            else if (result == true)  // if he does exist
-            {
-                //we dont know which hearts images to load to so we check
-                var playerResult = await proxy.LoadPlayerAsync(UsernameText.Text, PasswordText.Text); // we load him
 
-                List<double> ShieldHp = new List<double>() { playerResult.Shield1_HP, playerResult.Shield2_HP, playerResult.Shield3_HP }; // init array of 3 shield hp
-
-                Image shield_Image_1 = new Image(); // we load the images of the shields
-                //if any things doesnt work create 3 objects
-                shield_Image_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png")); // we load shield images
-                List<Image> Shields_Images = new List<Image>() {shield_Image_1, shield_Image_1, shield_Image_1}; // to pass
-
-                for (int i = 0; i < 3; i++) // check for missing shield
-                    if (ShieldHp[i] <= 0) // if shield hp is less then 0 or 0 
-                        Shields_Images[i] = null; // we delete its image
-
-                List<Image> Shields_hp_Images; // we load the hp images of the shields
-                Shields_hp_Images = LoadShieldImages(playerResult.Shield1_Image, playerResult.Shield2_Image, playerResult.Shield3_Image); // we dont know which images to load so we send the number of the image of each shield to load
-
-                Classes.Data player_data = new Classes.Data(playerResult.Current_Level, playerResult.Coins, playerResult.HP,
-                    playerResult.SpaceShip_Level, (Final_Project.Classes.Bullets)playerResult.Bullet_Level, Shields_Images, Shields_hp_Images, ShieldHp);
-
-                Frame.Navigate(typeof(GamePage), player_data); // pass to page after got all data
-            }
         }
         /// <summary>
         /// The function gets the numbers of images for each shield
@@ -77,7 +90,7 @@ namespace Final_Project.Pages
 
             for (int i = 0; i < 3; i++) // we move on the numbers
             {
-                if (ShieldImageNumber[i] == null) // if we have null the shield doesnt exist
+                if (ShieldImageNumber[i] == 0) // if we have null the shield doesnt exist
                     ShieldImageList[i] = null; // so we he wont have image
                 else // if a shield exist
                 {

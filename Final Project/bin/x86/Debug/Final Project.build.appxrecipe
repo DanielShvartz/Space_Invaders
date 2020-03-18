@@ -520,8 +520,8 @@
     <AppxPackagedFile Include="C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\Assets\HealthPoints\hp_7.png">
       <PackagePath>Assets\HealthPoints\hp_7.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\Assets\HealthPoints\hp_8_full.png">
-      <PackagePath>Assets\HealthPoints\hp_8_full.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\Assets\HealthPoints\hp_8.png">
+      <PackagePath>Assets\HealthPoints\hp_8.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\Assets\SpaceShip\Bullets\Granade_Shell.png">
       <PackagePath>Assets\SpaceShip\Bullets\Granade_Shell.png</PackagePath>

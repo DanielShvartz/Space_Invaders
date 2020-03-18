@@ -240,6 +240,9 @@ namespace Final_Project.Player_ServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISavePlayer_Service/IsPlayerExists", ReplyAction="http://tempuri.org/ISavePlayer_Service/IsPlayerExistsResponse")]
         System.Threading.Tasks.Task<bool> IsPlayerExistsAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISavePlayer_Service/IsUsernameExists", ReplyAction="http://tempuri.org/ISavePlayer_Service/IsUsernameExistsResponse")]
+        System.Threading.Tasks.Task<bool> IsUsernameExistsAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -299,6 +302,10 @@ namespace Final_Project.Player_ServiceRef {
         
         public System.Threading.Tasks.Task<bool> IsPlayerExistsAsync(string username, string password) {
             return base.Channel.IsPlayerExistsAsync(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> IsUsernameExistsAsync(string username) {
+            return base.Channel.IsUsernameExistsAsync(username);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {

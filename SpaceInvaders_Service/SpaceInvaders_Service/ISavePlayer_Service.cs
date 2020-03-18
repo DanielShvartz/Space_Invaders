@@ -20,5 +20,8 @@ namespace SpaceInvaders_Service
 
         [OperationContract]
         bool IsPlayerExists(string username, string password);
+
+        [OperationContract]
+        bool IsUsernameExists(string username);
     }
 }

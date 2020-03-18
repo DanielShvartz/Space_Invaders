@@ -8,12 +8,30 @@ namespace SpaceInvaders_Service
 {
     public class SavePlayer_Service : ISavePlayer_Service 
     {
+        public bool IsUsernameExists(string username)
+        {
+            string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            //delete by id
+            string query = string.Format("SELECT * FROM Player_Table Where Username = '{0}'", username);
+            SqlCommand cmd = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader SqlReader = cmd.ExecuteReader();
+
+            bool ans;
+            if (SqlReader.HasRows) // if he have rows - he exist
+                ans = true; // return exist
+            else // if he doesnt have rows he doesnt exists
+                ans = false; // doesnt exists
+            connection.Close();
+            return ans; // no need to check we just return true
+        }
         public bool IsPlayerExists(string username, string password)
         {
             string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
             SqlConnection connection = new SqlConnection(ConnectionString);
             //delete by id
-            string query = string.Format("SELECT * FROM Player_Table, Where Username = '{0}' AND Password = '{1}' ", username, password);
+            string query = string.Format("SELECT * FROM Player_Table Where Username = '{0}' AND Password = '{1}' ", username, password);
             SqlCommand cmd = new SqlCommand(query, connection);
             connection.Open();
             SqlDataReader SqlReader = cmd.ExecuteReader();
@@ -73,7 +91,7 @@ namespace SpaceInvaders_Service
 
             string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
             SqlConnection connection = new SqlConnection(ConnectionString);
-            string query = string.Format("SELECT * FROM Player_Table, Where Username = '{0}' AND Password = '{1}' ", username, password);
+            string query = string.Format("SELECT * FROM Player_Table Where Username = '{0}' AND Password = '{1}' ", username, password);
             SqlCommand cmd = new SqlCommand(query, connection); // we get the wanted player
             connection.Open();
             SqlDataReader SqlReader = cmd.ExecuteReader();
@@ -93,9 +111,22 @@ namespace SpaceInvaders_Service
                 player.Shield1_HP = int.Parse(SqlReader["Shield1_HP"].ToString());
                 player.Shield2_HP = int.Parse(SqlReader["Shield2_HP"].ToString());
                 player.Shield3_HP = int.Parse(SqlReader["Shield3_HP"].ToString());
-                player.Shield1_Image = int.Parse(SqlReader["Shield1_Image"].ToString());
-                player.Shield2_Image = int.Parse(SqlReader["Shield2_Image"].ToString());
-                player.Shield3_Image = int.Parse(SqlReader["Shield3_Image"].ToString());
+
+                if (player.Shield1_HP <= 0) // if we have a shield that hes less then 0 hp
+                    player.Shield1_Image = 0; // we wont load its image
+                else // if it has more
+                    player.Shield1_Image = int.Parse(SqlReader["Shield1_Image"].ToString()); // we get the image number
+
+                if (player.Shield2_HP <= 0)
+                    player.Shield2_Image = 0;
+                else
+                    player.Shield2_Image = int.Parse(SqlReader["Shield2_Image"].ToString());
+
+                if (player.Shield3_HP <= 0)
+                    player.Shield3_Image = 0;
+                else
+                    player.Shield3_Image = int.Parse(SqlReader["Shield3_Image"].ToString());
+                
             }
             connection.Close(); // in end we close the connection.
             return player;

@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="Final_Project.Pages.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Final_Project.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Background>
+        <ImageBrush ImageSource="ms-appx:///Assets/BackGrounds/login_background.jpg"/>
+    </Page.Background>
+
+    <Grid>
+        <TextBlock Text="Login/Register" Width="924" Height="104" Canvas.Left="1642" FontFamily="Cosmic Alien" FontSize="80" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="74" Margin="540,10,0,0"/>
+        <TextBox x:ConnectionId='2' Name="UsernameText" Text="Enter Username" Width="968" Height="92" FontSize="60" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="74" Margin="0,302,0,0" RenderTransformOrigin="0.68,2.22" ></TextBox>
+        <TextBox x:ConnectionId='3' Name="PasswordText" Text="Enter Password" Width="968" Height="92" FontSize="60" FontWeight="Normal" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="74" Margin="0,540,0,0" RenderTransformOrigin="0.68,2.22" ></TextBox>
+
+        <Button x:ConnectionId='4' Name="playButton" Height="244" Width="605" HorizontalAlignment="Center" Margin="0,753,0,0" VerticalAlignment="Top"                         >
+            <Button.Background>
+                <ImageBrush ImageSource="/Assets/Buttons/mp_start_button.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>
+

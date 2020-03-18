@@ -185,7 +185,7 @@
     <Content Include="Assets\Explosions\Enemy\shot6_exp7.png" />
     <Content Include="Assets\Explosions\Enemy\shot6_exp8.png" />
     <Content Include="Assets\Explosions\Enemy\shot6_exp9.png" />
-    <Content Include="Assets\HealthPoints\hp_0_dead.png" />
+    <Content Include="Assets\HealthPoints\hp_0.png" />
     <Content Include="Assets\HealthPoints\hp_1.png" />
     <Content Include="Assets\HealthPoints\hp_2.png" />
     <Content Include="Assets\HealthPoints\hp_3.png" />
@@ -193,7 +193,7 @@
     <Content Include="Assets\HealthPoints\hp_5.png" />
     <Content Include="Assets\HealthPoints\hp_6.png" />
     <Content Include="Assets\HealthPoints\hp_7.png" />
-    <Content Include="Assets\HealthPoints\hp_8_full.png" />
+    <Content Include="Assets\HealthPoints\hp_8.png" />
     <Content Include="Assets\SpaceShip\Bullets\Granade_Shell.png" />
     <Content Include="Assets\SpaceShip\Bullets\Heavy_Shell.png" />
     <Content Include="Assets\SpaceShip\Bullets\Laser_Enemy.png" />

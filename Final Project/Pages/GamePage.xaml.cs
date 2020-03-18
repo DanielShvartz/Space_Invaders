@@ -189,9 +189,9 @@ namespace Final_Project.Pages
                 shield_3.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png")); 
                 Shields_Images = new List<Image> { shield_1, shield_2, shield_3 }; // init list of shields to be able to remove them easly and thier hp
 
-                shield_hp_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
-                shield_hp_2.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
-                shield_hp_3.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8_full.png"));
+                shield_hp_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
+                shield_hp_2.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
+                shield_hp_3.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
                 Shields_hp_Images = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
 
                 ShieldHp = new List<double>() { SHIELD_HP_NUM, SHIELD_HP_NUM, SHIELD_HP_NUM }; // shields hp                
