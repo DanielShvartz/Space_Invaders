@@ -496,8 +496,8 @@
     <AppxPackagedFile Include="C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\Assets\Explosions\Enemy\shot6_exp9.png">
       <PackagePath>Assets\Explosions\Enemy\shot6_exp9.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\Assets\HealthPoints\hp_0_dead.png">
-      <PackagePath>Assets\HealthPoints\hp_0_dead.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\Assets\HealthPoints\hp_0.png">
+      <PackagePath>Assets\HealthPoints\hp_0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\Assets\HealthPoints\hp_1.png">
       <PackagePath>Assets\HealthPoints\hp_1.png</PackagePath>

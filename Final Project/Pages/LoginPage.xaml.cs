@@ -64,7 +64,7 @@ namespace Final_Project.Pages
                 }
                 else // if he doesnt exist - we let him enter new password or create new player
                 {
-                    var dialog = new MessageDialog("You have entered a wrong password!\nPlease enter a new password or create a new player");
+                    var dialog = new MessageDialog("You have entered a wrong password!\nPlease enter a correct password or create a new player");
                     dialog.Title = "Couldn't Login!";
                     dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
                     var ans = await dialog.ShowAsync();
@@ -95,6 +95,7 @@ namespace Final_Project.Pages
                 else // if a shield exist
                 {
                     string imgLocation = string.Format("ms-appx:///Assets/HealthPoints/hp_{0}.png", ShieldImageNumber[i]); // we take the number of the image to load
+                    ShieldImageList[i] = new Image(); // because it was set as null we create new image, without this, no image will be created
                     ShieldImageList[i].Source = new BitmapImage(new Uri(imgLocation)); // change the image accord
                 }
             }
