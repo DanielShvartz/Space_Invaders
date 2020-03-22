@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System;
@@ -69,8 +70,8 @@ namespace Final_Project.Pages
     protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             data_of_player = (Data)e.Parameter;
-            if (data_of_player == null)
-                return;
+            if (data_of_player == null || data_of_player.isExitingInDB == false) // if he doesnt exist in the db or he has no data at all
+                return; // retyurn him and dosent update
 
             // load all components from last level
  
@@ -182,7 +183,7 @@ namespace Final_Project.Pages
                 firstLoad = false;
             }
 
-            if (data_of_player == null) // if the player just registered of got new game - load new shields and data
+            if (data_of_player == null || data_of_player.isExitingInDB == false) // if the player just registered of got new game - load new shields and data
             {
                 shield_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
                 shield_2.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
@@ -195,7 +196,7 @@ namespace Final_Project.Pages
                 Shields_hp_Images = new List<Image> { shield_hp_1, shield_hp_2, shield_hp_3 };
 
                 ShieldHp = new List<double>() { SHIELD_HP_NUM, SHIELD_HP_NUM, SHIELD_HP_NUM }; // shields hp                
-                data_of_player = new Data(1, 0, 100, 0, Bullets.Light_Shell_Default, Shields_Images, Shields_hp_Images, ShieldHp); // load level 1
+                data_of_player = new Data(1, 0, 100, 0, Bullets.Light_Shell_Default, Shields_Images, Shields_hp_Images, ShieldHp, data_of_player.username, data_of_player.password, data_of_player.isExitingInDB); // load level 1
             }
             //init lists of images on any case - Init componenet makes it easy because it create the objects to run on
             Shields_Images = new List<Image> { shield_1, shield_2, shield_3 }; // init list of shields to be able to remove them easly and thier hp
@@ -274,6 +275,8 @@ namespace Final_Project.Pages
 
             dialog.Commands.Add(new UICommand { Label = "Continue To Shop", Id = 0 });
             dialog.Commands.Add(new UICommand { Label = "Continue To The Next Level", Id = 1 });
+            dialog.Commands.Add(new UICommand { Label = "Save And Exit", Id = 2 });
+
             var ans = await dialog.ShowAsync();
 
             //he leveled up so any way he gets more hp
@@ -292,12 +295,68 @@ namespace Final_Project.Pages
                 enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
                 enemy_create_bullet_timer.Start();
             }
-            if ((int)ans.Id == 0) // continue to the shop - sends info to shop page
+            else
             {
-                data_of_player = new Data(NewLevel, coins, Player_HitPoints, player.SpaceShip_Level, playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp);
-                Frame.Navigate(typeof(ShopPage), data_of_player); // we send all the info needed for the shop to buy the wanted things 
+                //to save progress into data of player - including all the images and hp
+                data_of_player = new Data(NewLevel, coins, Player_HitPoints, player.SpaceShip_Level, playerBulletType, Shields_Images, Shields_hp_Images, ShieldHp, data_of_player.username, data_of_player.password, data_of_player.isExitingInDB);
+                if ((int)ans.Id == 0) // continue to the shop - sends info to shop page
+                {
+                    Frame.Navigate(typeof(ShopPage), data_of_player); // we send all the info needed for the shop to buy the wanted things 
+                }
+                else if ((int)ans.Id == 2) // save and exit
+                {
+                    SavePlayerAsync();
+                }
             }
+     
         }
+
+        private async System.Threading.Tasks.Task SavePlayerAsync()
+        {
+            //create a proxy to access the db
+            Final_Project.Player_ServiceRef.SavePlayer_ServiceClient proxy = new Final_Project.Player_ServiceRef.SavePlayer_ServiceClient();
+
+            if (data_of_player.isExitingInDB) //if the user is already in the database - update
+            {
+                Final_Project.Player_ServiceRef.Player dataOfPlayer_Tosend = new Player_ServiceRef.Player();
+
+                dataOfPlayer_Tosend.Username = data_of_player.username;
+                dataOfPlayer_Tosend.Password = data_of_player.password;
+                dataOfPlayer_Tosend.Current_Level = data_of_player.Level;
+                dataOfPlayer_Tosend.HP = (int)data_of_player.player_HitPoints;
+                dataOfPlayer_Tosend.Coins = data_of_player.coins;
+                dataOfPlayer_Tosend.SpaceShip_Level = data_of_player.player_SpaceShip_Level;
+                dataOfPlayer_Tosend.Bullet_Level = (int)data_of_player.player_Bullet;
+                dataOfPlayer_Tosend.Shield1_HP = (int)data_of_player.ShieldHp[0];
+                dataOfPlayer_Tosend.Shield2_HP = (int)data_of_player.ShieldHp[1];
+                dataOfPlayer_Tosend.Shield3_HP = (int)data_of_player.ShieldHp[2];
+
+                //how to take image picture
+                Windows.UI.Xaml.Media.Imaging.BitmapImage imagesrc = (BitmapImage) data_of_player.Shields_hp_Images[0].Source;
+                string imgsrc = (string)imagesrc.UriSource.AbsoluteUri; // ms-appx:///Assets/HealthPoints/hp_8.png
+                
+                //get index
+                for(int i=0;i<imgsrc.Length;i++)
+                {
+                    Debug.WriteLine(imgsrc[i] + ", " + i); // to know index of the number instead of typing like a jerk
+                }
+                Debug.WriteLine(imgsrc[34]);
+
+                //explain - take the number and add him
+
+                  //todo - add save to player who doesnt exist and debug
+
+                //proxy.UpdatePlayerAsync(data_of_player.username);
+            }
+            else //if the user not in data base - add
+            {
+                
+            }
+
+            CoreApplication.Exit(); // exit
+        }
+
+
 
         private void Game_timer_movement_Tick(object sender, object e)
         {

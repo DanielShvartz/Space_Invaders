@@ -22,7 +22,11 @@ namespace Final_Project.Classes
         public List<double> ShieldHp; // init array of 3 shield hp
         // there is no need to pass ShieldRectangles because it stays the same and we doesnt need to pass him
 
-        public Data(int level, int coins, double player_HitPoints, int player_SpaceShip_Level, Bullets player_Bullet, List<Image> shields_Images, List<Image> shields_hp_Images, List<double> shieldHp)
+        public string username; // to save username and password and not ask twice
+        public string password;
+        public bool isExitingInDB; // added is existing in db to save the username and password and not access the db twice to check if he is existing or not
+
+        public Data(int level, int coins, double player_HitPoints, int player_SpaceShip_Level, Bullets player_Bullet, List<Image> shields_Images, List<Image> shields_hp_Images, List<double> shieldHp, string username, string password, bool isExistingInDB)
         {
             Level = level;
             this.coins = coins;
@@ -34,6 +38,10 @@ namespace Final_Project.Classes
             Shields_Images = shields_Images;
             Shields_hp_Images = shields_hp_Images;
             ShieldHp = shieldHp;
+
+            this.username = username;
+            this.password = password;
+            this.isExitingInDB = isExistingInDB;
         }
         public Data() { }
     }

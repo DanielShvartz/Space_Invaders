@@ -58,7 +58,8 @@ namespace Final_Project.Pages
                     Shields_hp_Images = LoadShieldImages(playerResult.Shield1_Image, playerResult.Shield2_Image, playerResult.Shield3_Image); // we dont know which images to load so we send the number of the image of each shield to load
 
                     Classes.Data player_data = new Classes.Data(playerResult.Current_Level, playerResult.Coins, playerResult.HP,
-                        playerResult.SpaceShip_Level, (Final_Project.Classes.Bullets)playerResult.Bullet_Level, Shields_Images, Shields_hp_Images, ShieldHp);
+                        playerResult.SpaceShip_Level, (Final_Project.Classes.Bullets)playerResult.Bullet_Level, Shields_Images, 
+                        Shields_hp_Images, ShieldHp, UsernameText.Text, PasswordText.Text, true);
 
                     Frame.Navigate(typeof(GamePage), player_data); // pass to page after got all data
                 }
@@ -72,7 +73,12 @@ namespace Final_Project.Pages
             }
             else // if the username doesnt exist there is no need to check the password - we just start new game with the given info
             {
-                Frame.Navigate(typeof(GamePage), null); // we send that he has no data and the data will be create thoughout the game
+                Classes.Data player_data = new Classes.Data();
+                player_data.username = UsernameText.Text; // we only pass username and password 
+                player_data.password = PasswordText.Text;
+                player_data.isExitingInDB = false; // but he doesnt exist in the db so we will need to add him
+                Frame.Navigate(typeof(GamePage), player_data); // we send that he has no data and the data will be create thoughout the game
+                
             }
 
         }

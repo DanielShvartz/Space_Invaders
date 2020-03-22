@@ -112,6 +112,8 @@ namespace SpaceInvaders_Service
                 player.Shield2_HP = int.Parse(SqlReader["Shield2_HP"].ToString());
                 player.Shield3_HP = int.Parse(SqlReader["Shield3_HP"].ToString());
 
+
+                //code dupi - if you want you can make func or loop
                 if (player.Shield1_HP <= 0) // if we have a shield that hes less then 0 hp
                     player.Shield1_Image = 0; // we wont load its image
                 else // if it has more
