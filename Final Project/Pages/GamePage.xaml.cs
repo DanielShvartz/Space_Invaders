@@ -58,7 +58,7 @@ namespace Final_Project.Pages
         List<Enemy> enemy_Control; // enemies
 
         //shields
-        List<Image> Shields_Images; 
+        List<Image> Shields_Images;
         List<Image> Shields_hp_Images;
         List<double> ShieldHp; // init array of 3 shield hp
         List<Rect> ShieldRectangles = new List<Rect>() // init rectangle for collusion - its const so we dont need to init twice
@@ -67,14 +67,14 @@ namespace Final_Project.Pages
                 }; // init array of 3 rectnagle of the shields to check hits
 
 
-    protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             data_of_player = (Data)e.Parameter;
             if (data_of_player == null || data_of_player.isExitingInDB == false) // if he doesnt exist in the db or he has no data at all
                 return; // retyurn him and dosent update
 
             // load all components from last level
- 
+
             coins = data_of_player.coins; // done
         }
 
@@ -95,11 +95,11 @@ namespace Final_Project.Pages
 
             string imLocation = "";
             int counter = 1; // after each 12 moves  - changes the enemys pictures and moves down
-            for (int i = 3; i >= 1; ) // this loops runs 3 times and create 3 rows
+            for (int i = 3; i >= 1;) // this loops runs 3 times and create 3 rows
             {
                 if (counter <= 12) // each 12 runs create 12 aliens
                 {
-                    switch(i)
+                    switch (i)
                     {
                         case 3:
                             imLocation = "ms-appx:///Assets/Enemys/Ship_Level3.png"; // each run we have different ship image
@@ -166,14 +166,14 @@ namespace Final_Project.Pages
                     ImageLocation = "ms-appx:///Assets/SpaceShip/spaceship_3.png";
                     break;
             }
-            player = new Player(15, this.canvas, ImageLocation , data_of_player.player_SpaceShip_Level);
+            player = new Player(15, this.canvas, ImageLocation, data_of_player.player_SpaceShip_Level);
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             rnd = new Random();
-            
-            if(firstLoad == true) // when he first loads the game - we build the level
+
+            if (firstLoad == true) // when he first loads the game - we build the level
             {
                 //check if login - if so - load level by last level played - if not start at one
                 DataAccessLayer.DeleteAll(); // delete the data base if exist
@@ -187,7 +187,7 @@ namespace Final_Project.Pages
             {
                 shield_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
                 shield_2.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
-                shield_3.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png")); 
+                shield_3.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
                 Shields_Images = new List<Image> { shield_1, shield_2, shield_3 }; // init list of shields to be able to remove them easly and thier hp
 
                 shield_hp_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/HealthPoints/hp_8.png"));
@@ -207,8 +207,8 @@ namespace Final_Project.Pages
             Level = DataAccessLayer.SelectByNum(data_of_player.Level); // load by level
             Level_Text.Text = "Level: " + Level.Currentlevel;
             playerBulletType = data_of_player.player_Bullet; // load by data
-            //initalize componenets when the game starts
-            
+                                                             //initalize componenets when the game starts
+
             CreateSpaceShip();
 
             // when the page is loaded we create a new list
@@ -240,7 +240,7 @@ namespace Final_Project.Pages
         {
             for (int i = 0; i < Shields_Images.Count(); i++)
             {
-                if(data_of_player.Shields_Images[i] != null) // so we dont access nulls we skip those
+                if (data_of_player.Shields_Images[i] != null) // so we dont access nulls we skip those
                 {
                     Shields_Images[i].Source = data_of_player.Shields_Images[i].Source;
                     Shields_hp_Images[i].Source = data_of_player.Shields_hp_Images[i].Source;
@@ -252,7 +252,7 @@ namespace Final_Project.Pages
             Player_HitPoints = data_of_player.player_HitPoints;
             Health_Text.Text = "Health: " + Player_HitPoints + "%";
         }
-        
+
         private void Enemy_create_bullet_timer_Tick(object sender, object e) // create bullets for enemy each X times and add to list
         {
             //if the player won - we stop this timer and not check because we dont have any more enemies
@@ -269,8 +269,8 @@ namespace Final_Project.Pages
         {
             NewLevel++;
             //check if won the game
-            Level_Text.Text = "Level: " + NewLevel; 
-            var dialog = new MessageDialog("You Have Leveled Up To Level " + (NewLevel)  + " !" + "\nPlease Choose:");
+            Level_Text.Text = "Level: " + NewLevel;
+            var dialog = new MessageDialog("You Have Leveled Up To Level " + (NewLevel) + " !" + "\nPlease Choose:");
             dialog.Title = "Level Up!";
 
             dialog.Commands.Add(new UICommand { Label = "Continue To Shop", Id = 0 });
@@ -287,11 +287,11 @@ namespace Final_Project.Pages
             {
                 Level = DataAccessLayer.SelectByNum(NewLevel);
                 InitEnemies(canvas); //there is no enemies right now so we just init as usual but load a new level
-                
+
                 game_timer_movement.Start(); // start timer
 
                 enemy_create_bullet_timer = new DispatcherTimer();
-                enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds((double)1/NewLevel); // each level more enemies will shoot
+                enemy_create_bullet_timer.Interval = TimeSpan.FromSeconds((double)1 / NewLevel); // each level more enemies will shoot
                 enemy_create_bullet_timer.Tick += Enemy_create_bullet_timer_Tick;
                 enemy_create_bullet_timer.Start();
             }
@@ -308,7 +308,7 @@ namespace Final_Project.Pages
                     SavePlayerAsync();
                 }
             }
-     
+
         }
 
         private async System.Threading.Tasks.Task SavePlayerAsync()
@@ -317,52 +317,67 @@ namespace Final_Project.Pages
             Final_Project.Player_ServiceRef.SavePlayer_ServiceClient proxy = new Final_Project.Player_ServiceRef.SavePlayer_ServiceClient();
 
             if (data_of_player.isExitingInDB) //if the user is already in the database - update
-            {
-                Final_Project.Player_ServiceRef.Player dataOfPlayer_Tosend = new Player_ServiceRef.Player();
-
-                dataOfPlayer_Tosend.Username = data_of_player.username;
-                dataOfPlayer_Tosend.Password = data_of_player.password;
-                dataOfPlayer_Tosend.Current_Level = data_of_player.Level;
-                dataOfPlayer_Tosend.HP = (int)data_of_player.player_HitPoints;
-                dataOfPlayer_Tosend.Coins = data_of_player.coins;
-                dataOfPlayer_Tosend.SpaceShip_Level = data_of_player.player_SpaceShip_Level;
-                dataOfPlayer_Tosend.Bullet_Level = (int)data_of_player.player_Bullet;
-                dataOfPlayer_Tosend.Shield1_HP = (int)data_of_player.ShieldHp[0];
-                dataOfPlayer_Tosend.Shield2_HP = (int)data_of_player.ShieldHp[1];
-                dataOfPlayer_Tosend.Shield3_HP = (int)data_of_player.ShieldHp[2];
-
-                //how to take image picture
-                Windows.UI.Xaml.Media.Imaging.BitmapImage imagesrc = (BitmapImage) data_of_player.Shields_hp_Images[0].Source;
-                string imgsrc = (string)imagesrc.UriSource.AbsoluteUri; // ms-appx:///Assets/HealthPoints/hp_8.png
-                
-                //get index
-                for(int i=0;i<imgsrc.Length;i++)
-                {
-                    Debug.WriteLine(imgsrc[i] + ", " + i); // to know index of the number instead of typing like a jerk
-                }
-                Debug.WriteLine(imgsrc[34]);
-
-                //explain - take the number and add him
-
-                  //todo - add save to player who doesnt exist and debug
-
-                //proxy.UpdatePlayerAsync(data_of_player.username);
-            }
+                await proxy.UpdatePlayerAsync(CreatePlayerForDB()); //Update because it exists - then store in the db and exit
             else //if the user not in data base - add
-            {
-                
-            }
+                await proxy.InsertNewPlayerAsync(CreatePlayerForDB());//Insert beacause it doesnt exist - then store in the db and exit
 
             CoreApplication.Exit(); // exit
         }
 
+        Player_ServiceRef.Player CreatePlayerForDB()
+        {
+            //Doesnt matter if is already known user, same things for both
+            Final_Project.Player_ServiceRef.Player dataOfPlayer_Tosend = new Player_ServiceRef.Player();
 
+            dataOfPlayer_Tosend.Username = data_of_player.username; // set all the values
+            dataOfPlayer_Tosend.Password = data_of_player.password;
+            dataOfPlayer_Tosend.Current_Level = data_of_player.Level;
+            dataOfPlayer_Tosend.HP = (int)data_of_player.player_HitPoints;
+            dataOfPlayer_Tosend.Coins = data_of_player.coins;
+            dataOfPlayer_Tosend.SpaceShip_Level = data_of_player.player_SpaceShip_Level;
+            dataOfPlayer_Tosend.Bullet_Level = (int)data_of_player.player_Bullet;
+            dataOfPlayer_Tosend.Shield1_HP = (int)data_of_player.ShieldHp[0];
+            dataOfPlayer_Tosend.Shield2_HP = (int)data_of_player.ShieldHp[1];
+            dataOfPlayer_Tosend.Shield3_HP = (int)data_of_player.ShieldHp[2];
+
+            // to get the number of the images, then get the number from each image and set accordingly.
+            dataOfPlayer_Tosend.Shield1_Image = GetNumFromImage(data_of_player.Shields_hp_Images[0]);
+            dataOfPlayer_Tosend.Shield2_Image = GetNumFromImage(data_of_player.Shields_hp_Images[1]);
+            dataOfPlayer_Tosend.Shield3_Image = GetNumFromImage(data_of_player.Shields_hp_Images[2]);
+
+            return dataOfPlayer_Tosend;
+        }
+
+        //This function gets an image of the format ms-appx:///Assets/HealthPoints/hp_X.png
+        //Where X is the number of the image, returns the number it self to send into the db.
+        private int GetNumFromImage(Image img)
+        {
+            if (img == null) // if the image is null - it doesnt exist
+                return 0;
+            else
+            {
+                //how to take image picture number
+                Windows.UI.Xaml.Media.Imaging.BitmapImage imagesrc = (BitmapImage)img.Source;
+                string imgsrc = (string)imagesrc.UriSource.AbsoluteUri; // ms-appx:///Assets/HealthPoints/hp_8.png
+                //This loop shows how to get the currect index
+                //this loop right heee gets the index of the image just to show, we print the char and the index of him
+                for (int i = 0; i < imgsrc.Length; i++)
+                {
+                    Debug.WriteLine(imgsrc[i] + ", " + i); // to know index of the number instead of typing like a jerk
+                }
+                //Debug.WriteLine(imgsrc[34]);// the 34th index is what we are looking for
+                Debug.WriteLine((int)char.GetNumericValue(imgsrc[34]));
+                return (int)char.GetNumericValue(imgsrc[34]); //  we get the number from the char and convert it to int ( returns string )
+            }
+           
+        }
 
         private void Game_timer_movement_Tick(object sender, object e)
         {
             bool hitRemoved = true;
             bool bulletGotHit = true;
             double remainHP;
+
 
             if(enemy_Control.Count() == 0) // if these is no enemies  - we level up because he killed all the enemies
             {
@@ -471,12 +486,33 @@ namespace Final_Project.Pages
                     canvas.Children.Remove(enemy_bullet_control[bullet].GetBulletImage()); // remove from the bullet from the canavas first
                     Player_HitPoints -= enemy_bullet_control[bullet].damage; // reduce hp
                     Health_Text.Text = "Health: " + Player_HitPoints.ToString() + '%'; // update text box
-                    //here check for 0
                     enemy_bullet_control.Remove(enemy_bullet_control[bullet]); // remove bullet from the list
                     bulletGotHit = true; // bullet got hit so he doesnt move
+                    if(Player_HitPoints <= 0) // player lose
+                    {
+                        enemy_create_bullet_timer.Stop(); // stop creating bullets for enemies because he lost
+                        game_timer_movement.Stop(); // stop the game timer - to not check  
+                        PlayerLostAsync();
+                        Frame.Navigate(typeof(MainPage)); // back to start
+                        //like the level up - same thing here but exit
+                    }
                 }
                 if (!bulletGotHit)
                     MoveBullet(enemy_bullet_control[bullet]);
+            } 
+        }
+
+        private async System.Threading.Tasks.Task PlayerLostAsync()
+        {
+            var dialog = new MessageDialog("You Lost...");
+            dialog.Title = "Lose";
+            dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
+            var ans = await dialog.ShowAsync();
+
+            if (data_of_player.isExitingInDB) // if the player exists in the database we remove him so he dont abuse the game
+            {
+                Final_Project.Player_ServiceRef.SavePlayer_ServiceClient proxy = new Final_Project.Player_ServiceRef.SavePlayer_ServiceClient();
+                await proxy.RemoveFromDBAsync(data_of_player.username);
             }
         }
 

@@ -229,8 +229,8 @@ namespace Final_Project.Player_ServiceRef {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Player_ServiceRef.ISavePlayer_Service")]
     public interface ISavePlayer_Service {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISavePlayer_Service/SavePlayer", ReplyAction="http://tempuri.org/ISavePlayer_Service/SavePlayerResponse")]
-        System.Threading.Tasks.Task<bool> SavePlayerAsync(Final_Project.Player_ServiceRef.Player player);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISavePlayer_Service/InsertNewPlayer", ReplyAction="http://tempuri.org/ISavePlayer_Service/InsertNewPlayerResponse")]
+        System.Threading.Tasks.Task<bool> InsertNewPlayerAsync(Final_Project.Player_ServiceRef.Player player);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISavePlayer_Service/UpdatePlayer", ReplyAction="http://tempuri.org/ISavePlayer_Service/UpdatePlayerResponse")]
         System.Threading.Tasks.Task<bool> UpdatePlayerAsync(Final_Project.Player_ServiceRef.Player player);
@@ -243,6 +243,9 @@ namespace Final_Project.Player_ServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISavePlayer_Service/IsUsernameExists", ReplyAction="http://tempuri.org/ISavePlayer_Service/IsUsernameExistsResponse")]
         System.Threading.Tasks.Task<bool> IsUsernameExistsAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISavePlayer_Service/RemoveFromDB", ReplyAction="http://tempuri.org/ISavePlayer_Service/RemoveFromDBResponse")]
+        System.Threading.Tasks.Task RemoveFromDBAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -288,8 +291,8 @@ namespace Final_Project.Player_ServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        public System.Threading.Tasks.Task<bool> SavePlayerAsync(Final_Project.Player_ServiceRef.Player player) {
-            return base.Channel.SavePlayerAsync(player);
+        public System.Threading.Tasks.Task<bool> InsertNewPlayerAsync(Final_Project.Player_ServiceRef.Player player) {
+            return base.Channel.InsertNewPlayerAsync(player);
         }
         
         public System.Threading.Tasks.Task<bool> UpdatePlayerAsync(Final_Project.Player_ServiceRef.Player player) {
@@ -306,6 +309,10 @@ namespace Final_Project.Player_ServiceRef {
         
         public System.Threading.Tasks.Task<bool> IsUsernameExistsAsync(string username) {
             return base.Channel.IsUsernameExistsAsync(username);
+        }
+        
+        public System.Threading.Tasks.Task RemoveFromDBAsync(string username) {
+            return base.Channel.RemoveFromDBAsync(username);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {

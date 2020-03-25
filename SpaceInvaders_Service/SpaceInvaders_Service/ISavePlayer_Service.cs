@@ -10,7 +10,7 @@ namespace SpaceInvaders_Service
     public interface ISavePlayer_Service
     {
         [OperationContract]
-        bool SavePlayer(Player player);
+        bool InsertNewPlayer(Player player);
 
         [OperationContract]
         bool UpdatePlayer(Player player);
@@ -23,5 +23,8 @@ namespace SpaceInvaders_Service
 
         [OperationContract]
         bool IsUsernameExists(string username);
+
+        [OperationContract]
+        void RemoveFromDB(string username);
     }
 }

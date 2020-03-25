@@ -8,11 +8,20 @@ namespace SpaceInvaders_Service
 {
     public class SavePlayer_Service : ISavePlayer_Service 
     {
+        public void RemoveFromDB(string username)
+        {
+            string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string query = string.Format("DELETE FROM Player_Table Where Username = '{0}'", username);
+            SqlCommand cmd = new SqlCommand(query, connection);
+            connection.Open();
+            cmd.ExecuteNonQuery(); // no need to read only remove and execute
+            connection.Close();
+        }
         public bool IsUsernameExists(string username)
         {
             string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
             SqlConnection connection = new SqlConnection(ConnectionString);
-            //delete by id
             string query = string.Format("SELECT * FROM Player_Table Where Username = '{0}'", username);
             SqlCommand cmd = new SqlCommand(query, connection);
             connection.Open();
@@ -46,7 +55,7 @@ namespace SpaceInvaders_Service
         }
 
         //he wants to finish the game - we add him to table or update him
-        public bool SavePlayer(Player player)
+        public bool InsertNewPlayer(Player player)
         {
             //we want to know where is our server so we search for connection string
             string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
@@ -54,8 +63,12 @@ namespace SpaceInvaders_Service
             SqlConnection connection = new SqlConnection(ConnectionString);
 
             //set the query by formating string - we access the table and insert data.
-            string query = string.Format("INSERT INTO Player_Table (Username, Password, Current_Level, HP, Coins, SpaceShip_Level, Bullet_Level, Shield1_HP, Shield2_HP, Shield3_HP) VALUES ('{0}','{1}', {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9})",
-               player.Username, player.Password, player.Current_Level, player.HP, player.Coins, player.SpaceShip_Level, player.Bullet_Level, player.Shield1_HP, player.Shield2_HP, player.Shield3_HP);
+            string query = string.Format("INSERT INTO Player_Table (Username, Password, Current_Level, HP, Coins, SpaceShip_Level, " +
+                "Bullet_Level, Shield1_HP, Shield2_HP, Shield3_HP, Shield1_Image, Shield2_Image, Shield3_Image) VALUES " +
+                "('{0}','{1}', {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12})",
+               player.Username, player.Password, player.Current_Level, player.HP, player.Coins, player.SpaceShip_Level, 
+               player.Bullet_Level, player.Shield1_HP, player.Shield2_HP, player.Shield3_HP, player.Shield1_Image,
+               player.Shield2_Image, player.Shield3_Image);
 
             // intialize a sql command
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -75,8 +88,11 @@ namespace SpaceInvaders_Service
             string ConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
             SqlConnection connection = new SqlConnection(ConnectionString);
             //delete by id
-            string query = string.Format("UPDATE Player_Table SET Current_Level = {0}, HP = {1}, Coins = {2}, SpaceShip_Level = {3}, Bullet_Level = {4}, Shield1_HP = {5}, Shield2_HP = {6}, Shield3_HP = {7} WHERE Username = {8} ",
-                player.Current_Level, player.HP, player.Coins, player.SpaceShip_Level, player.Bullet_Level, player.Shield1_HP, player.Shield2_HP, player.Shield3_HP, player.Username);
+            string query = string.Format("UPDATE Player_Table SET Current_Level = {0}, HP = {1}, Coins = {2}, SpaceShip_Level = {3}," +
+                " Bullet_Level = {4}, Shield1_HP = {5}, Shield2_HP = {6}, Shield3_HP = {7}, Shield1_Image = {8}, Shield2_Image = {9}, " +
+                "Shield3_Image = {10} WHERE Username = '{11}' ",
+                player.Current_Level, player.HP, player.Coins, player.SpaceShip_Level, player.Bullet_Level, player.Shield1_HP,
+                player.Shield2_HP, player.Shield3_HP, player.Shield1_Image, player.Shield2_Image, player.Shield3_Image, player.Username);
             SqlCommand cmd = new SqlCommand(query, connection);
             connection.Open();
             cmd.ExecuteNonQuery();
