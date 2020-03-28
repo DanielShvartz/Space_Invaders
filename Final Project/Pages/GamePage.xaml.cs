@@ -70,7 +70,9 @@ namespace Final_Project.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             data_of_player = (Data)e.Parameter;
-            if (data_of_player == null || data_of_player.isExitingInDB == false) // if he doesnt exist in the db or he has no data at all
+
+            // if he doesnt exist in the db and he is level 1 we cant create him so we wont init him or he has no data at all
+            if (data_of_player == null || (data_of_player.isExitingInDB == false && data_of_player.Level == 1))
                 return; // retyurn him and dosent update
 
             // load all components from last level
@@ -182,8 +184,8 @@ namespace Final_Project.Pages
 
                 firstLoad = false;
             }
-
-            if (data_of_player == null || data_of_player.isExitingInDB == false) // if the player just registered of got new game - load new shields and data
+            // If the player is new and hes level is 1 we must init him if the player just registered of got new game - load new shields and data
+            if (data_of_player == null || (data_of_player.isExitingInDB == false && data_of_player.Level == 1)) 
             {
                 shield_1.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));
                 shield_2.Source = new BitmapImage(new Uri("ms-appx:///Assets/SpaceShip/Shield.png"));

@@ -77,6 +77,7 @@ namespace Final_Project.Pages
                 player_data.username = UsernameText.Text; // we only pass username and password 
                 player_data.password = PasswordText.Text;
                 player_data.isExitingInDB = false; // but he doesnt exist in the db so we will need to add him
+                player_data.Level = 1;
                 Frame.Navigate(typeof(GamePage), player_data); // we send that he has no data and the data will be create thoughout the game
                 
             }
