@@ -237,6 +237,14 @@ D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\LoginPage.g.cs
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\LoginPage.xaml
 D:\Daniel Shvartz\Final Project\Space_Invaders\Final Project\obj\x86\Debug\Pages\LoginPage.xbf
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\System.Collections.NonGeneric.dll
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\Final Project.pdb
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Private.DataContractSerialization.SR.resw
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Private.ServiceModel.SR.resw
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Threading.Tasks.Parallel.SR.resw
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Xml.ReaderWriter.SR.resw
+C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Xml.XmlDocument.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\App.xbf
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\Pages\GamePage.xbf
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\Pages\LoginPage.xbf
@@ -300,7 +308,6 @@ C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Projec
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\System.Buffers.dll
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\System.Collections.Concurrent.dll
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\System.Collections.Immutable.dll
-C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\System.Collections.NonGeneric.dll
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\System.Collections.Specialized.dll
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\System.ComponentModel.dll
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\bin\x86\Debug\System.ComponentModel.Annotations.dll
@@ -400,9 +407,7 @@ C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Projec
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\Final Project.csproj.CoreCompileInputs.cache
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\Final Project.csproj.CopyComplete
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\Final Project.exe
-C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\Final Project.pdb
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\ResourceHandlingTask.state
-C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Collections.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.IO.SR.resw
@@ -440,8 +445,6 @@ C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Projec
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Net.WebSockets.Client.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Numerics.Vectors.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.ObjectModel.SR.resw
-C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Private.DataContractSerialization.SR.resw
-C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Private.ServiceModel.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Reflection.DispatchProxy.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Reflection.Metadata.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Runtime.Numerics.SR.resw
@@ -459,10 +462,7 @@ C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Projec
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Threading.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Threading.Overlapped.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Threading.Tasks.Dataflow.SR.resw
-C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Threading.Tasks.Parallel.SR.resw
-C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Xml.ReaderWriter.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Xml.XDocument.SR.resw
-C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Xml.XmlDocument.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\FxResources.System.Xml.XmlSerializer.SR.resw
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\priconfig.xml
 C:\Users\DanielShvartz\Desktop\פרויקט מדמח\Space_Invaders\Final Project\obj\x86\Debug\priconfig.xml.intermediate

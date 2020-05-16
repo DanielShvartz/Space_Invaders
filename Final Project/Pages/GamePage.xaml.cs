@@ -86,9 +86,7 @@ namespace Final_Project.Pages
             //the xaml it will load them - this can fuck up things by loading children into the canvas
         }
 
-        public void UpLevel() { }
-
-        private void InitEnemies(Canvas canvas)
+        private void InitEnemies()
         {
             const double startingX = 165; //defualt values which can adjust the settings of the enemies creaiton
             const double spacingX = 120;
@@ -217,7 +215,9 @@ namespace Final_Project.Pages
             bullet_Control = new List<Bullet>(); // this lists also allows to remove hit bullets from the canvas and check for bullet collution
             enemy_bullet_control = new List<Bullet>();
             enemy_Control = new List<Enemy>();
-            InitEnemies(canvas); //init enemies everytime but depands on level they are stronger
+
+
+            InitEnemies(); //init enemies everytime but depands on level they are stronger
 
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;//if key was press give control to windows or event
@@ -288,7 +288,7 @@ namespace Final_Project.Pages
             if ((int)ans.Id == 1) // continue to next level
             {
                 Level = DataAccessLayer.SelectByNum(NewLevel);
-                InitEnemies(canvas); //there is no enemies right now so we just init as usual but load a new level
+                InitEnemies(); //there is no enemies right now so we just init as usual but load a new level
 
                 game_timer_movement.Start(); // start timer
 
@@ -429,7 +429,7 @@ namespace Final_Project.Pages
                                 canvas.Children.Remove(bullet_Control[player_bullet].GetBulletImage()); // remove bullet from canvas and from list
                                 bullet_Control.Remove(bullet_Control[player_bullet]);
                                 hitRemoved = false;
-                                break;  // if the bullet is already removed from the list there is no need to check we all the enemies for to continue
+                                break;  // if the bullet is already removed from the list there is no need to check we all the enemies for to continue move to next bullet and not enemy
                                 //explode animation
                             }
                             else if (bullet_Control[player_bullet].damage == enemy_Control[enemy].hitPoints) // enemy dies here - getting coins
@@ -444,7 +444,7 @@ namespace Final_Project.Pages
 
                                 enemy_Control.Remove(enemy_Control[enemy]);
                                 hitRemoved = false;
-                                break; // if the bullet is already removed from the list there is no need to check we all the enemies for to continue
+                                break; // if the bullet is already removed from the list there is no need to check with all the enemies for to continue
                             }
                         }
                     }
@@ -519,7 +519,7 @@ namespace Final_Project.Pages
         }
 
         /// <summary>
-        /// This function update an image. Removes the old one, update with the new one with given locaiton and update rectnangle size
+        /// This function update an image. Removes the old one, update with the new one with given locaiton
         /// </summary>
         /// <param name="shieldNum"></param> -
         /// <param name="newX"></param>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Final_Project.App" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAQAAIAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Final_Project.MainPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Final_Project.Classes.Base" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAABSEAAAACAAAABgAEAABAA=</HashCode>
+      <FileName>Classes\Base.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final_Project.Classes.Bullet" Collapsed="true">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UUAAAAAAAIAAgAQAQAAAAAACAABAAAABAABggAAAAAA=</HashCode>
+      <FileName>Classes\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final_Project.Classes.Data" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAgAAAAAAYAAAAAAEAgYAAgAABAAAAAgAAAAA=</HashCode>
+      <FileName>Classes\Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final_Project.Classes.Enemy" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIEAAAAAAAAIAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Classes\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final_Project.Classes.Player" Collapsed="true">
+    <Position X="2" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final_Project.Player_ServiceRef.Player" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAADAAEABAAQCQAADACBwAAACAEGAAgAEqDACAQ=</HashCode>
+      <FileName>Connected Services\Player_ServiceRef\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Final_Project.Player_ServiceRef.SavePlayer_ServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2" Y="5.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Final_Project.Player_ServiceRef.SavePlayer_ServiceClient.EndpointConfiguration" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Connected Services\Player_ServiceRef\Reference.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAAAAABAAAAAAAEAAAJIAQCAAAAAAKAAEAAQAAAEAA=</HashCode>
+      <FileName>Connected Services\Player_ServiceRef\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Final_Project.Pages.GamePage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAmAAQAAIRgAAAYBICAAwQghQAAAJAJAhAAAQIAAOM=</HashCode>
+      <FileName>Pages\GamePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Final_Project.Pages.LoginPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\LoginPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Final_Project.Pages.ShopPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Final_Project.Pages.ShopPage.ItemType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Pages\ShopPage.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIBAAACgAAAAAQAAhAAAgQAAAAAAIAAACAQABAAAAA=</HashCode>
+      <FileName>Pages\ShopPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Final_Project.Pages.ShopPage2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Final_Project.Pages.ShopPage2.ItemType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Pages\ShopPage2.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIgAAACgAAAAAAAAAIAAAQAAAAAAAAAABAQgCAACAA=</HashCode>
+      <FileName>Pages\ShopPage2.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Final_Project.SQLite.DataAccessLayer" Collapsed="true">
+    <Position X="11.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAAAAAAgAAAAAAAAAAAAAIAAAAAAAAAAACA=</HashCode>
+      <FileName>SQLite\DataAccessLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final_Project.SQLite.Level" Collapsed="true">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SQLite\Level.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Final_Project.Player_ServiceRef.ISavePlayer_Service" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAEAAAAIAACAAAAAAIAAAAAAAAAEAA=</HashCode>
+      <FileName>Connected Services\Player_ServiceRef\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Final_Project.Player_ServiceRef.ISavePlayer_ServiceChannel" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Connected Services\Player_ServiceRef\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Final_Project.Classes.Bullets" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAQACAAAiAAA=</HashCode>
+      <FileName>Classes\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Final_Project.Classes.SpaceShips" Collapsed="true">
+    <Position X="2" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Player.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

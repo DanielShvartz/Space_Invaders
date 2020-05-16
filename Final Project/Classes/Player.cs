@@ -19,7 +19,6 @@ namespace Final_Project.Classes
         //we cant init it in the base only in the players class
 
         public int SpaceShip_Level;
-        static Random rnd = new Random();
         //spaceship speed is also declered by spaceship level - higher level - stronger and faster
         public Player(double dxSpeed, Canvas canvas, string imageLocation, int SpaceShip_Level) : base(dxSpeed + SpaceShip_Level * 4, canvas, imageLocation)
         {

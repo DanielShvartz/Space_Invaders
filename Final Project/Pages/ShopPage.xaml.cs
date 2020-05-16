@@ -66,7 +66,7 @@ namespace Final_Project.Pages
                 Space_Ship3.IsEnabled = false;
 
 
-            data.coins += 1500;
+            
             Coin_Text.Text = "Coins:" + data.coins;
         }
 

@@ -129,6 +129,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Connected Services\Player_ServiceRef\Final_Project.Player_ServiceRef.Player.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -49,7 +49,7 @@ namespace Final_Project.Pages
 
             int counterExist = 0; // check if he has 3 shields
             for (int i = 0; i < data.Shields_Images.Count(); i++)
-                if (data.Shields_Images[i] != null) // if shield is not null - an image is exiting - we counter
+                if (data.ShieldHp[i] != 0) // if shield is not 0 - we have a shield - we counter
                     counterExist++;
             if (counterExist == 3) // if he has 3 shields - he cannot buy more
                 ShieldUpgrade_Button.IsEnabled = false; // but if he has 2 or 1 or 0 shields he can buy.
@@ -102,7 +102,7 @@ namespace Final_Project.Pages
                     //if the player has 3 shields - doesnt buy - own respo
                     for (int i = 0; i < data.Shields_Images.Count(); i++)
                     {
-                        if (data.Shields_Images[i] == null) // found missing shield
+                        if (data.ShieldHp[i] == 0) // found missing shield
                         {
                             createNewShield(i); // send index and not tag
                             return;
